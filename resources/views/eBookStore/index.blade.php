@@ -275,7 +275,7 @@
                             <img class="img-fluid w-100" src="{{ url('eBookStore/img/HarryPotter.jpg') }}" alt="">
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3 flex-grow-1 d-flex flex-column">
-                            <h6 class="text-truncate mb-3">Don Quixote</h6>
+                            <h6 class="text-truncate mb-3">Harry Potter</h6>
                             <div class="d-flex justify-content-center">
                                 <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                             </div>
@@ -343,7 +343,7 @@
                             <img class="img-fluid w-100" src="{{ url('eBookStore/img/LordOfTheRings.jpeg') }}" alt="">
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 class="text-truncate mb-3">The Da Vinci Code</h6>
+                            <h6 class="text-truncate mb-3">Lord Of The Rings</h6>
                             <div class="d-flex justify-content-center">
                                 <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                             </div>
@@ -377,7 +377,7 @@
                             <img class="img-fluid w-100" src="{{ url('eBookStore/img/TheLittlePrinces.jpeg') }}" alt="">
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 class="text-truncate mb-3">The Hobbit</h6>
+                            <h6 class="text-truncate mb-3">The Little Princes</h6>
                             <div class="d-flex justify-content-center">
                                 <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                             </div>
@@ -427,6 +427,18 @@
         <div class="books"> 
             <a href="#"> <img src="{{ url('eBookStore/img/CrimeAndPunishment.jpeg') }}" alt="book1" height="230px" width="250px"> </a>
             <div class="description"> Crime and Punishment </div>
+        </div>
+        <div class="books"> 
+            <a href="#"> <img src="{{ url('eBookStore/img/The Da Vinci Code.jpeg') }}" alt="book1" height="230px" width="250px"> </a>
+            <div class="description"> The Da Vinci Code </div>
+        </div>
+        <div class="books"> 
+            <a href="#"> <img src="{{ url('eBookStore/img/TheHobbit.jpeg') }}" alt="book1" height="230px" width="250px"> </a>
+            <div class="description"> The Hobbit </div>
+        </div>
+        <div class="books"> 
+            <a href="#"> <img src="{{ url('eBookStore/img/TheLittlePrinces.jpeg') }}" alt="book1" height="230px" width="250px"> </a>
+            <div class="description"> The Little Princes </div>
         </div>
     </div>
 
