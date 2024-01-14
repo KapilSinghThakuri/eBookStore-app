@@ -1,4 +1,9 @@
 /* Style for most loved books  */
+
+html{
+    scroll-behavior: smooth;
+}
+
 .lovedBooks{
     margin: 0px 52px; /* top  bottom , left right*/
     background-color: transparent;

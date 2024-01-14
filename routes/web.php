@@ -5,6 +5,7 @@ use App\Http\Controllers\eBookStore\CheckOutController;
 use App\Http\Controllers\eBookStore\ContactController;
 use App\Http\Controllers\eBookStore\HomeController;
 use App\Http\Controllers\eBookStore\LogInController;
+use App\Http\Controllers\eBookStore\refundPolicyController;
 use App\Http\Controllers\eBookStore\RegisterController;
 use App\Http\Controllers\eBookStore\ShopDetailController;
 use Illuminate\Support\Facades\Route;
@@ -39,6 +40,8 @@ Route::get('/', function () {
     Route::get('/login',[LogInController::class,'index']);
 
     Route::get('/register',[RegisterController::class,'index']);
+
+    Route::get('/refundPolicy',[refundPolicyController::class,'index']);
 
 
 

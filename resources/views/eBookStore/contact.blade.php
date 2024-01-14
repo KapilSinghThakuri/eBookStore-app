@@ -9,7 +9,7 @@
 
         <div class="d-flex flex-column align-items-center justify-content-start" style="min-height: 300px">
             <h1 class="font-weight-semi-bold text-uppercase mt-4 mb-3" 
-            style="color: whitesmoke;">Contact</h1>
+            style="color: whitesmoke;">Contact Us</h1>
             <!-- <div class="d-inline-flex">
                 <p class="m-0"><a href="">Home</a></p>
                 <p class="m-0 px-2">-</p>
