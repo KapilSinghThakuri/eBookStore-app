@@ -3,7 +3,7 @@
 @section('main')
 
     <div class="container-fluid mb-5 " 
-    style="background-image:url('eBookStore/img/PRH_Site_1200x628_NYT-1.jpg');
+    style="background-image:url('eBookStore/img/cover3.jpg');
     background-position: center; background-repeat: no-repeat; background-size: cover; height: 500px; width: 100%;">
 
         <div class="d-flex flex-column align-items-center justify-content-start" style="min-height: 300px">

@@ -4,7 +4,7 @@
 
     <!-- Page Header Start -->
     <div class="container-fluid mb-5 " 
-    style="background-image: url('eBookStore/img/MustRead21_ListAssets_templateCoreMerch_1200x600.jpg');
+    style="background-image: url('eBookStore/img/cover3.jpg');
     background-position: center; background-repeat: no-repeat; background-size: cover; height: 500px; width: 100%;">
 
         <div class="d-flex flex-column align-items-center justify-content-start" style="min-height: 300px">
@@ -30,16 +30,16 @@
                 <div id="product-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner border">
                         <div class="carousel-item active">
-                            <img class="w-100 h-100" src="img/product-1.jpg" alt="Image">
+                            <img class="w-100 h-100" src="{{ url('eBookStore/img/HarryPotter.jpg') }}" alt="Image">
                         </div>
                         <div class="carousel-item">
-                            <img class="w-100 h-100" src="img/product-2.jpg" alt="Image">
+                            <img class="w-100 h-100" src="{{ url('eBookStore/img/HarryPotter.jpg') }}" alt="Image">
                         </div>
                         <div class="carousel-item">
-                            <img class="w-100 h-100" src="img/product-3.jpg" alt="Image">
+                            <img class="w-100 h-100" src="{{ url('eBookStore/img/HarryPotter.jpg') }}" alt="Image">
                         </div>
                         <div class="carousel-item">
-                            <img class="w-100 h-100" src="img/product-4.jpg" alt="Image">
+                            <img class="w-100 h-100" src="{{ url('eBookStore/img/HarryPotter.jpg') }}" alt="Image">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#product-carousel" data-slide="prev">
@@ -52,7 +52,7 @@
             </div>
 
             <div class="col-lg-7 pb-5">
-                <h3 class="font-weight-semi-bold">Colorful Stylish Shirt</h3>
+                <h3 class="font-weight-semi-bold">HarryPotter</h3>
                 <div class="d-flex mb-3">
                     <div class="text-primary mr-2">
                         <small class="fas fa-star"></small>

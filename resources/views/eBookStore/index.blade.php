@@ -116,13 +116,13 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link" data-toggle="dropdown">Business & Investing<i class="fa fa-angle-down float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="" class="dropdown-item">Investing</a>
-                                <a href="" class="dropdown-item">Marketing and Sales</a>
-                                <a href="" class="dropdown-item">Finance</a>
-                                <a href="" class="dropdown-item">Management</a>
+                                <a href="#business-investing" class="dropdown-item">Investing</a>
+                                <a href="#business-investing" class="dropdown-item">Marketing and Sales</a>
+                                <a href="#business-investing" class="dropdown-item">Finance</a>
+                                <a href="#business-investing" class="dropdown-item">Management</a>
                             </div>
                         </div>
-                        <a href="#action-adventures" class="nav-item nav-link">Action & Adventure</a>
+                        <a href="" class="nav-item nav-link">Action & Adventure</a>
                         <a href="" class="nav-item nav-link">Fictions & Literature</a>
                         <a href="" class="nav-item nav-link">History & Biography</a>
                         <a href="" class="nav-item nav-link">Kid's & Teens</a>
@@ -164,7 +164,7 @@
                 <div id="header-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" style="height: 410px;">
-                            <img class="img-fluid" src="{{ url('eBookStore/img/index1.jpg') }}" alt="Image">
+                            <img class="img-fluid" src="{{ url('eBookStore/img/Home2.jpg') }}" alt="Image">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
                                     <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
@@ -262,7 +262,7 @@
     <!-- Categories End -->
 
     <!-- Highly Recomended Books -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-4">
         <div class="text-center mb-4">
             <h2 class="section-title px-5"><span class="px-2">Highly Recomended Books</span></h2>
         </div>
@@ -398,7 +398,10 @@
     <!--Top 10 Coming Soon -->
     
     <div class="lovedBooks">
-        <h1 style="text-align: center; margin-top: 10px; margin-bottom: 20px;"> Top 10 Coming Soon</h1>
+
+        <div class="text-center mb-4">
+            <h2 class="section-title px-5"><span class="px-2">Top 10 Coming Soon Books</span></h2>
+        </div>
 
         <div class="books"> 
             <a href="#"> <img src="{{ url('eBookStore/img/HarryPotter.jpg') }}" alt="book1" height="230px" width="250px"> </a>
@@ -449,14 +452,14 @@
         <div class="text-center mb-4">
             <h2 class="section-title px-5"><span class="px-2">Religion & Spirituality</span></h2>
         </div>
-        <div class="row px-xl-5 pb-3">
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
+        <div class="row px-3 pb-3">
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="{{ url('eBookStore/img/product-1.jpg') }}" alt="">
+                        <img class="img-fluid w-100" src="{{ url('eBookStore/img/PrideAndPrejudice.jpeg') }}" alt="">
                     </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">Pride And Prejudice</h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -467,13 +470,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="{{ url('eBookStore/img/product-2.jpg') }}" alt="">
+                        <img class="img-fluid w-100" src="{{ url('eBookStore/img/TheHobbit.jpeg') }}" alt="">
                     </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">The Hobbit</h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -484,13 +487,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="{{ url('eBookStore/img/product-3.jpg') }}" alt="">
+                        <img class="img-fluid w-100" src="{{ url('eBookStore/img/The Quran.jpeg') }}" alt="">
                     </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">The Quran</h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -501,13 +504,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                         <img class="img-fluid w-100" src="{{ url('eBookStore/img/product-4.jpg') }}" alt="">
                     </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -518,13 +521,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                         <img class="img-fluid w-100" src="{{ url('eBookStore/img/product-5.jpg') }}" alt="">
                     </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -535,13 +538,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                         <img class="img-fluid w-100" src="{{ url('eBookStore/img/product-6.jpg') }}" alt="">
                     </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -552,13 +555,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                         <img class="img-fluid w-100" src="{{ url('eBookStore/img/product-7.jpg') }}" alt="">
                     </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -569,13 +572,81 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                         <img class="img-fluid w-100" src="{{ url('eBookStore/img/product-8.jpg') }}" alt="">
                     </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
+                        <div class="d-flex justify-content-center">
+                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="{{ url('eBookStore/img/product-8.jpg') }}" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
+                        <div class="d-flex justify-content-center">
+                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="{{ url('eBookStore/img/product-8.jpg') }}" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
+                        <div class="d-flex justify-content-center">
+                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="{{ url('eBookStore/img/product-8.jpg') }}" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
+                        <div class="d-flex justify-content-center">
+                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="{{ url('eBookStore/img/product-8.jpg') }}" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -618,7 +689,7 @@
     <!-- Offer End -->
 
     <!-- Subscribe Start -->
-    <div class="container-fluid bg-secondary my-5" style="background-image: url( eBookStore/img/image-0-0.jpeg);">
+    <div class="container-fluid bg-secondary my-5" style="background-image: url( eBookStore/img/cover5.jpeg );">
         <div class="row justify-content-md-center py-5 px-xl-5">
             <div class="col-md-6 col-12 py-5">
                 <div class="text-center mb-2 pb-2">
@@ -640,19 +711,19 @@
     <!-- Subscribe End -->
 
 
-    <!-- Products Start -->
-    <div class="container-fluid pt-5" id="action-adventures">
+    <!-- Products Start ( Business & Investing Books)-->
+    <div class="container-fluid pt-5" id="business-investing">
         <div class="text-center mb-4">
-            <h2 class="section-title px-5"><span class="px-2">Actions and Adventure Books</span></h2>
+            <h2 class="section-title px-5"><span class="px-2">Business & Investing Books</span></h2>
         </div>
-        <div class="row px-xl-5 pb-3">
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
+        <div class="row px-3 pb-3">
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="/eBookStore/img/product-1.jpg" alt="">
+                        <img class="img-fluid w-100" src="eBookStore/img/PrideAndPrejudice.jpeg" alt="">
                     </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">Pride And Prejudice</h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -663,13 +734,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-2.jpg" alt="">
+                        <img class="img-fluid w-100" src="eBookStore/img/TheHobbit.jpeg" alt="">
                     </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">The Hobbit</h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -680,13 +751,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-3.jpg" alt="">
+                        <img class="img-fluid w-100" src="eBookStore/img/The Quran.jpeg" alt="">
                     </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">The Quran</h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -697,13 +768,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-4.jpg" alt="">
+                        <img class="img-fluid w-100" src="eBookStore/img/product-4.jpg" alt="">
                     </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -714,13 +785,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-5.jpg" alt="">
+                        <img class="img-fluid w-100" src="eBookStore/img/product-5.jpg" alt="">
                     </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -731,13 +802,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-6.jpg" alt="">
+                        <img class="img-fluid w-100" src="eBookStore/img/product-6.jpg" alt="">
                     </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -748,13 +819,13 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-7.jpg" alt="">
+                        <img class="img-fluid w-100" src="eBookStore/img/product-7.jpg" alt="">
                     </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -765,13 +836,81 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="/eBookStore/img/product-8.jpg" alt="">
+                        <img class="img-fluid w-100" src="eBookStore/img/product-8.jpg" alt="">
                     </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
+                        <div class="d-flex justify-content-center">
+                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="eBookStore/img/product-8.jpg" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
+                        <div class="d-flex justify-content-center">
+                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="eBookStore/img/product-8.jpg" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
+                        <div class="d-flex justify-content-center">
+                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="eBookStore/img/product-8.jpg" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
+                        <div class="d-flex justify-content-center">
+                            <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="eBookStore/img/product-8.jpg" alt="">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -784,8 +923,7 @@
             </div>
         </div>
     </div>
-    <!-- Products End -->
-
+<!-- Products End ( Business & Investing Books)-->
 
     <!-- Vendor Start -->
     <div class="container-fluid py-5">
