@@ -105,7 +105,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="row px-xl-5">
             <div class="col">
                 <div class="nav nav-tabs justify-content-center border-secondary mb-4">
@@ -160,7 +160,7 @@
                     <div class="tab-pane fade" id="tab-pane-3">
                         <div class="row">
                             <div class="col-md-6">
-                                <h4 class="mb-4">1 review for "Colorful Stylish Shirt"</h4>
+                                <h4 class="mb-4">1 Review For "The Harry Potter"</h4>
                                 <div class="media mb-4">
                                     <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
                                     <div class="media-body">
@@ -192,15 +192,15 @@
                                 <form>
                                     <div class="form-group">
                                         <label for="message">Your Review *</label>
-                                        <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
+                                        <textarea id="message" cols="30" rows="5" class="form-control" placeholder="Your Review"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Your Name *</label>
-                                        <input type="text" class="form-control" id="name">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Your Email *</label>
-                                        <input type="email" class="form-control" id="email">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
                                     </div>
                                     <div class="form-group mb-0">
                                         <input type="submit" value="Leave Your Review" class="btn btn-primary px-3">
@@ -216,7 +216,7 @@
     <!-- Shop Detail End -->
 
 
-    <!-- Products Start -->
+    <!-- Products Start ( You may also like ) -->
     <div class="container-fluid py-5">
         <div class="text-center mb-4">
             <h2 class="section-title px-5"><span class="px-2">You May Also Like</span></h2>
@@ -235,7 +235,7 @@
                             <div class="d-flex justify-content-center">
                                 <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                             </div>
-                            <div class="flex-grow-1"></div> <!-- This will make the body section grow to fill available height -->
+                            <div class="flex-grow-1"></div>
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
                             <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
@@ -349,7 +349,7 @@
             </div>
         </div>
     </div>
-    <!-- Products End -->
+    <!-- Products End ( You may also like ) -->
 
 @endsection
    

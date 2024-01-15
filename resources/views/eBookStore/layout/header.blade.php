@@ -8,6 +8,7 @@
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
+
     <!-- Favicon -->
     <link href="{{ url('eBookStore/img/favicon.ico') }}" rel="icon">
 
@@ -24,7 +25,7 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ url('eBookStore/css/style.css') }}" rel="stylesheet">
 
-    <!-- SignIN Stylesheet -->
+    <!-- SignIn Stylesheet -->
     <link href="{{ url('eBookStore/css/signin.css') }}" rel="stylesheet">
 </head>
 
@@ -107,19 +108,19 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link" data-toggle="dropdown">Religion & Spirituality <i class="fa fa-angle-down float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="" class="dropdown-item">Buddhism</a>
-                                <a href="" class="dropdown-item">Hinduism</a>
-                                <a href="" class="dropdown-item">Christianity</a>
-                                <a href="" class="dropdown-item">Islam</a>
+                                <a href="#religion-spirituality" class="dropdown-item">Buddhism</a>
+                                <a href="#religion-spirituality" class="dropdown-item">Hinduism</a>
+                                <a href="#religion-spirituality" class="dropdown-item">Christianity</a>
+                                <a href="#religion-spirituality" class="dropdown-item">Islam</a>
                             </div>
                         </div>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link" data-toggle="dropdown">Business & Investing<i class="fa fa-angle-down float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="" class="dropdown-item">Investing</a>
-                                <a href="" class="dropdown-item">Marketing and Sales</a>
-                                <a href="" class="dropdown-item">Finance</a>
-                                <a href="" class="dropdown-item">Management</a>
+                                <a href="#business-investing" class="dropdown-item">Investing</a>
+                                <a href="#business-investing" class="dropdown-item">Marketing and Sales</a>
+                                <a href="#business-investing" class="dropdown-item">Finance</a>
+                                <a href="#business-investing" class="dropdown-item">Management</a>
                             </div>
                         </div>
                         <a href="" class="nav-item nav-link">Action & Adventure</a>
