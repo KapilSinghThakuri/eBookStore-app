@@ -2,15 +2,16 @@
 
 @section('main')
 
-
+<!-- Register section start -->
 <div class="container-fluid mt-5 d-flex justify-content-center align-items-center">
         <div class="row">
             <div class="col-md-12">
-                <div class="card bg-primary" style="width: 450px; border-radius: 8px; background-color: whitesmoke;">
-                    <div class="card-header" style="text-align: center; color: black; font-size: 26px; font-weight:600;">
+
+                <div class="card bg-primary" id="register-card">
+                    <div class="card-header" style="text-align: center; color: black; font-size: 2.2rem; font-weight:550;">
                         Sign up
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" >
                         <form action="" method="" title="Register">
                             <div class="form-group mb-4">
                                 <label for="" class="text-white">Full Name</label>
@@ -29,8 +30,7 @@
                                 <input type="text" name="" class="form-control bg-primary text-white" placeholder="Enter Password to Confirm">
                             </div>
                             <div class="register-btn d-flex justify-content-center">
-                                <button type="" class="btn btn-secondary"
-                                style="height: 50px; width: 300px; text-align: center; border-radius: 24px;">
+                                <button type="" class="btn btn-secondary" id="register-btn">
                                     Register
                                 </button>
                             </div>
@@ -46,5 +46,8 @@
             </div>
         </div>
     </div>
+
+<!-- Register section end -->
+
 
 @endsection
