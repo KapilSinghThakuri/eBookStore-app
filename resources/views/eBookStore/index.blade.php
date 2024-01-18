@@ -771,10 +771,10 @@
             <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
                 <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="eBookStore/img/product-4.jpg" alt="">
+                        <img class="img-fluid w-100" src="eBookStore/img/Ugly Love.jpg" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
-                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
+                        <h6 class="text-truncate mb-2">Ugly Love</h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -805,10 +805,10 @@
             <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
                 <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="eBookStore/img/product-6.jpg" alt="">
+                        <img class="img-fluid w-100" src="eBookStore/img/ThePowerOfPositiveAttitude.jpg" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
-                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
+                        <h6 class="text-truncate mb-2">The Power Of Positive Attitude </h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
