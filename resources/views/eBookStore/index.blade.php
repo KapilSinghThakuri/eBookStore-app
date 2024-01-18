@@ -788,10 +788,10 @@
             <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
                 <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="eBookStore/img/product-5.jpg" alt="">
+                        <img class="img-fluid w-100" src="eBookStore/img/Tech Phoenix.jpg" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
-                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
+                        <h6 class="text-truncate mb-2">Tech Phoenix</h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -969,9 +969,9 @@
                     <h1 class="mb-4 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border border-white px-3 mr-1">E</span>Shopper</h1>
                 </a>
                 <p>Dolore erat dolor sit lorem vero amet. Sed sit lorem magna, ipsum no sit erat lorem et magna ipsum dolore amet erat.</p>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Gaindakot, Nawalparasi, Nepal</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@eBookStore.com</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+977 9864575047</p>
             </div>
             <div class="col-lg-8 col-md-12">
                 <div class="row">
@@ -1014,11 +1014,8 @@
         </div>
         <div class="row border-top border-light mx-xl-5 py-4">
             <div class="col-md-6 px-xl-0">
-                <p class="mb-md-0 text-center text-md-left text-dark">
-                    &copy; <a class="text-dark font-weight-semi-bold" href="#">Your Site Name</a>. All Rights Reserved. Designed
-                    by
-                    <a class="text-dark font-weight-semi-bold" href="https://htmlcodex.com">HTML Codex</a><br>
-                    Distributed By <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                <p class="mb-md-0 text-center text-md-left text-dark">Copyright
+                    &copy; 2024. <a class="text-dark font-weight-semi-bold" href="#">eBookStore.com</a>. All Rights Reserved.
                 </p>
             </div>
             <div class="col-md-6 px-xl-0 text-center text-md-right">
