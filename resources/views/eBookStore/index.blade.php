@@ -978,7 +978,7 @@
                     <div class="col-md-4 mb-5">
                         <h5 class="font-weight-bold text-dark mb-4">Informations</h5>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-dark mb-2" href=""><i class="fa fa-angle-right mr-2"></i>About Us</a>
+                            <a class="text-dark mb-2" href="/aboutUs"><i class="fa fa-angle-right mr-2"></i>About Us</a>
                             <a class="text-dark mb-2" href="/refundPolicy"><i class="fa fa-angle-right mr-2"></i>Return and Refund Policy</a>
                             <a class="text-dark mb-2" href=""><i class="fa fa-angle-right mr-2"></i>Terms and Condition</a>
                             <a class="text-dark mb-2" href=""><i class="fa fa-angle-right mr-2"></i>Privacy Policy</a>

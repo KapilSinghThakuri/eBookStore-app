@@ -1,14 +1,15 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\eBookStore\CartController;
-use App\Http\Controllers\eBookStore\CheckOutController;
-use App\Http\Controllers\eBookStore\ContactController;
 use App\Http\Controllers\eBookStore\HomeController;
 use App\Http\Controllers\eBookStore\LogInController;
-use App\Http\Controllers\eBookStore\refundPolicyController;
+use App\Http\Controllers\eBookStore\AboutUsController;
+use App\Http\Controllers\eBookStore\ContactController;
+use App\Http\Controllers\eBookStore\CheckOutController;
 use App\Http\Controllers\eBookStore\RegisterController;
 use App\Http\Controllers\eBookStore\ShopDetailController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\eBookStore\refundPolicyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,8 @@ Route::get('/', function () {
     Route::get('/register',[RegisterController::class,'index']);
 
     Route::get('/refundPolicy',[refundPolicyController::class,'index']);
+
+    Route::get('/aboutUs',[AboutUsController::class,'index']);
 
 
 
