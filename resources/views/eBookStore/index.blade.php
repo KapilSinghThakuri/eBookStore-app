@@ -689,13 +689,16 @@
     <!-- Offer End -->
 
     <!-- Subscribe Start -->
-    <div class="container-fluid bg-secondary my-5" style="background-image: url( eBookStore/img/cover5.jpeg );">
+    <div class="container-fluid bg-secondary my-5" style="background-image: url( eBookStore/img/uniqueCover.jpeg );">
         <div class="row justify-content-md-center py-5 px-xl-5">
             <div class="col-md-6 col-12 py-5">
                 <div class="text-center mb-2 pb-2">
-                    <h2 class="section-title px-5 mb-3"><span class="px-2" style="background-color: rgb(90, 191, 200); color: whitesmoke; border-radius: 10px;">Get Membership</span></h2>
-                    <p style="color: whitesmoke;">"Unlock a world of knowledge and adventure – subscribe now to elevate your reading experience with our 
-                        exclusive collection at the online book store!"</p>
+                    <h2 class="px-5 mb-3">
+                        <span class="px-2" style="color: white; font-size: 2.4 rem; font-weight: 600; letter-spacing: 4px;">Get Membership</span>
+                    </h2>
+                    <p style="color: whitesmoke;">"Unlock a world of knowledge and adventure – subscribe now to elevate
+                     your reading experience with our exclusive collection at the online book store!"
+                    </p>
                 </div>
                 <form action="">
                     <div class="input-group">
