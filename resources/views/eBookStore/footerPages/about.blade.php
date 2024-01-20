@@ -5,6 +5,14 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
+
+            <h1 class="text-center mt-3" style="color: #ba6a62;">eBookStore</h1>
+            <h5 class="text-center mb-3" style="font-size: 1rem; font-weight: 500;">"Your Choice, Your Pride"</h5>
+
+        <div class="container-fluid d-flex">
+            <img class="img-fluid" style="border-radius: 6px; max-width: 100%;" src="{{ url('eBookStore/img/uniqueCover.jpeg')}}" alt="Cover Image">
+        </div>
+
             <div class = "AboutUs m-5">
                 <div>
                     <h5 class = "text-primary"> About Us </h5>
