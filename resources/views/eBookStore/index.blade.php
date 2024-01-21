@@ -272,6 +272,23 @@
 
                     <div class="card product-item border-0 flex-grow-1" style="max-width: 200px; margin: 0 20px;">
                         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <img class="img-fluid w-100" src="{{ url('eBookStore/img/Atomic Habits.jpg') }}" alt="">
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3 flex-grow-1 d-flex flex-column">
+                            <h6 class="text-truncate mb-3">Atomic Habits</h6>
+                            <div class="d-flex justify-content-center">
+                                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            </div>
+                            <div class="flex-grow-1"></div> <!-- This will make the body section grow to fill available height -->
+                        </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        </div>
+                    </div>
+
+                    <div class="card product-item border-0 flex-grow-1" style="max-width: 200px; margin: 0 20px;">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
                             <img class="img-fluid w-100" src="{{ url('eBookStore/img/HarryPotter.jpg') }}" alt="">
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3 flex-grow-1 d-flex flex-column">
@@ -507,10 +524,10 @@
             <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
                 <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="{{ url('eBookStore/img/product-4.jpg') }}" alt="">
+                        <img class="img-fluid w-100" src="{{ url('eBookStore/img/The Bible in 52 Weeks.jpg') }}" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
-                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
+                        <h6 class="text-truncate mb-2">The Bible in 52 Weeks</h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -524,10 +541,10 @@
             <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
                 <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="{{ url('eBookStore/img/product-5.jpg') }}" alt="">
+                        <img class="img-fluid w-100" src="{{ url('eBookStore/img/LordOfTheRings.jpeg') }}" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
-                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
+                        <h6 class="text-truncate mb-2">The Lord Of Rings</h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -541,10 +558,10 @@
             <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
                 <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="{{ url('eBookStore/img/product-6.jpg') }}" alt="">
+                        <img class="img-fluid w-100" src="{{ url('eBookStore/img/Fourth Wing.jpg') }}" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
-                        <h6 class="text-truncate mb-2">Colorful Stylish Shirt</h6>
+                        <h6 class="text-truncate mb-2">Fourth Wing (The Empyrean, 1)</h6>
                         <div class="d-flex justify-content-center">
                             <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                         </div>
@@ -984,7 +1001,7 @@
                             <a class="text-dark mb-2" href="/aboutUs"><i class="fa fa-angle-right mr-2"></i>About Us</a>
                             <a class="text-dark mb-2" href="/refundPolicy"><i class="fa fa-angle-right mr-2"></i>Return and Refund Policy</a>
                             <a class="text-dark mb-2" href=""><i class="fa fa-angle-right mr-2"></i>Terms and Condition</a>
-                            <a class="text-dark mb-2" href=""><i class="fa fa-angle-right mr-2"></i>Privacy Policy</a>
+                            <a class="text-dark mb-2" href="/privacyPolicy"><i class="fa fa-angle-right mr-2"></i>Privacy Policy</a>
                         </div>
                     </div>
                     <div class="col-md-4 mb-5">

@@ -7,6 +7,7 @@ use App\Http\Controllers\eBookStore\LogInController;
 use App\Http\Controllers\eBookStore\AboutUsController;
 use App\Http\Controllers\eBookStore\ContactController;
 use App\Http\Controllers\eBookStore\CheckOutController;
+use App\Http\Controllers\eBookStore\PrivacyController;
 use App\Http\Controllers\eBookStore\RegisterController;
 use App\Http\Controllers\eBookStore\ShopDetailController;
 use App\Http\Controllers\eBookStore\refundPolicyController;
@@ -45,6 +46,8 @@ Route::get('/', function () {
     Route::get('/refundPolicy',[refundPolicyController::class,'index']);
 
     Route::get('/aboutUs',[AboutUsController::class,'index']);
+
+    Route::get('/privacyPolicy',[PrivacyController::class,'index']);
 
 
 
