@@ -51,8 +51,39 @@
                     </p>
                 </div>
                 <div>
+                    <h5>Security</h5>
                     <p>
-                        
+                        We value your trust in providing us your Personal Information, thus we are striving to use 
+                        commercially acceptable means of protecting it. But remember that no method of transmission over 
+                        the internet, or method of electronic storage is 100% secure and reliable, and we cannot 
+                        guarantee its absolute security.
+                    </p>
+                </div>
+                <div>
+                    <h5>Children's Privacy</h5>
+                    <p>
+                        Our Services do not address anyone under the age of 18. We do not knowingly collect personal 
+                        identifiable information from children under 18. In the case we discover that a child under 18 
+                        has provided us with personal information, we immediately delete this from our servers. If you 
+                        are a parent or guardian and you are aware that your child has provided us with personal 
+                        information, please contact us so that we will be able to do necessary actions.
+                    </p>
+                </div>
+                <div>
+                    <h5>Changes to This Privacy Policy</h5>
+                    <p>
+                        We may update our Privacy Policy from time to time. Thus, we advise you to review this page 
+                        periodically for any changes. We will notify you of any changes by posting the new Privacy Policy 
+                        on this page. These changes are effective immediately, after they are posted on this page.
+                    </p>
+                </div>
+                <div>
+                    <h5>Contact Us</h5>
+                    <p>
+                        If you have any questions or suggestions about our Privacy Policy, do not hesitate to 
+                        contact us at info@eBookStore.com. <br> <br>
+
+                        This Privacy Policy page was created at www.eBookStore.com
                     </p>
                 </div>
             </div>
