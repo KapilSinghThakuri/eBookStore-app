@@ -169,7 +169,7 @@
                                 <div class="p-3" style="max-width: 700px;">
                                     <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
                                     <h3 class="display-4 text-white font-weight-semi-bold mb-4">Read, Lead & Succeed.</h3>
-                                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                                    <a href="#highly-recomended" class="btn btn-light py-2 px-3">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -179,7 +179,7 @@
                                 <div class="p-3" style="max-width: 700px;">
                                     <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
                                     <h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
-                                    <a href="" class="btn btn-light py-2 px-3">Shop Now</a>
+                                    <a href="#highly-recomended" class="btn btn-light py-2 px-3">Shop Now</a>
                                 </div>
                             </div>
                         </div>
@@ -209,7 +209,7 @@
                     <a href="" class="cat-img position-relative overflow-hidden mb-3">
                         <img class="img-fluid" src="" alt="">
                     </a>
-                    <h5 class="font-weight-semi-bold m-0">Action & Adventure</h5>
+                    <h5 class="font-weight-semi-bold m-0">Kids & Teens</h5>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 pb-1">
@@ -225,12 +225,12 @@
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                     <p class="text-right">15 Products</p>
                     <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="" alt="">
+                        <img class="img-fluid" src="{{ url('eBookStore/img/') }}" alt="">
                     </a>
-                    <h5 class="font-weight-semi-bold m-0">Business & Investing</h5>
+                    <h5 class="font-weight-semi-bold m-0">Technology</h5>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 pb-1">
+            <!-- <div class="col-lg-4 col-md-6 pb-1">
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                     <p class="text-right">15 Products</p>
                     <a href="" class="cat-img position-relative overflow-hidden mb-3">
@@ -256,13 +256,13 @@
                     </a>
                     <h5 class="font-weight-semi-bold m-0">Fictions & Literature</h5>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <!-- Categories End -->
 
     <!-- Highly Recomended Books -->
-    <div class="container-fluid py-4">
+    <div class="container-fluid py-4" id="highly-recomended">
         <div class="text-center mb-4">
             <h2 class="section-title px-5"><span class="px-2">Highly Recomended Books</span></h2>
         </div>
@@ -272,7 +272,7 @@
 
                     <div class="card product-item border-0 flex-grow-1" style="max-width: 200px; margin: 0 20px;">
                         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="{{ url('eBookStore/img/Atomic Habits.jpg') }}" alt="">
+                            <img class="img-fluid w-100" src="{{ url('eBookStore/img/The Indoctrinated Brain.jpg') }}" alt="">
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3 flex-grow-1 d-flex flex-column">
                             <h6 class="text-truncate mb-3">Atomic Habits</h6>
@@ -280,6 +280,23 @@
                                 <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                             </div>
                             <div class="flex-grow-1"></div> <!-- This will make the body section grow to fill available height -->
+                        </div>
+                        <div class="card-footer d-flex justify-content-between bg-light border">
+                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        </div>
+                    </div>
+
+                    <div class="card product-item border-0 flex-grow-1" style="max-width: 200px; margin: 0 20px;">
+                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                            <img class="img-fluid w-100" src="{{ url('eBookStore/img/RichDadPoorDad.jpg') }}" alt="">
+                        </div>
+                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
+                            <h6 class="text-truncate mb-3">Rich Dad Poor Dad</h6>
+                            <div class="d-flex justify-content-center">
+                                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            </div>
+                            <div class="flex-grow-1"></div>
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
                             <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
@@ -310,23 +327,6 @@
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                             <h6 class="text-truncate mb-3">Don Quixote</h6>
-                            <div class="d-flex justify-content-center">
-                                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                            </div>
-                            <div class="flex-grow-1"></div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between bg-light border">
-                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                        </div>
-                    </div>
-
-                    <div class="card product-item border-0 flex-grow-1" style="max-width: 200px; margin: 0 20px;">
-                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="{{ url('eBookStore/img/RichDadPoorDad.jpg') }}" alt="">
-                        </div>
-                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 class="text-truncate mb-3">Rich Dad Poor Dad</h6>
                             <div class="d-flex justify-content-center">
                                 <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                             </div>
