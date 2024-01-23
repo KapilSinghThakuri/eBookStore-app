@@ -275,9 +275,9 @@
                             <img class="img-fluid w-100" src="{{ url('eBookStore/img/The Indoctrinated Brain.jpg') }}" alt="">
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3 flex-grow-1 d-flex flex-column">
-                            <h6 class="text-truncate mb-3">Atomic Habits</h6>
+                            <h6 class="text-truncate mb-3">The Indoctrinated Brain</h6>
                             <div class="d-flex justify-content-center">
-                                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                                <h6>$32.00</h6><h6 class="text-muted ml-2"><del>$45.00</del></h6>
                             </div>
                             <div class="flex-grow-1"></div> <!-- This will make the body section grow to fill available height -->
                         </div>
