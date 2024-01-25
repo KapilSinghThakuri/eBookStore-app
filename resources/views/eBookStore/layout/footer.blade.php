@@ -17,7 +17,7 @@
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-dark mb-2" href="{{ url('/aboutUs') }}"><i class="fa fa-angle-right mr-2"></i>About Us</a>
                             <a class="text-dark mb-2" href="{{ url('/refundPolicy') }}"><i class="fa fa-angle-right mr-2"></i>Return and Refund Policy</a>
-                            <a class="text-dark mb-2" href=""><i class="fa fa-angle-right mr-2"></i>Terms and Condition</a>
+                            <a class="text-dark mb-2" href="{{ url('/termCondition') }}"><i class="fa fa-angle-right mr-2"></i>Terms and Condition</a>
                             <a class="text-dark mb-2" href="{{ url('/privacyPolicy') }}"><i class="fa fa-angle-right mr-2"></i>Privacy Policy</a>
                         </div>
                     </div>

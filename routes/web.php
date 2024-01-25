@@ -11,6 +11,7 @@ use App\Http\Controllers\eBookStore\PrivacyController;
 use App\Http\Controllers\eBookStore\RegisterController;
 use App\Http\Controllers\eBookStore\ShopDetailController;
 use App\Http\Controllers\eBookStore\refundPolicyController;
+use App\Http\Controllers\eBookStore\TermConditionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +49,8 @@ Route::get('/', function () {
     Route::get('/aboutUs',[AboutUsController::class,'index']);
 
     Route::get('/privacyPolicy',[PrivacyController::class,'index']);
+
+    Route::get('/termCondition',[TermConditionController::class,'index']);
 
 
 
