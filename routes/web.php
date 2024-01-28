@@ -12,6 +12,9 @@ use App\Http\Controllers\eBookStore\RegisterController;
 use App\Http\Controllers\eBookStore\ShopDetailController;
 use App\Http\Controllers\eBookStore\refundPolicyController;
 use App\Http\Controllers\eBookStore\TermConditionController;
+use App\Http\Controllers\eBookStore\TopbarController\FAQController;
+use App\Http\Controllers\eBookStore\TopbarController\helpController;
+use App\Http\Controllers\eBookStore\TopbarController\supportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +31,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+//  eBookStore Routing 
 
     Route::get('/Home',[HomeController::class,'index']);
 
@@ -40,9 +43,13 @@ Route::get('/', function () {
 
     Route::get('/contact',[ContactController::class,'index']);
 
+    // For RegistrationPages Routing
+
     Route::get('/login',[LogInController::class,'index']);
 
     Route::get('/register',[RegisterController::class,'index']);
+
+    // For FooterPages Routing
 
     Route::get('/refundPolicy',[refundPolicyController::class,'index']);
 
@@ -51,6 +58,14 @@ Route::get('/', function () {
     Route::get('/privacyPolicy',[PrivacyController::class,'index']);
 
     Route::get('/termCondition',[TermConditionController::class,'index']);
+
+    // For TopbarPages Routing
+
+    Route::get('/FAQ',[FAQController::class,'index']);
+
+    Route::get('/help',[helpController::class,'index']);
+
+    Route::get('/support',[supportController::class,'index']);
 
 
 
