@@ -63,7 +63,7 @@
         </div>
         <div class="row align-items-center py-3 px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
-                <a href="{{ url('/homePage') }}" class="text-decoration-none">
+                <a href="{{ url('/Home') }}" class="text-decoration-none">
                     <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Books</h1>
                 </a>
             </div>
@@ -84,7 +84,7 @@
                     <i class="fas fa-heart text-primary"></i>
                     <span class="badge">0</span>
                 </a>
-                <a href="" class="btn border">
+                <a href="/shoppingCart" class="btn border">
                     <i class="fas fa-shopping-cart text-primary"></i>
                     <span class="badge">0</span>
                 </a>
@@ -135,7 +135,7 @@
             </div>
             <div class="col-lg-9">
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-                    <a href="{{ url('/homePage') }}" class="text-decoration-none d-block d-lg-none">
+                    <a href="{{ url('/Home') }}" class="text-decoration-none d-block d-lg-none">
                         <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Books</h1>
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -143,7 +143,7 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="{{ url('/homePage') }}" class="nav-item nav-link active">Home</a>
+                            <a href="{{ url('/Home') }}" class="nav-item nav-link active">Home</a>
                             <!-- <a href="shop.html" class="nav-item nav-link">Shop</a> -->
                             <a href="{{ url('/shopDetail') }}" class="nav-item nav-link">Shop Detail</a>
                             <div class="nav-item dropdown">
@@ -1199,7 +1199,7 @@
     <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
         <div class="row px-xl-5 pt-5">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
-                <a href="/homePage" class="text-decoration-none">
+                <a href="/Home" class="text-decoration-none">
                     <h1 class="mb-4 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border border-white px-3 mr-1">E</span>Books</h1>
                 </a>
                 <p>Dolore erat dolor sit lorem vero amet. Sed sit lorem magna, ipsum no sit erat lorem et magna ipsum dolore amet erat.</p>
@@ -1249,7 +1249,7 @@
         <div class="row border-top border-light mx-xl-5 py-4">
             <div class="col-md-6 px-xl-0">
                 <p class="mb-md-0 text-center text-md-left text-dark">Copyright
-                    &copy; 2024. <a class="text-dark font-weight-semi-bold" href="#">eBookStore.com</a>. All Rights Reserved.
+                    &copy; 2024. <a class="text-dark font-weight-semi-bold" href="#">eBookStore.com</a> All Rights Reserved.
                 </p>
             </div>
             <div class="col-md-6 px-xl-0 text-center text-md-right">

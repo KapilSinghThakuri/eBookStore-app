@@ -30,7 +30,7 @@ Route::get('/', function () {
 
 
 
-    Route::get('/homePage',[HomeController::class,'index']);
+    Route::get('/Home',[HomeController::class,'index']);
 
     Route::get('/shopDetail',[ShopDetailController::class,'index']);
 
