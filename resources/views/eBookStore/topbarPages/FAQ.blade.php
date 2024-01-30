@@ -2,6 +2,7 @@
 
 @section('main')
 
+    <!-- FAQS Start here -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12">
@@ -42,5 +43,7 @@
         </div>
     </div>
 </div>
+
+    <!-- FAQS End here -->
 
 @endsection
