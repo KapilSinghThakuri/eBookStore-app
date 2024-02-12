@@ -11,7 +11,7 @@
             <form action="">
                 <h1>Login</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Username or " required>
+                    <input type="text" placeholder="Username or email" required>
                     <i class='bx bxs-user'></i>
                 </div>
                 <div class="input-box">
