@@ -45,9 +45,11 @@ Route::get('/', function () {
 
     // For RegistrationPages Routing
 
-    Route::get('/login',[LogInController::class,'index']);
+    Route::get('/login',[LogInController::class,'index'])->name('login');
 
-    Route::get('/register',[RegisterController::class,'index']);
+    Route::get('/register',[RegisterController::class,'index'])->name('register');
+    // Route::get('/register',[RegisterController::class,'store'])->name('register');
+
 
     // For FooterPages Routing
 

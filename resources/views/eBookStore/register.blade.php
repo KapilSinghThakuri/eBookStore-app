@@ -12,22 +12,23 @@
                         Sign up
                     </div>
                     <div class="card-body" >
-                        <form action="" method="" title="Register">
+                        <form action="{{ url('/register')}}" method="post" title="Register">
+                            @csrf
                             <div class="form-group mb-4">
-                                <label for="" class="text-white">Full Name</label>
+                                <label for="name" class="text-white">Full Name</label>
                                 <input type="text" name="" class="form-control bg-primary text-white" placeholder="Enter your full name">
                             </div>
                             <div class="form-group mb-4">
                                 <label for="" class="text-white">Email</label>
-                                <input type="text" name="" class="form-control bg-primary text-white" placeholder="Enter your Email">
+                                <input type="text" name="email" class="form-control bg-primary text-white" placeholder="Enter your Email">
                             </div>
                             <div class="form-group mb-4">
                                 <label for="" class="text-white">Password</label>
-                                <input type="text" name="" class="form-control bg-primary text-white" placeholder="Create Strong Password">
+                                <input type="text" name="password" class="form-control bg-primary text-white" placeholder="Create Strong Password">
                             </div>
                             <div class="form-group mb-4">
                                 <label for="" class="text-white">Re-Password</label>
-                                <input type="text" name="" class="form-control bg-primary text-white" placeholder="Enter Password to Confirm">
+                                <input type="text" name="password_confirmation" class="form-control bg-primary text-white" placeholder="Enter Password to Confirm">
                             </div>
                             <div class="register-btn d-flex justify-content-center">
                                 <button type="" class="btn btn-secondary" id="register-btn">

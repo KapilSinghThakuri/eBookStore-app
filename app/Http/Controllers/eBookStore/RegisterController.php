@@ -10,4 +10,9 @@ class RegisterController extends Controller
     public function index() {
         return view('eBookStore.register');
     }
+
+    public function store(Request $request)
+    {
+        // dd($request->all());
+    }
 }
