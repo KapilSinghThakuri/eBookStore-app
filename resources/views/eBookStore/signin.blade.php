@@ -4,19 +4,25 @@
 @section('main')
 
 <!-- Login section start -->
-
     <div class="container" >
         <div class="wrapper" style="background-color: #D19C97;">
 
-            <form action="">
+            <form action="{{ url('/login')}}" method="post" title="Login">
+                @csrf
                 <h1>Login</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Username or email" required>
+                    <input type="text" name="email" value="{{old('email')}}" placeholder="Username or email">
                     <i class='bx bxs-user'></i>
+                    @error('email')
+                    <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" name="password" value="{{old('password')}}" placeholder="Password">
                     <i class='bx bxs-lock-alt'></i>
+                    @error('password')
+                    <span class="text-danger">{{ $message }}</span>
+                    @enderror
                 </div>
                 <div class="remember-forgot">
                     <label><input type="checkbox">Remember me</label>

@@ -155,10 +155,22 @@
                             </div>
                             <a href="{{ url('/contact') }}" class="nav-item nav-link">Contact</a>
                         </div>
+
                         <div class="navbar-nav ml-auto py-0">
-                            <a href="{{ url('/login') }}" class="nav-item nav-link">Login</a>
-                            <a href="{{ url('/register') }}" class="nav-item nav-link">Register</a>
+                            @if (Route::has('login'))
+                            <div class="hidden d-flex">
+                                @auth
+                                    <a href="{{ url('/logout') }}" class="nav-item nav-link">Logout</a>
+                                @else
+                                    <a href="{{ url('/login') }}" class="nav-item nav-link">Login</a>
+                                    @if (Route::has('register'))
+                                    <a href="{{ url('/register') }}" class="nav-item nav-link">Register</a>
+                                    @endif
+                                @endauth
+                            </div>
+                            @endif
                         </div>
+
                     </div>
                 </nav>
                 <div id="header-carousel" class="carousel slide" data-ride="carousel">

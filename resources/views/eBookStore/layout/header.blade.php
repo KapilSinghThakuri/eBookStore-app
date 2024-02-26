@@ -8,7 +8,8 @@
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
-
+    <!-- boxicon for login/register page -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Favicon -->
     <link href="{{ url('eBookStore/img/favicon.ico') }}" rel="icon">
 
@@ -157,16 +158,19 @@
 
                         <div class="navbar-nav ml-auto py-0">
                             @if (Route::has('login'))
+                            <div class="hidden d-flex">
                                 @auth
                                     <a href="{{ url('/logout') }}" class="nav-item nav-link">Logout</a>
                                 @else
                                     <a href="{{ url('/login') }}" class="nav-item nav-link">Login</a>
                                     @if (Route::has('register'))
-                                        <a href="{{ url('/register') }}" class="nav-item nav-link">Register</a>
+                                    <a href="{{ url('/register') }}" class="nav-item nav-link">Register</a>
                                     @endif
                                 @endauth
+                            </div>
                             @endif
                         </div>
+
                     </div>
                 </nav>
             </div>
