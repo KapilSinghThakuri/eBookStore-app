@@ -15,6 +15,12 @@
                         </ul>
                     </div>
                 @endif
+
+                @if (session('fail'))
+                    <div class="alert alert-danger">
+                        {{ session('fail') }}
+                    </div>
+                @endif
                 <div class="card bg-primary" id="register-card">
                     <div class="card-header" style="text-align: center; color: black; font-size: 2.2rem; font-weight:550;">
                         Sign up

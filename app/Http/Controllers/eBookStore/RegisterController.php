@@ -29,7 +29,7 @@ class RegisterController extends Controller
             return redirect('/Home');
         }
         else{
-            return back()->with('error','Error occurred !!!');
+            return back()->with('fail','Error occurred !!!');
         }
     }
 

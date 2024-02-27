@@ -16,4 +16,13 @@ class User extends AuthenticatableUser implements Authenticatable
         'email',
         'password',
     ];
+
+    public function isAdmin()
+    {
+        return $this->role_id == 1;
+    }
+    public function isUser()
+    {
+        return $this->role_id == 2;
+    }
 }

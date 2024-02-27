@@ -16,16 +16,9 @@ use App\Http\Controllers\eBookStore\TopbarController\FAQController;
 use App\Http\Controllers\eBookStore\TopbarController\helpController;
 use App\Http\Controllers\eBookStore\TopbarController\supportController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\eBookStore\Backendpart\AdminDashboardController;
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -33,6 +26,7 @@ Route::get('/', function () {
 
 //  eBookStore Routing 
 
+// Route::group(['middleware'=>'Admin_verify'],function(){
     Route::get('/Home',[HomeController::class,'index']);
 
     Route::get('/shopDetail',[ShopDetailController::class,'index']);
@@ -43,15 +37,18 @@ Route::get('/', function () {
 
     Route::get('/contact',[ContactController::class,'index']);
 
-    // For RegistrationPages Routing
-
-    Route::get('/login',[LogInController::class,'index'])->name('login');
-    Route::post('/login',[LogInController::class,'store'])->name('login');
-
-    Route::get('/register',[RegisterController::class,'index'])->name('register');
-    Route::post('/register',[RegisterController::class,'store'])->name('register');
     Route::get('/logout',[RegisterController::class,'logout'])->name('logout');
+// });
 
+    // For RegistrationPages Routing
+// Route::group(['middleware'=>'guest'],function(){
+
+    Route::get('/login',[LogInController::class,'index'])->name('login')->middleware('Loggedin_verify');
+    Route::post('/login',[LogInController::class,'store'])->name('login')->middleware('Loggedin_verify');
+
+    Route::get('/register',[RegisterController::class,'index'])->name('register')->middleware('Loggedin_verify');
+    Route::post('/register',[RegisterController::class,'store'])->name('register')->middleware('Loggedin_verify');
+// });
 
     // For FooterPages Routing
 
@@ -71,7 +68,8 @@ Route::get('/', function () {
 
     Route::get('/support',[supportController::class,'index']);
 
-
+// Admin Panel Routing
+Route::get('/AdminDashboard',[AdminDashboardController::class,'index'])->middleware('Admin_verify');
 
 
 // USING Prefix Routing with Controllers

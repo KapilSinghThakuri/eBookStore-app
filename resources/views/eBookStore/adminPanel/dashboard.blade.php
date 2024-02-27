@@ -1,0 +1,4 @@
+@include('eBookStore.adminPanel.layout')
+
+
+

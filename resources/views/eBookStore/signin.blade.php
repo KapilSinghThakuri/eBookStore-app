@@ -3,8 +3,19 @@
 
 @section('main')
 
-<!-- Login section start -->
+<!-- @if (Route::has('login'))
+
+        @auth
+           <div class="alert alert-warning">You're already Loggedin. </div>
+        @else -->
+
+        <!-- Login section start -->
     <div class="container" >
+        @if (session('fail'))
+            <div class="alert alert-danger">
+                {{ session('fail') }}
+            </div>
+        @endif
         <div class="wrapper" style="background-color: #D19C97;">
 
             <form action="{{ url('/login')}}" method="post" title="Login">
@@ -33,7 +44,7 @@
 
                 <div class="sign-with">
                     <p>Or login with</p>
-                    <a href="#" class="google" > <i class='bx bxl-google'></i> 
+                    <a href="#" class="google" > <i class='bx bxl-google'></i>
                     Continue with Google </a>
                 </div>
                 <div class="register-link">
@@ -43,5 +54,8 @@
         </div>
     </div>
 <!-- Login section end -->
+<!--         @endauth
+
+    @endif -->
 
 @endsection
