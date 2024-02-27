@@ -1,4 +1,7 @@
-@include('eBookStore.adminPanel.layout')
+@include('eBookStore.adminPanel.header')
 
+@section('content')
+
+@endsection
 
 

@@ -17,8 +17,7 @@ use App\Http\Controllers\eBookStore\TopbarController\helpController;
 use App\Http\Controllers\eBookStore\TopbarController\supportController;
 
 use App\Http\Controllers\eBookStore\Backendpart\AdminDashboardController;
-
-
+use App\Http\Controllers\eBookStore\Backendpart\CategoryController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -70,6 +69,11 @@ Route::get('/', function () {
 
 // Admin Panel Routing
 Route::get('/AdminDashboard',[AdminDashboardController::class,'index'])->middleware('Admin_verify');
+
+    // Category part
+    Route::get('/AdminDashboard/Category/Create',[CategoryController::class,'create']);
+    Route::post('/AdminDashboard/Category/Store',[CategoryController::class,'store']);
+
 
 
 // USING Prefix Routing with Controllers
