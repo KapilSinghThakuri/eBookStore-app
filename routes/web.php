@@ -18,6 +18,8 @@ use App\Http\Controllers\eBookStore\TopbarController\supportController;
 
 use App\Http\Controllers\eBookStore\Backendpart\AdminDashboardController;
 use App\Http\Controllers\eBookStore\Backendpart\CategoryController;
+use App\Http\Controllers\eBookStore\Backendpart\BookController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -73,6 +75,8 @@ Route::get('/AdminDashboard',[AdminDashboardController::class,'index'])->middlew
     // Category part
     Route::get('/AdminDashboard/Category/Create',[CategoryController::class,'create']);
     Route::post('/AdminDashboard/Category/Store',[CategoryController::class,'store']);
+    Route::get('/AdminDashboard/Book/Create',[BookController::class,'create']);
+    Route::post('/AdminDashboard/Book/Store',[BookController::class,'store']);
 
 
 

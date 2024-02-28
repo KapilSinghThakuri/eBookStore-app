@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('role_id')->constrained('roles');
+            $table->foreignId('role_id')->constrained('roles')->default(2)->onDelete('cascade')->onUpdate('cascade');
             $table->string('name');
             $table->string('email');
             $table->string('password');

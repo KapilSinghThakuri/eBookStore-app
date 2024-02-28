@@ -1,4 +1,4 @@
-@include('eBookStore.adminPanel.layout')
+@include('eBookStore.adminPanel.header')
 
 <div class="container-fluid mt-3">
     <div class="row">
@@ -14,7 +14,7 @@
                 <div class="card-header">
                     <h2 style="text-align: center;">
                     Add Category
-                    <a href="{{ url('/AdminDashboard')}}" class="btn btn-primary float-right">Back</a>
+                    <a href="{{ url('/AdminDashboard')}}" class="btn btn-primary float-right rounded">Back</a>
                     </h2>
                 </div>
                 <div class="card-body">
@@ -27,7 +27,7 @@
                                 <span class="text-danger">{{ $message }}</span>
                             @enderror -->
                         </div>
-                        <button type="submit" id="category_add" class="btn btn-success">Save</button>
+                        <button type="submit" id="category_add" class="btn btn-success rounded">Save</button>
                     </form>
                 </div>
             </div>
