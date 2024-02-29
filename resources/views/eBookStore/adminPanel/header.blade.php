@@ -8,6 +8,12 @@
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
+     <!-- Boxicons icons link -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Homepage css links -->
+    <link rel="stylesheet" href="{{ url('eBookStore/css/homepage.css') }}">
+
     <!-- X-CSRF-TOKEN -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 

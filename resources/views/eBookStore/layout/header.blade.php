@@ -8,6 +8,9 @@
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
+    <!-- Homepage css links -->
+    <link rel="stylesheet" href="{{ url('eBookStore/css/homepage.css') }}">
+
     <!-- boxicon for login/register page -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Favicon -->
@@ -160,6 +163,10 @@
                             @if (Route::has('login'))
                             <div class="hidden d-flex">
                                 @auth
+                                    @if( $roleId == 1)
+                                    <a href="{{ url('/AdminDashboard') }}" class="nav-item nav-link">AdminHome</a>
+                                    @endif
+                                    <a href="#" id="profileBtn"  class="nav-item nav-link">{{$userName}}</a>
                                     <a href="{{ url('/logout') }}" class="nav-item nav-link">Logout</a>
                                 @else
                                     <a href="{{ url('/login') }}" class="nav-item nav-link">Login</a>
@@ -170,9 +177,17 @@
                             </div>
                             @endif
                         </div>
-
                     </div>
                 </nav>
+
+        <!-- Profile informations modal -->
+                <div id="profileModal">
+                    <nav>
+                        <h5>{{$userName}}</h5>
+                        <i id="cancelBtn" class='bx bx-x'></i>
+                    </nav>
+                </div>
+
             </div>
         </div>
     </div>

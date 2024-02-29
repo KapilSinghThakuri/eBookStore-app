@@ -78,7 +78,7 @@
     <script src="eBookStore/mail/jqBootstrapValidation.min.js"></script>
     <script src="eBookStore/mail/contact.js"></script>
 
-    <!-- Template Javascript -->
+    <!-- Main Javascript -->
     <script src="eBookStore/js/main.js"></script>
 </body>
 

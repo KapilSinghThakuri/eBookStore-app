@@ -162,6 +162,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+// Newly added serviceprovieder for making available 'loggedin username' across to all the views
+        App\Providers\ViewComposerServiceProvider::class,
         /*
          * Package Service Providers...
          */

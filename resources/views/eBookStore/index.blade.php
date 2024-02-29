@@ -8,7 +8,10 @@
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
-    <!-- css links -->
+    <!-- Boxicons icons link -->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Homepage css links -->
     <link rel="stylesheet" href="{{ url('eBookStore/css/homepage.css') }}">
 
     <!-- Favicon -->
@@ -160,6 +163,10 @@
                             @if (Route::has('login'))
                             <div class="hidden d-flex">
                                 @auth
+                                    @if( $roleId == 1)
+                                    <a href="{{ url('/AdminDashboard') }}" class="nav-item nav-link">AdminHome</a>
+                                    @endif
+                                    <a href="#" id="profileBtn" class="nav-item nav-link">{{ $userName }} </a>
                                     <a href="{{ url('/logout') }}" class="nav-item nav-link">Logout</a>
                                 @else
                                     <a href="{{ url('/login') }}" class="nav-item nav-link">Login</a>
@@ -173,7 +180,18 @@
 
                     </div>
                 </nav>
+
+                <!-- Profile informations modal -->
+                <div id="profileModal">
+                    <nav>
+                        <h5>{{ $userName }}</h5>
+                        <i id="cancelBtn" class='bx bx-x'></i>
+                    </nav>
+                </div>
+
+
                 <div id="header-carousel" class="carousel slide" data-ride="carousel">
+
                     <div class="carousel-inner">
                         <div class="carousel-item active" style="height: 410px;">
                             <img class="img-fluid" src="{{ url('eBookStore/img/Home2.jpg') }}" alt="Image">
@@ -1287,7 +1305,7 @@
     <script src="eBookStore/mail/jqBootstrapValidation.min.js"></script>
     <script src="eBookStore/mail/contact.js"></script>
 
-    <!-- Template Javascript -->
+    <!-- Main Javascript -->
     <script src="eBookStore/js/main.js"></script>
 
 

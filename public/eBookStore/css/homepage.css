@@ -32,3 +32,26 @@ html{
 .books:hover{
     transform: scale(1.1);
 }
+#profileModal{
+    display: none;
+    position: absolute;
+    right: 0px;
+    top: 45px;
+    z-index: 5;
+    height: 450px;
+    width: 350px;
+    background-color: whitesmoke;
+    border-radius: 8px;
+}
+#profileModal nav{
+    display: flex;
+    justify-content: space-between;
+}
+#profileModal nav h5{
+    margin: 10px 0 0 95px;
+}
+#profileModal nav i{
+    margin: 8px 10px 0 0px;
+    font-size: 30px;
+    cursor: pointer;
+}

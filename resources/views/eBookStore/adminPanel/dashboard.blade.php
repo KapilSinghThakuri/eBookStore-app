@@ -87,6 +87,9 @@
     $(document).ready(function(){
         $(document).on('click','.addBook', function(event){
             event.preventDefault();
+            // Setting the 'Saving' text when saving the data into db
+            $(this).text("Saving");
+
             var formData = new FormData(); // Create a FormData object
 
             // Append form data to the FormData object

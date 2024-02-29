@@ -19,6 +19,7 @@ use App\Http\Controllers\eBookStore\TopbarController\supportController;
 use App\Http\Controllers\eBookStore\Backendpart\AdminDashboardController;
 use App\Http\Controllers\eBookStore\Backendpart\CategoryController;
 use App\Http\Controllers\eBookStore\Backendpart\BookController;
+use App\Http\Controllers\eBookStore\Backendpart\UserController;
 
 
 Route::get('/', function () {
@@ -39,6 +40,8 @@ Route::get('/', function () {
     Route::get('/contact',[ContactController::class,'index']);
 
     Route::get('/logout',[RegisterController::class,'logout'])->name('logout');
+    Route::get('/profile',[RegisterController::class,'profile'])->name('profile');
+
 // });
 
     // For RegistrationPages Routing
@@ -77,6 +80,21 @@ Route::get('/AdminDashboard',[AdminDashboardController::class,'index'])->middlew
     Route::post('/AdminDashboard/Category/Store',[CategoryController::class,'store']);
     Route::get('/AdminDashboard/Book/Create',[BookController::class,'create']);
     Route::post('/AdminDashboard/Book/Store',[BookController::class,'store']);
+
+
+
+
+
+
+
+// For Testing
+Route::get('/UserDetails',[UserController::class,'getUserDetails']);
+
+
+
+
+
+
 
 
 
