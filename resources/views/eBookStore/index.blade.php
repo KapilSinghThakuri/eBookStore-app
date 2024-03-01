@@ -110,29 +110,23 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link" data-toggle="dropdown">Religion & Spirituality <i class="fa fa-angle-down float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="#religion-spirituality" class="dropdown-item">Buddhism</a>
-                                <a href="#religion-spirituality" class="dropdown-item">Hinduism</a>
-                                <a href="#religion-spirituality" class="dropdown-item">Christianity</a>
-                                <a href="#religion-spirituality" class="dropdown-item">Islam</a>
+                            @foreach($religionSpirituality as $religionCategory)
+                                <a href="#religion-spirituality" class="dropdown-item">{{ $religionCategory ->name }}</a>
+                            @endforeach
                             </div>
                         </div>
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link" data-toggle="dropdown">Business & Investing<i class="fa fa-angle-down float-right mt-1"></i></a>
+                            <a href="#" class="nav-link" data-toggle="dropdown">Business Essentials<i class="fa fa-angle-down float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="#business-investing" class="dropdown-item">Investing</a>
-                                <a href="#business-investing" class="dropdown-item">Marketing and Sales</a>
-                                <a href="#business-investing" class="dropdown-item">Finance</a>
-                                <a href="#business-investing" class="dropdown-item">Management</a>
+                                @foreach($businessEssential as $businessCategory)
+                                <a href="#business-investing" class="dropdown-item">{{ $businessCategory -> name}}</a>
+                                @endforeach
                             </div>
                         </div>
-                        <a href="" class="nav-item nav-link">Action & Adventure</a>
-                        <a href="" class="nav-item nav-link">Fictions & Literature</a>
-                        <a href="#History-Biography" class="nav-item nav-link">History & Biography</a>
-                        <a href="" class="nav-item nav-link">Kid's & Teens</a>
-                        <a href="" class="nav-item nav-link">Technology</a>
-                        <a href="" class="nav-item nav-link">Self Improvement & Relationships</a>
-
-
+                        @foreach($remainCategories as $remainCategory)
+                        <a href="" class="nav-item nav-link">{{ $remainCategory -> name }}</a>
+                        @endforeach
+                        <!-- <a href="#History-Biography" class="nav-item nav-link">History & Biography</a> -->
                     </div>
                 </nav>
             </div>
@@ -298,6 +292,7 @@
         </div>
         <div class="row px-xl-5">
             <div class="col">
+            @foreach($books as $book)
                 <div class="owl-carousel related-carousel d-flex flex-wrap">
 
                     <div class="card product-item border-0 flex-grow-1" style="max-width: 200px; margin: 0 20px;">
@@ -317,14 +312,17 @@
                         </div>
                     </div>
 
+
+                        <!-- Newly fetched data from database -->
+
                     <div class="card product-item border-0 flex-grow-1" style="max-width: 200px; margin: 0 20px;">
                         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="{{ url('eBookStore/img/RichDadPoorDad.jpg') }}" alt="">
+                            <img src="{{ asset($book->image)}}" class="img-fluid w-100">
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 class="text-truncate mb-3">Rich Dad Poor Dad</h6>
+                            <h6 class="text-truncate mb-3">{{ $book -> title }}</h6>
                             <div class="d-flex justify-content-center">
-                                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                                <h6>{{ $book -> price }}</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
                             </div>
                             <div class="flex-grow-1"></div>
                         </div>
@@ -333,6 +331,9 @@
                             <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                         </div>
                     </div>
+
+
+
 
                     <div class="card product-item border-0 flex-grow-1" style="max-width: 200px; margin: 0 20px;">
                         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
@@ -435,8 +436,9 @@
                             <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                         </div>
                     </div>
-
                 </div>
+            @endforeach
+
             </div>
         </div>
     </div>

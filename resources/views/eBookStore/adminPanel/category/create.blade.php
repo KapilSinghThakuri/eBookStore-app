@@ -43,6 +43,7 @@
 $(document).ready(function () {
     $(document).on('click','#category_add', function(event) {
         event.preventDefault();
+        $(this).text("Saving");
         // console.log('Hello World!!!');
         var formData = {
             'name': $('.name').val(),
