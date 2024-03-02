@@ -19,9 +19,9 @@ class HomeController extends Controller
         $highlyRecommendedBooks = $this->getHighlyRecomenededBooks();
         // dd($highlyRecommendedBooks->all());
         $top10ComingSoonBooks = $this->getTop10ComingSoonBooks();
-
+        $mysteryThrillerBooks = $this->getMysteryThrillerBooks();
         return view('eBookStore.index',
-            compact('religionSpirituality','businessEssential','remainCategories','highlyRecommendedBooks','top10ComingSoonBooks'));
+            compact('religionSpirituality','businessEssential','remainCategories','highlyRecommendedBooks','top10ComingSoonBooks','mysteryThrillerBooks'));
     }
     private function gethighlyRecomenededBooks()
     {
@@ -30,5 +30,9 @@ class HomeController extends Controller
     }
     private function getTop10ComingSoonBooks(){
         return Category::find(16)->books;
+    }
+    private function getMysteryThrillerBooks()
+    {
+        return Category::find(9)->books;
     }
 }
