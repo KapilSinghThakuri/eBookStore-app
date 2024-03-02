@@ -47,7 +47,7 @@ html{
 #profileModal nav{
     display: flex;
     justify-content: space-between;
-    border: solid rgba(0, 0, 0, 0.8) 1px;
+/*     border: solid rgba(0, 0, 0, 0.8) 1px; */
     background-color: rgb(240, 222, 209);
     height: 50px;
     border-radius: 8px;
