@@ -18,13 +18,17 @@ class HomeController extends Controller
 
         $highlyRecommendedBooks = $this->getHighlyRecomenededBooks();
         // dd($highlyRecommendedBooks->all());
+        $top10ComingSoonBooks = $this->getTop10ComingSoonBooks();
 
         return view('eBookStore.index',
-            compact('religionSpirituality','businessEssential','remainCategories','highlyRecommendedBooks'));
+            compact('religionSpirituality','businessEssential','remainCategories','highlyRecommendedBooks','top10ComingSoonBooks'));
     }
-    function gethighlyRecomenededBooks()
+    private function gethighlyRecomenededBooks()
     {
     //retrieves all the books associated with the category with ID 15
         return Category::find(15)->books;
+    }
+    private function getTop10ComingSoonBooks(){
+        return Category::find(16)->books;
     }
 }

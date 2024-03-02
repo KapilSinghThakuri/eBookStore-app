@@ -324,47 +324,12 @@
         <div class="text-center mb-4">
             <h2 class="section-title px-5"><span class="px-2">Top 10 Coming Soon Books</span></h2>
         </div>
-
+        @foreach($top10ComingSoonBooks as $book)
         <div class="books"> 
-            <a href="#"> <img src="{{ url('eBookStore/img/HarryPotter.jpg') }}" alt="book1" height="230px" width="250px"> </a>
+            <a href="#"> <img src="{{ asset($book -> image) }}" alt="book1" height="230px" width="250px"> </a>
             <div class="description"> The Harry Potter Books </div>
         </div>
-        <div class="books"> 
-            <a href="#"> <img src="{{ url('eBookStore/img/GabrielgarciaMarquez.jpeg') }}" alt="book1" height="230px" width="250px"> </a>
-            <div class="description"> Gabriel Garcia Marquez Books </div>
-        </div>
-        <div class="books"> 
-            <a href="#"> <img src="{{ url('eBookStore/img/LordOfTheRings.jpeg') }}" alt="book1" height="230px" width="250px"> </a>
-            <div class="description"> The Lord of the Rings </div>
-        </div>
-        <div class="books"> 
-            <a href="#"> <img src="{{ url('eBookStore/img/The Quran.jpeg') }}" alt="book1" height="230px" width="250px"> </a>
-            <div class="description"> The Quran </div>
-        </div>
-        <div class="books"> 
-            <a href="#"> <img src="{{ url('eBookStore/img/Don Quixote.jpeg') }}" alt="book1" height="230px" width="250px"> </a>
-            <div class="description"> Don Quixote </div>
-        </div>
-        <div class="books"> 
-            <a href="#"> <img src="{{ url('eBookStore/img/HarryPotter.jpg') }}" alt="book1" height="230px" width="250px"> </a>
-            <div class="description"> The Harry Potter Books </div>
-        </div>
-        <div class="books"> 
-            <a href="#"> <img src="{{ url('eBookStore/img/CrimeAndPunishment.jpeg') }}" alt="book1" height="230px" width="250px"> </a>
-            <div class="description"> Crime and Punishment </div>
-        </div>
-        <div class="books"> 
-            <a href="#"> <img src="{{ url('eBookStore/img/The Da Vinci Code.jpeg') }}" alt="book1" height="230px" width="250px"> </a>
-            <div class="description"> The Da Vinci Code </div>
-        </div>
-        <div class="books"> 
-            <a href="#"> <img src="{{ url('eBookStore/img/TheHobbit.jpeg') }}" alt="book1" height="230px" width="250px"> </a>
-            <div class="description"> The Hobbit </div>
-        </div>
-        <div class="books"> 
-            <a href="#"> <img src="{{ url('eBookStore/img/TheLittlePrinces.jpeg') }}" alt="book1" height="230px" width="250px"> </a>
-            <div class="description"> The Little Princes </div>
-        </div>
+        @endforeach()
     </div>
 
     <!-- End Top 10 Coming Soon -->
