@@ -118,7 +118,7 @@
             }
             });
             $.ajax({
-                type: "POST",
+                type: "post",
                 url: "/AdminDashboard/Book/Store",
                 datatype: "json",
                 data: formData,

@@ -46,7 +46,6 @@ class BookController extends Controller
             'description' => $request->input('description'),
             'author'=> $request->input('author'),
             'price'=> $request->input('price'),
-            // 'image' => $request->input('/eBookStore/img'. $fileName),
             'image' => '/eBookStore/img/' . $fileName,
             'rating' => $request->input('rating'),
             ]);
