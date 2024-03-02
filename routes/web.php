@@ -85,8 +85,6 @@ Route::get('/AdminDashboard',[AdminDashboardController::class,'index'])->middlew
 
 
 
-
-
 // For Testing
 Route::get('/UserDetails',[UserController::class,'getUserDetails']);
 

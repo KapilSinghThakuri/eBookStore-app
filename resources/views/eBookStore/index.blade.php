@@ -293,15 +293,15 @@
         <div class="row px-xl-5">
             <div class="col">
                 <div class="owl-carousel related-carousel d-flex flex-wrap">
-
+                    @foreach($highlyRecommendedBooks as $book)
                     <div class="card product-item border-0 flex-grow-1" style="max-width: 200px; margin: 0 20px;">
                         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="{{ url('eBookStore/img/atomicHabits.jpg') }}" alt="">
+                            <img class="img-fluid w-100" src="{{ asset($book->image) }}">
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3 flex-grow-1 d-flex flex-column">
-                            <h6 class="text-truncate mb-3">Actomic Habits</h6>
+                            <h6 class="text-truncate mb-3">{{ $book->title }}</h6>
                             <div class="d-flex justify-content-center">
-                                <h6>$32.00</h6><h6 class="text-muted ml-2"><del>$45.00</del></h6>
+                                <h6>{{ $book->price}}</h6><h6 class="text-muted ml-2"><del>$45.00</del></h6>
                             </div>
                             <div class="flex-grow-1"></div> <!-- This will make the body section grow to fill available height -->
                         </div>
@@ -310,133 +310,8 @@
                             <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                         </div>
                     </div>
-
-
-                        <!-- Newly fetched data from database -->
-                    <div class="card product-item border-0 flex-grow-1" style="max-width: 200px; margin: 0 20px;">
-                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img src="#" class="img-fluid w-100">
-                        </div>
-                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 class="text-truncate mb-3">Harry</h6>
-                            <div class="d-flex justify-content-center">
-                                <h6>55</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                            </div>
-                            <div class="flex-grow-1"></div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between bg-light border">
-                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                        </div>
-                    </div>
-
-
-
-
-
-                    <div class="card product-item border-0 flex-grow-1" style="max-width: 200px; margin: 0 20px;">
-                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="{{ url('eBookStore/img/atomicHabits.jpg') }}" alt="">
-                        </div>
-                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3 flex-grow-1 d-flex flex-column">
-                            <h6 class="text-truncate mb-3">Harry Potter</h6>
-                            <div class="d-flex justify-content-center">
-                                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                            </div>
-                            <div class="flex-grow-1"></div> <!-- This will make the body section grow to fill available height -->
-                        </div>
-                        <div class="card-footer d-flex justify-content-between bg-light border">
-                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                        </div>
-                    </div>
-
-                    <div class="card product-item border-0 flex-grow-1" style="max-width: 200px; margin: 0 20px;">
-                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="{{ url('eBookStore/img/HarryPotter.jpg') }}" alt="">
-                        </div>
-                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 class="text-truncate mb-3">Don Quixote</h6>
-                            <div class="d-flex justify-content-center">
-                                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                            </div>
-                            <div class="flex-grow-1"></div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between bg-light border">
-                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                        </div>
-                    </div>
-
-                    <div class="card product-item border-0 flex-grow-1" style="max-width: 200px; margin: 0 20px;">
-                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="{{ url('eBookStore/img/PrideAndPrejudice.jpeg') }}" alt="">
-                        </div>
-                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 class="text-truncate mb-3">Pride And Prejudice</h6>
-                            <div class="d-flex justify-content-center">
-                                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                            </div>
-                            <div class="flex-grow-1"></div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between bg-light border">
-                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                        </div>
-                    </div>
-
-                    <div class="card product-item border-0 flex-grow-1" style="max-width: 200px; margin: 0 20px;">
-                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="{{ url('eBookStore/img/LordOfTheRings.jpeg') }}" alt="">
-                        </div>
-                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 class="text-truncate mb-3">Lord Of The Rings</h6>
-                            <div class="d-flex justify-content-center">
-                                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                            </div>
-                            <div class="flex-grow-1"></div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between bg-light border">
-                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                        </div>
-                    </div>
-
-                    <div class="card product-item border-0 flex-grow-1" style="max-width: 200px; margin: 0 20px;">
-                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="{{ url('eBookStore/img/TheHobbit.jpeg') }}" alt="">
-                        </div>
-                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 class="text-truncate mb-3">The Hobbit</h6>
-                            <div class="d-flex justify-content-center">
-                                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                            </div>
-                            <div class="flex-grow-1"></div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between bg-light border">
-                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                        </div>
-                    </div>
-
-                    <div class="card product-item border-0 flex-grow-1" style="max-width: 200px; margin: 0 20px;">
-                        <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="{{ url('eBookStore/img/TheLittlePrinces.jpeg') }}" alt="">
-                        </div>
-                        <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                            <h6 class="text-truncate mb-3">The Little Princes</h6>
-                            <div class="d-flex justify-content-center">
-                                <h6>$123.00</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                            </div>
-                            <div class="flex-grow-1"></div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-between bg-light border">
-                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-
             </div>
         </div>
     </div>

@@ -15,9 +15,16 @@ class HomeController extends Controller
         $religionSpirituality = Category::orderBy('id')->take(4)->get();
         $businessEssential = Category::orderBy('id')->skip(4)->take(4)->get();
         $remainCategories = Category::orderBy('id')->skip(8)->take(6)->get();
-// dd($remainCategories->all());
-        $books = Book::where('id',2)->get();
+
+        $highlyRecommendedBooks = $this->getHighlyRecomenededBooks();
+        // dd($highlyRecommendedBooks->all());
+
         return view('eBookStore.index',
-            compact('books','religionSpirituality','businessEssential','remainCategories'));
+            compact('religionSpirituality','businessEssential','remainCategories','highlyRecommendedBooks'));
+    }
+    function gethighlyRecomenededBooks()
+    {
+    //retrieves all the books associated with the category with ID 15
+        return Category::find(15)->books;
     }
 }
