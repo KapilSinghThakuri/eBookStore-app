@@ -20,8 +20,14 @@ class HomeController extends Controller
         // dd($highlyRecommendedBooks->all());
         $top10ComingSoonBooks = $this->getTop10ComingSoonBooks();
         $mysteryThrillerBooks = $this->getMysteryThrillerBooks();
+        $childrenBooks = $this->getChildrenBooks();
+        $buddhismBooks = $this->getBuddhismBooks();
+        $hinduismBooks = $this->getHinduismBooks();
+        $islamBooks = $this->getIslamBooks();
+        $christianityBooks = $this->getChristianityBooks();
+        $historyBiographyBooks = $this->getHistoryBiographyBooks();
         return view('eBookStore.index',
-            compact('religionSpirituality','businessEssential','remainCategories','highlyRecommendedBooks','top10ComingSoonBooks','mysteryThrillerBooks'));
+            compact('religionSpirituality','businessEssential','remainCategories','highlyRecommendedBooks','top10ComingSoonBooks','mysteryThrillerBooks','childrenBooks','buddhismBooks','hinduismBooks','islamBooks','christianityBooks','historyBiographyBooks'));
     }
     private function gethighlyRecomenededBooks()
     {
@@ -35,4 +41,23 @@ class HomeController extends Controller
     {
         return Category::find(9)->books;
     }
+    private function getChildrenBooks(){
+        return Category::find(12)->books;
+    }
+    private function getBuddhismBooks(){
+        return Category::find(1)->books;
+    }
+    private function getHinduismBooks(){
+        return Category::find(2)->books;
+    }
+    private function getIslamBooks(){
+        return Category::find(3)->books;
+    }
+    private function getChristianityBooks(){
+        return Category::find(4)->books;
+    }
+    private function getHistoryBiographyBooks(){
+        return Category::find(11)->books;
+    }
+
 }
