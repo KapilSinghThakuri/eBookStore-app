@@ -115,3 +115,25 @@ profileBtn.addEventListener('click', function(event) {
 cancelBtn.addEventListener('click',function(event){
     profileModal.style.display = 'none';
 });
+
+// For alerting card when customer click addtocart button
+var addToCartModal = document.getElementById('addToCartModal');
+var closeBtn = document.getElementById('closeBtn');
+var addToCartButton = document.querySelectorAll('.addToCartBtn');
+
+// Iterate through each element with the class .addToCartBtn
+addToCartButton.forEach(function(element) {
+    // Attach click event listener to each element
+    element.addEventListener('click', function(e) {
+        e.preventDefault();
+        addToCartModal.style.display = 'block';
+        console.log("Modal Button Clicked");
+    });
+});
+
+closeBtn.onclick = function(){
+    addToCartModal.style.display = 'none';
+};
+
+
+

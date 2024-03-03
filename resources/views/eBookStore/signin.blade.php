@@ -22,14 +22,14 @@
                 @csrf
                 <h1>Login</h1>
                 <div class="input-box">
-                    <input type="text" name="email" value="{{old('email')}}" placeholder="Username or email">
+                    <input type="text" name="email" value="{{old('email')}}" autofocus placeholder="Username or email">
                     <i class='bx bxs-user'></i>
                     @error('email')
                     <span class="text-danger">{{ $message }}</span>
                     @enderror
                 </div>
                 <div class="input-box">
-                    <input type="password" name="password" value="{{old('password')}}" placeholder="Password">
+                    <input type="password" name="password" value="{{old('password')}}" autofocus placeholder="Password">
                     <i class='bx bxs-lock-alt'></i>
                     @error('password')
                     <span class="text-danger">{{ $message }}</span>

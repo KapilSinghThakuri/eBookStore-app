@@ -284,6 +284,27 @@
     </div>
     <!-- Categories End -->
 
+<!-- addToCart or buyMore books -->
+    <div id="addToCartModalContent">
+        <div id="addToCartModal" class="addToCart">
+            <div id="modalHeadingContent">
+                <p>Books Message</p>
+                <i id="closeBtn" class='bx bx-x'></i>
+            </div>
+            <div id="modalBodyContent">
+                <img src="">
+                <div id="bookInfo">
+                    <p>{{ $userName }} eBookStore</p>
+                    <h5>Books Name</h5>
+                </div>
+            </div>
+            <div id="modalFooterContent">
+                <a href="#" id="viewCartBtn">View Cart</a>
+                <a href="#" id="checkOutBtn">Check out</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Highly Recomended Books -->
     <div class="container-fluid py-4" id="highly-recomended">
         <div class="text-center mb-4">
@@ -300,13 +321,13 @@
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3 flex-grow-1 d-flex flex-column">
                             <h6 class="text-truncate mb-3">{{ $book->title }}</h6>
                             <div class="d-flex justify-content-center">
-                                <h6>{{ $book->price}}</h6><h6 class="text-muted ml-2"><del>$45.00</del></h6>
+                                <h6>Rs.{{ $book->price}}</h6><h6 class="text-muted ml-2"><del>Rs.99.00</del></h6>
                             </div>
                             <div class="flex-grow-1"></div> <!-- This will make the body section grow to fill available height -->
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
                             <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                            <a href="" class="addToCartBtn btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                         </div>
                     </div>
                     @endforeach
@@ -347,16 +368,18 @@
                     <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
                         <h6 class="text-truncate mb-2">{{ $book-> title }}</h6>
                         <div class="d-flex justify-content-center">
-                            <h6>{{ $book->price }}</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h6>Rs.{{ $book->price }}</h6><h6 class="text-muted ml-2"><del>Rs.123.00</del></h6>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        <a href="" class="addToCartBtn btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                     </div>
                 </div>
             </div>
             @endforeach
+
+    <!-- Products Start (Science Fictions & Fantasy Books)-->
             @foreach( $fictionFantasyBooks as $book)
             <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
                 <div class="card product-item border-0 mb-4" style="max-width: 200px;">
@@ -366,16 +389,18 @@
                     <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
                         <h6 class="text-truncate mb-2">{{ $book-> title }}</h6>
                         <div class="d-flex justify-content-center">
-                            <h6>{{ $book->price }}</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h6>Rs.{{ $book->price }}</h6><h6 class="text-muted ml-2"><del>Rs.123.00</del></h6>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        <a href="" class="addToCartBtn btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                     </div>
                 </div>
             </div>
             @endforeach
+    <!-- Products End (Science Fictions & Fantasy Books)-->
+
         </div>
     </div>
     <!-- Products End (Mystery & Thriller Books)-->
@@ -448,12 +473,12 @@
                     <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
                         <h6 class="text-truncate mb-2">{{$book->title}}</h6>
                         <div class="d-flex justify-content-center">
-                            <h6>{{ $book -> price }}</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h6>Rs.{{ $book -> price }}</h6><h6 class="text-muted ml-2"><del>Rs.123.00</del></h6>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        <a href="" class="addToCartBtn btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                     </div>
                 </div>
             </div>
@@ -467,12 +492,12 @@
                     <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
                         <h6 class="text-truncate mb-2">{{$book->title}}</h6>
                         <div class="d-flex justify-content-center">
-                            <h6>{{ $book -> price }}</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h6>Rs.{{ $book -> price }}</h6><h6 class="text-muted ml-2"><del>Rs.123.00</del></h6>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        <a href="" class="addToCartBtn btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                     </div>
                 </div>
             </div>
@@ -486,12 +511,12 @@
                     <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
                         <h6 class="text-truncate mb-2">{{$book->title}}</h6>
                         <div class="d-flex justify-content-center">
-                            <h6>{{ $book -> price }}</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h6>Rs.{{ $book -> price }}</h6><h6 class="text-muted ml-2"><del>Rs.123.00</del></h6>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        <a href="" class="addToCartBtn btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                     </div>
                 </div>
             </div>
@@ -505,12 +530,12 @@
                     <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
                         <h6 class="text-truncate mb-2">{{$book->title}}</h6>
                         <div class="d-flex justify-content-center">
-                            <h6>{{ $book -> price }}</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h6>Rs.{{ $book -> price }}</h6><h6 class="text-muted ml-2"><del>Rs.123.00</del></h6>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        <a href="" class="addToCartBtn btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                     </div>
                 </div>
             </div>
@@ -534,12 +559,12 @@
                     <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
                         <h6 class="text-truncate mb-2">{{$book->title}}</h6>
                         <div class="d-flex justify-content-center">
-                            <h6>{{ $book -> price }}</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h6>Rs.{{ $book -> price }}</h6><h6 class="text-muted ml-2"><del>Rs.123.00</del></h6>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        <a href="" class="addToCartBtn btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                     </div>
                 </div>
             </div>
@@ -563,12 +588,12 @@
                     <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
                         <h6 class="text-truncate mb-2">{{$childreanBook->title}}</h6>
                         <div class="d-flex justify-content-center">
-                            <h6>{{ $childreanBook -> price }}</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                            <h6>Rs.{{ $childreanBook -> price }}</h6><h6 class="text-muted ml-2"><del>Rs.123.00</del></h6>
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        <a href="" class="addToCartBtn btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                     </div>
                 </div>
             </div>

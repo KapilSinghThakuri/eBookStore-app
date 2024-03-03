@@ -34,6 +34,7 @@ Route::get('/', function () {
     Route::get('/shopDetail',[ShopDetailController::class,'index']);
 
     Route::get('/shoppingCart',[CartController::class,'index']);
+    Route::get('/shoppingCart/{id}',[CartController::class,'addToCart']);
 
     Route::get('/checkOut',[CheckOutController::class,'index']);
 
@@ -54,6 +55,20 @@ Route::get('/', function () {
     Route::post('/register',[RegisterController::class,'store'])->name('register')->middleware('Loggedin_verify');
 // });
 
+// Admin Panel Routing
+Route::get('/AdminDashboard',[AdminDashboardController::class,'index'])->middleware('Admin_verify');
+
+    // Category part
+    Route::get('/AdminDashboard/Category/Create',[CategoryController::class,'create']);
+    Route::post('/AdminDashboard/Category/Store',[CategoryController::class,'store']);
+    Route::get('/AdminDashboard/Book/Create',[BookController::class,'create']);
+    Route::post('/AdminDashboard/Book/Store',[BookController::class,'store']);
+
+
+// For Testing
+Route::get('/UserDetails',[UserController::class,'getUserDetails']);
+
+
     // For FooterPages Routing
 
     Route::get('/refundPolicy',[refundPolicyController::class,'index']);
@@ -71,25 +86,6 @@ Route::get('/', function () {
     Route::get('/help',[helpController::class,'index']);
 
     Route::get('/support',[supportController::class,'index']);
-
-// Admin Panel Routing
-Route::get('/AdminDashboard',[AdminDashboardController::class,'index'])->middleware('Admin_verify');
-
-    // Category part
-    Route::get('/AdminDashboard/Category/Create',[CategoryController::class,'create']);
-    Route::post('/AdminDashboard/Category/Store',[CategoryController::class,'store']);
-    Route::get('/AdminDashboard/Book/Create',[BookController::class,'create']);
-    Route::post('/AdminDashboard/Book/Store',[BookController::class,'store']);
-
-
-
-
-
-// For Testing
-Route::get('/UserDetails',[UserController::class,'getUserDetails']);
-
-
-
 
 
 
