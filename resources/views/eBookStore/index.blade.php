@@ -357,6 +357,25 @@
                 </div>
             </div>
             @endforeach
+            @foreach( $fictionFantasyBooks as $book)
+            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
+                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
+                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
+                        <img class="img-fluid w-100" src="{{ asset($book -> image) }}">
+                    </div>
+                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
+                        <h6 class="text-truncate mb-2">{{ $book-> title }}</h6>
+                        <div class="d-flex justify-content-center">
+                            <h6>{{ $book->price }}</h6><h6 class="text-muted ml-2"><del>$123.00</del></h6>
+                        </div>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between bg-light border">
+                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
         </div>
     </div>
     <!-- Products End (Mystery & Thriller Books)-->

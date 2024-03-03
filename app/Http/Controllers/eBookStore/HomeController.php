@@ -26,8 +26,9 @@ class HomeController extends Controller
         $islamBooks = $this->getIslamBooks();
         $christianityBooks = $this->getChristianityBooks();
         $historyBiographyBooks = $this->getHistoryBiographyBooks();
+        $fictionFantasyBooks = $this->getFictionFantasyBooks();
         return view('eBookStore.index',
-            compact('religionSpirituality','businessEssential','remainCategories','highlyRecommendedBooks','top10ComingSoonBooks','mysteryThrillerBooks','childrenBooks','buddhismBooks','hinduismBooks','islamBooks','christianityBooks','historyBiographyBooks'));
+            compact('religionSpirituality','businessEssential','remainCategories','highlyRecommendedBooks','top10ComingSoonBooks','mysteryThrillerBooks','childrenBooks','buddhismBooks','hinduismBooks','islamBooks','christianityBooks','historyBiographyBooks','fictionFantasyBooks'));
     }
     private function gethighlyRecomenededBooks()
     {
@@ -58,6 +59,9 @@ class HomeController extends Controller
     }
     private function getHistoryBiographyBooks(){
         return Category::find(11)->books;
+    }
+    private function getFictionFantasyBooks(){
+        return Category::find(10)->books;
     }
 
 }
