@@ -117,23 +117,60 @@ cancelBtn.addEventListener('click',function(event){
 });
 
 // For alerting card when customer click addtocart button
-var addToCartModal = document.getElementById('addToCartModal');
-var closeBtn = document.getElementById('closeBtn');
-var addToCartButton = document.querySelectorAll('.addToCartBtn');
+// var addToCartModal = document.getElementById('addToCartModal');
+// var closeBtn = document.getElementById('closeBtn');
+// var addToCartButton = document.querySelectorAll('.addToCartBtn');
 
 // Iterate through each element with the class .addToCartBtn
-addToCartButton.forEach(function(element) {
+// addToCartButton.forEach(function(element) {
     // Attach click event listener to each element
-    element.addEventListener('click', function(e) {
-        e.preventDefault();
-        addToCartModal.style.display = 'block';
-        console.log("Modal Button Clicked");
-    });
-});
+//     element.addEventListener('click', function(e) {
+//         e.preventDefault();
+//         addToCartModal.style.display = 'block';
+//         console.log("Modal Button Clicked");
+//     });
+// });
+// closeBtn.onclick = function(){
+//     addToCartModal.style.display = 'none';
+// };
+     var book_id;
+    // Add event listener to each "Add To Cart" button
+        document.querySelectorAll('.addToCartBtn').forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
 
-closeBtn.onclick = function(){
-    addToCartModal.style.display = 'none';
-};
+                // Get book details from data attributes
+                var bookTitle = button.getAttribute('data-title');
+                var bookPrice = button.getAttribute('data-price');
+                var bookImage = button.getAttribute('data-image');
+                var bookId = button.getAttribute('data-id');
+
+                book_id = bookId;
+                console.log(book_id);
+
+                // Populate modal with book details
+                document.querySelector('#addToCartModal #bookInfo h5').textContent = bookTitle;
+                document.querySelector('#addToCartModal #bookInfo h6').textContent = "Rs."+ bookPrice;
+                document.querySelector('#addToCartModal #modalBodyContent img').src = bookImage;
+
+                // Show modal
+                document.getElementById('addToCartModal').style.display = 'block';
+            });
+        });
+
+        // Close modal when the close button is clicked
+        document.getElementById('closeBtn').addEventListener('click', function() {
+            document.getElementById('addToCartModal').style.display = 'none';
+        });
+
+        document.getElementById('viewCartBtn').addEventListener('click', function(e){
+            e.preventDefault();
+            var shoppingCartUrl = this.getAttribute('href');
+            shoppingCartUrl += '/' + book_id;
+            window.location.href = shoppingCartUrl;
+        });
+
+
 
 
 

@@ -10,12 +10,33 @@ use Illuminate\Support\Facades\Session;
 
 class CartController extends Controller
 {
-    public function index() {
-        return view('eBookStore.cart');
-    }
-    public function addToCart($id){
-        $userDetails = Auth::user()->id;
+    public function index($id) {
+        if (Auth::check()) {
+            $userDetails = Auth::user()->id;
+        }
+        else{
+            return redirect('/Home')->with('message','Please login first.');
+        }
         $cartDetails = Book::where('id', $id)->get();
-        dd($cartDetails->all(),$userDetails);
+        // dd($userDetails,$cartDetails);
+        return view('eBookStore.cart',compact('userDetails','cartDetails'));
     }
+
+    // public function addToCart($id){
+    //     if (Auth::check()) {
+    //         $userDetails = Auth::user()->id;
+    //     }
+    //     else{
+    //         return redirect('/Home')->with('message','Please login first.');
+    //     }
+    //     $cartDetails = Book::where('id', $id)->get();
+    //     $user_cart_details = [
+    //         'userDetails' => $userDetails,
+    //         'cartDetails'=> $cartDetails->all(),
+    //     ];
+    //     return $user_cart_details;
+    //     dd($user_cart_details);
+    // }
 }
+
+

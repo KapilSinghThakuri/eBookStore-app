@@ -265,14 +265,15 @@
                 <i id="closeBtn" class='bx bx-x'></i>
             </div>
             <div id="modalBodyContent">
-                <img src="">
+                <img src=""> <!-- Here, Added book image  -->
                 <div id="bookInfo">
                     <p>{{ $userName }} eBookStore</p>
-                    <h5>Books Name</h5>
+                    <h5></h5> <!-- Here, Added book name  -->
+                    <h6></h6> <!-- Here, Added book price  -->
                 </div>
             </div>
             <div id="modalFooterContent">
-                <a href="#" id="viewCartBtn">View Cart</a>
+                <a href="/shoppingCart" id="viewCartBtn">View Cart</a>
                 <a href="#" id="checkOutBtn">Check out</a>
             </div>
         </div>
@@ -296,11 +297,17 @@
                             <div class="d-flex justify-content-center">
                                 <h6>Rs.{{ $book->price}}</h6><h6 class="text-muted ml-2"><del>Rs.99.00</del></h6>
                             </div>
-                            <div class="flex-grow-1"></div> <!-- This will make the body section grow to fill available height -->
+                            <div class="flex-grow-1"></div>
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
                             <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            <a href="" class="addToCartBtn btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                            <a href="#"
+                                data-title="{{ $book->title }}"
+                                data-price="{{ $book->price }}"
+                                data-image="{{ asset($book->image) }}"
+                                data-id="{{ $book->id }}"
+                                class="addToCartBtn btn btn-sm text-dark p-0">
+                            <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                         </div>
                     </div>
                     @endforeach
@@ -311,7 +318,6 @@
     <!-- Highly Recomended Books end -->
 
     <!--Top 10 Coming Soon -->
-    
     <div class="lovedBooks">
         <div class="text-center mb-4">
             <h2 class="section-title px-5"><span class="px-2">Top 10 Coming Soon Books</span></h2>
@@ -323,7 +329,6 @@
         </div>
         @endforeach()
     </div>
-
     <!-- End Top 10 Coming Soon -->
 
     <!-- Products Start (Mystery & Thriller Books)-->
@@ -346,7 +351,13 @@
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href="" class="addToCartBtn btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        <a href=""
+                            data-title="{{ $book->title }}"
+                            data-price="{{ $book->price }}"
+                            data-image="{{ asset($book->image) }}"
+                            data-id="{{ $book->id }}"
+                        class="addToCartBtn btn btn-sm text-dark p-0">
+                        <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                     </div>
                 </div>
             </div>
@@ -367,7 +378,13 @@
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href="" class="addToCartBtn btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        <a href=""
+                        data-title="{{ $book->title }}"
+                        data-price="{{ $book->price }}"
+                        data-image="{{ asset($book->image) }}"
+                        data-id="{{ $book->id }}"
+                        class="addToCartBtn btn btn-sm text-dark p-0">
+                        <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                     </div>
                 </div>
             </div>
@@ -451,7 +468,13 @@
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href="" class="addToCartBtn btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        <a href=""
+                            data-title="{{ $book->title }}"
+                            data-price="{{ $book->price }}"
+                            data-image="{{ asset($book->image) }}"
+                            data-id="{{ $book->id }}"
+                        class="addToCartBtn btn btn-sm text-dark p-0">
+                        <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                     </div>
                 </div>
             </div>
@@ -470,7 +493,13 @@
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href="" class="addToCartBtn btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        <a href=""
+                        data-title="{{ $book->title }}"
+                        data-price="{{ $book->price }}"
+                        data-image="{{ asset($book->image) }}"
+                        data-id="{{ $book->id }}"
+                        class="addToCartBtn btn btn-sm text-dark p-0">
+                        <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                     </div>
                 </div>
             </div>
@@ -489,7 +518,13 @@
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href="" class="addToCartBtn btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        <a href=""
+                        data-title="{{ $book->title }}"
+                        data-price="{{ $book->price }}"
+                        data-image="{{ asset($book->image) }}"
+                        data-id="{{ $book->id }}"
+                        class="addToCartBtn btn btn-sm text-dark p-0">
+                        <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                     </div>
                 </div>
             </div>
@@ -508,7 +543,13 @@
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href="" class="addToCartBtn btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        <a href=""
+                            data-title="{{ $book->title }}"
+                            data-price="{{ $book->price }}"
+                            data-image="{{ asset($book->image) }}"
+                            data-id="{{ $book->id }}"
+                            class="addToCartBtn btn btn-sm text-dark p-0">
+                            <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                     </div>
                 </div>
             </div>
@@ -537,7 +578,13 @@
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href="" class="addToCartBtn btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        <a href=""
+                        data-title="{{ $book->title }}"
+                        data-price="{{ $book->price }}"
+                        data-image="{{ asset($book->image) }}"
+                        data-id="{{ $book->id }}"
+                        class="addToCartBtn btn btn-sm text-dark p-0">
+                        <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                     </div>
                 </div>
             </div>
@@ -566,7 +613,13 @@
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
                         <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href="" class="addToCartBtn btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        <a href=""
+                        data-title="{{ $childreanBook->title }}"
+                        data-price="{{ $childreanBook->price }}"
+                        data-image="{{ asset($childreanBook->image) }}"
+                        data-id="{{ $book->id }}"
+                        class="addToCartBtn btn btn-sm text-dark p-0">
+                        <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                     </div>
                 </div>
             </div>

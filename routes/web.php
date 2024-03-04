@@ -33,16 +33,14 @@ Route::get('/', function () {
 
     Route::get('/shopDetail',[ShopDetailController::class,'index']);
 
-    Route::get('/shoppingCart',[CartController::class,'index']);
-    Route::get('/shoppingCart/{id}',[CartController::class,'addToCart']);
+    Route::get('/shoppingCart/{id}',[CartController::class,'index']);
+    // Route::get('/shoppingCart/{id}',[CartController::class,'addToCart']);
 
     Route::get('/checkOut',[CheckOutController::class,'index']);
 
     Route::get('/contact',[ContactController::class,'index']);
 
     Route::get('/logout',[RegisterController::class,'logout'])->name('logout');
-    Route::get('/profile',[RegisterController::class,'profile'])->name('profile');
-
 // });
 
     // For RegistrationPages Routing
