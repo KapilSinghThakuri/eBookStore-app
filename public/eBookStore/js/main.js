@@ -186,7 +186,8 @@ $('.addToCartBtn').click(function(event) {
                 $('#addToCartModal #modalHeadingContent #bookAddedMessage').text(response.success);
                 // $('#addToCartModal').fadeIn();
                 $('#addToCartModal').show();
-
+                // To show updated cartItemCount in cartSection onTop and viewCartButton
+                updateCartItemCount();
             } else {
                 if (response.status == 404 ) {
                     // alert(response.message);
@@ -222,6 +223,25 @@ $('.addToCartBtn').click(function(event) {
     //     window.location.href = shoppingCartUrl;
     // });
 
+// Counting the addToCartItems
+function updateCartItemCount(){
+$.ajax({
+    url: '/getCartItemCount',
+    type: 'GET',
+    success: function(response) {
+        if (response.status == 200) {
+            // Update the UI with the cart item count
+            $('#cartItemCount').text(response.cart_item_count);
+            $('#cartBookCount').text(response.cart_item_count);
+        } else {
+            console.error('Error fetching cart item count:', response.errors);
+        }
+    },
+    error: function(xhr, status, error) {
+        console.error('Error fetching cart item count:', error);
+    }
+});
+}
 
 
 

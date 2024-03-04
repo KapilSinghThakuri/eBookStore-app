@@ -48,4 +48,23 @@ class ShoppingCartController extends Controller
             'message' => 'Please login first !!!']);
         }
     }
+
+    public function getCartItemCount(){
+        if(Auth::check()){
+            $userId = Auth::id();
+            $cartItemCount = ShoppingCart::where('user_id', $userId)->count();
+
+            return response()->json([
+                'status' => 200,
+                'cart_item_count' => $cartItemCount,
+                'message' => 'Successfully counted the total no of item.',
+            ]);
+        }
+        else{
+            return response()->json([
+                'status' => 400,
+                'errors' => 'Add To Cart Book First !!!',
+            ]);
+        }
+    }
 }

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Book;
 use App\Models\Category;
+use App\Models\ShoppingCart;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -25,7 +26,7 @@ class UserController extends Controller
         // }
 
     //retrieves all the books associated with the category with ID 15
-        $highlyRecomenededBook = Category::find(15)->books;
-        dd($highlyRecomenededBook->all());
+        // $highlyRecomenededBook = Category::find(15)->books;
+        // dd($highlyRecomenededBook->all());
     }
 }

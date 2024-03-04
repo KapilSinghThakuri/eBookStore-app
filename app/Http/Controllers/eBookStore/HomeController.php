@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Book;
-
+use App\Models\ShoppingCart;
 
 class HomeController extends Controller
 {

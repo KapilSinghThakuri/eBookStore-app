@@ -94,7 +94,7 @@
                 </a>
                 <a href="/shoppingCart" class="btn border">
                     <i class="fas fa-shopping-cart text-primary"></i>
-                    <span class="badge">0</span>
+                    <span class="badge" id="cartItemCount">0</span>
                 </a>
             </div>
         </div>
@@ -278,7 +278,7 @@
                 </div>
             </div>
             <div id="modalFooterContent">
-                <a href="/shoppingCart" id="viewCartBtn">View Cart</a>
+                <a href="/shoppingCart" id="viewCartBtn">View Cart(<span id="cartBookCount">0</span>)</a>
                 <a href="#" id="checkOutBtn">Check out</a>
             </div>
         </div>
