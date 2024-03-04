@@ -20,6 +20,7 @@ use App\Http\Controllers\eBookStore\Backendpart\AdminDashboardController;
 use App\Http\Controllers\eBookStore\Backendpart\CategoryController;
 use App\Http\Controllers\eBookStore\Backendpart\BookController;
 use App\Http\Controllers\eBookStore\Backendpart\UserController;
+use App\Http\Controllers\eBookStore\Backendpart\ShoppingCartController;
 
 
 Route::get('/', function () {
@@ -34,7 +35,8 @@ Route::get('/', function () {
     Route::get('/shopDetail',[ShopDetailController::class,'index']);
 
     Route::get('/shoppingCart/{id}',[CartController::class,'index']);
-    // Route::get('/shoppingCart/{id}',[CartController::class,'addToCart']);
+
+    Route::post('/addToCartDetailStore',[ShoppingCartController::class,'saveCartDetails']);
 
     Route::get('/checkOut',[CheckOutController::class,'index']);
 

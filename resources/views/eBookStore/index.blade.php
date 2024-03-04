@@ -8,8 +8,13 @@
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
+    <!-- x-csrf tokens -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+
     <!-- Boxicons icons link -->
-<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- Homepage css links -->
     <link rel="stylesheet" href="{{ url('eBookStore/css/homepage.css') }}">
@@ -261,7 +266,7 @@
     <div id="addToCartModalContent">
         <div id="addToCartModal" class="addToCart">
             <div id="modalHeadingContent">
-                <p>Books Message</p>
+                <p id="bookAddedMessage"></p>
                 <i id="closeBtn" class='bx bx-x'></i>
             </div>
             <div id="modalBodyContent">
@@ -617,7 +622,7 @@
                         data-title="{{ $childreanBook->title }}"
                         data-price="{{ $childreanBook->price }}"
                         data-image="{{ asset($childreanBook->image) }}"
-                        data-id="{{ $book->id }}"
+                        data-id="{{ $childreanBook->id }}"
                         class="addToCartBtn btn btn-sm text-dark p-0">
                         <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
                     </div>
@@ -731,7 +736,6 @@
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
