@@ -160,12 +160,12 @@ cancelBtn.addEventListener('click',function(event){
                 // document.getElementById('addToCartModal').style.display = 'block';
             // });
         // });
-
+var selectedBookId;
 $('.addToCartBtn').click(function(event) {
     event.preventDefault();
 
     var bookId = $(this).data('id'); // Get the book ID from the data attribute of the clicked button
-
+    selectedBookId = bookId;
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -210,9 +210,18 @@ $('.addToCartBtn').click(function(event) {
     document.getElementById('viewCartBtn').addEventListener('click', function(e){
         e.preventDefault();
         var shoppingCartUrl = this.getAttribute('href');
-        shoppingCartUrl += '/' + book_id;
+        shoppingCartUrl += '/' + selectedBookId;
         window.location.href = shoppingCartUrl;
     });
+
+    // Use event delegation for the viewCartBtn click event
+    // $(document).on('click', '#viewCartBtn', function(e) {
+    //     e.preventDefault();
+    //     var shoppingCartUrl = $(this).attr('href');
+    //     shoppingCartUrl += '/' + selectedBookId;
+    //     window.location.href = shoppingCartUrl;
+    // });
+
 
 
 

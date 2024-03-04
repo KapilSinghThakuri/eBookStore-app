@@ -266,7 +266,7 @@
     <div id="addToCartModalContent">
         <div id="addToCartModal" class="addToCart">
             <div id="modalHeadingContent">
-                <p id="bookAddedMessage"></p>
+                <p id="bookAddedMessage"></p> <!-- Here, book added to cart table  -->
                 <i id="closeBtn" class='bx bx-x'></i>
             </div>
             <div id="modalBodyContent">

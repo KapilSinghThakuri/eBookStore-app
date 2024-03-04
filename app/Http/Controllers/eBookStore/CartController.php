@@ -18,8 +18,8 @@ class CartController extends Controller
             return redirect('/Home')->with('message','Please login first.');
         }
         $cartDetails = Book::where('id', $id)->get();
-        // dd($userDetails,$cartDetails);
-        return view('eBookStore.cart',compact('userDetails','cartDetails'));
+        dd($userDetails,$cartDetails);
+        // return view('eBookStore.cart',compact('userDetails','cartDetails'));
     }
 
     // public function addToCart($id){
