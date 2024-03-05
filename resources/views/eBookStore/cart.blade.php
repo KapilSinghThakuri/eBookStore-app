@@ -136,17 +136,16 @@
                 });
             });
         function updateTotalPrice(){
-            var subTotal_price = 0;
             var total_price = 0;
             $('.tablerow').each(function(){
                 var priceStr = $(this).find('.cartItem_price').text();
             // Converting the string type price into float type and replace null('') instead of Rs. and remove whitespace
                 var priceNum = parseFloat(priceStr.replace('Rs.', '').trim());
-                subTotal_price += priceNum;
-                total_price += priceNum + 110;
+                total_price += priceNum;
             });
-            $('.subTotal-price').text('Rs.'+ subTotal_price);
-            $('.total-price').text('Rs.'+ total_price);
+            var totalPriceWithShipping = total_price + 110;
+            $('.subTotal-price').text('Rs.'+ total_price);
+            $('.total-price').text('Rs.'+ totalPriceWithShipping);
         }
         updateTotalPrice();
     });
