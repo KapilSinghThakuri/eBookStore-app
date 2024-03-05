@@ -34,7 +34,10 @@ Route::get('/', function () {
 
     Route::get('/shopDetail',[ShopDetailController::class,'index']);
 
-    Route::get('/shoppingCart/{id}',[CartController::class,'index']);
+    Route::get('/shoppingCart',[CartController::class,'index']);
+    // for removing cart items from cart table
+    Route::DELETE('/shoppingCart/{id}',[CartController::class,'destroy']);
+
     // for saving cart items to cart table & displaying cart modal
     Route::post('/addToCartDetailStore',[ShoppingCartController::class,'saveCartDetails']);
     // for counting the cart items

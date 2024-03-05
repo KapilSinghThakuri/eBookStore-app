@@ -13,4 +13,9 @@ class ShoppingCart extends Model
         'user_id',
         'book_id',
     ];
+
+    public function book()
+    {
+        return $this->belongsTo(Book::class, 'book_id');
+    }
 }

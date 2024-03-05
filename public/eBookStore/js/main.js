@@ -119,7 +119,7 @@ cancelBtn.addEventListener('click',function(event){
 });
 
 // For alerting card when customer click addtocart button
-// This is just for displying modal
+// This is just for displying modal incase of modal items are in loop
     // var addToCartModal = document.getElementById('addToCartModal');
     // var closeBtn = document.getElementById('closeBtn');
     // var addToCartButton = document.querySelectorAll('.addToCartBtn');
@@ -160,12 +160,13 @@ cancelBtn.addEventListener('click',function(event){
                 // document.getElementById('addToCartModal').style.display = 'block';
             // });
         // });
+
 var selectedBookId;
 $('.addToCartBtn').click(function(event) {
     event.preventDefault();
 
     var bookId = $(this).data('id'); // Get the book ID from the data attribute of the clicked button
-    selectedBookId = bookId;
+    selectedBookId = bookId; // Setting bookId to selectedBookId variable for passing the book id to Shopping cart page
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -203,44 +204,49 @@ $('.addToCartBtn').click(function(event) {
         });
     });
 
-    // Close modal when the close button is clicked
-    document.getElementById('closeBtn').addEventListener('click', function() {
-        document.getElementById('addToCartModal').style.display = 'none';
+// Close modal when the close button is clicked
+    // document.getElementById('closeBtn').addEventListener('click', function() {
+    //     document.getElementById('addToCartModal').style.display = 'none';
+    // });
+
+    $('#closeBtn').click(function(event) {
+        event.preventDefault();
+        $('#addToCartModal').hide();
     });
 
-    document.getElementById('viewCartBtn').addEventListener('click', function(e){
-        e.preventDefault();
-        var shoppingCartUrl = this.getAttribute('href');
-        shoppingCartUrl += '/' + selectedBookId;
-        window.location.href = shoppingCartUrl;
-    });
-
-    // Use event delegation for the viewCartBtn click event
-    // $(document).on('click', '#viewCartBtn', function(e) {
+// Open shopping cart page with cart items when the view cart button is clicked
+    // document.getElementById('viewCartBtn').addEventListener('click', function(e){
     //     e.preventDefault();
-    //     var shoppingCartUrl = $(this).attr('href');
-    //     shoppingCartUrl += '/' + selectedBookId;
+    //     var shoppingCartUrl = this.getAttribute('href');
+    //     // shoppingCartUrl += '/' + selectedBookId;
     //     window.location.href = shoppingCartUrl;
     // });
 
+    // Or Using event delegation for the viewCartBtn click event
+    $(document).on('click', '#viewCartBtn', function(e) {
+        e.preventDefault();
+        var shoppingCartUrl = $(this).attr('href');
+        window.location.href = shoppingCartUrl;
+    });
+
 // Counting the addToCartItems
 function updateCartItemCount(){
-$.ajax({
-    url: '/getCartItemCount',
-    type: 'GET',
-    success: function(response) {
-        if (response.status == 200) {
-            // Update the UI with the cart item count
-            $('#cartItemCount').text(response.cart_item_count);
-            $('#cartBookCount').text(response.cart_item_count);
-        } else {
-            console.error('Error fetching cart item count:', response.errors);
+    $.ajax({
+        url: '/getCartItemCount',
+        type: 'GET',
+        success: function(response) {
+            if (response.status == 200) {
+                // Update the UI with the cart item count
+                $('#cartItemCount').text(response.cart_item_count);
+                $('#cartBookCount').text(response.cart_item_count);
+            } else {
+                console.error('Error fetching cart item count:', response.errors);
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('Error fetching cart item count:', error);
         }
-    },
-    error: function(xhr, status, error) {
-        console.error('Error fetching cart item count:', error);
-    }
-});
+    });
 }
 
 

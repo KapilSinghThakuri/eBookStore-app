@@ -3,12 +3,12 @@
 @section('main')
 
     <div class="container-fluid mb-5 " 
-    style="background-image: url('eBookStore/img/cover3.jpg');
+    style="background-image: url('{{ asset("eBookStore/img/cover3.jpg") }}');
     background-position: center; background-repeat: no-repeat; background-size: cover; height: 500px; width: 100%;">
 
         <div class="d-flex flex-column align-items-center justify-content-start" style="min-height: 300px">
             <h1 class="font-weight-semi-bold text-uppercase mt-4 mb-3" 
-            style="color: whitesmoke;">Checkout</h1>
+            style="color: papayawhip;">Checkout</h1>
             <!-- <div class="d-inline-flex">
                 <p class="m-0"><a href="">Home</a></p>
                 <p class="m-0 px-2">-</p>

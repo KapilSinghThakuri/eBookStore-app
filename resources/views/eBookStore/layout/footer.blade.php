@@ -67,10 +67,13 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
+    <!-- Include external libraries and frameworks -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
-       <!-- JavaScript Libraries -->
-       <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Libraries -->
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script> -->
     <script src="eBookStore/lib/easing/easing.min.js"></script>
     <script src="eBookStore/lib/owlcarousel/owl.carousel.min.js"></script>
 
@@ -81,5 +84,4 @@
     <!-- Main Javascript -->
     <script src="eBookStore/js/main.js"></script>
 </body>
-
 </html>
