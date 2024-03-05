@@ -60,7 +60,7 @@
                                     </div>
                                 </div>
                             </td> -->
-                            <td class="align-middle">Rs.{{ $itemDetail->price }}</td>
+                            <td class="align-middle cartItem_price">Rs.{{ $itemDetail->price }}</td>
 
                             <td class="align-middle">
                                 <a href="#"  data-id="{{ $itemDetail -> cartItemId }}"
@@ -89,11 +89,11 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between mb-3 pt-1">
                             <h6 class="font-weight-medium">Subtotal</h6>
-                            <h6 class="total-price font-weight-medium">0</h6>
+                            <h6 class="subTotal-price font-weight-medium">0</h6>
                         </div>
                         <div class="d-flex justify-content-between">
                             <h6 class="font-weight-medium">Shipping</h6>
-                            <h6 class="font-weight-medium">$10</h6>
+                            <h6 class="font-weight-medium">Rs.110</h6>
                         </div>
                     </div>
                     <div class="card-footer border-secondary bg-transparent">
@@ -127,7 +127,7 @@
                         console.log(response);
                         if (response.status == 200) {
                             console.log('Item deleted successfully');
-                            // updateTotalPrice();
+                            updateTotalPrice();
                         }else
                         {
                            console.log('You can not remove this item.');
@@ -135,6 +135,20 @@
                     }
                 });
             });
-        });
+        function updateTotalPrice(){
+            var subTotal_price = 0;
+            var total_price = 0;
+            $('.tablerow').each(function(){
+                var priceStr = $(this).find('.cartItem_price').text();
+            // Converting the string type price into float type and replace null('') instead of Rs. and remove whitespace
+                var priceNum = parseFloat(priceStr.replace('Rs.', '').trim());
+                subTotal_price += priceNum;
+                total_price += priceNum + 110;
+            });
+            $('.subTotal-price').text('Rs.'+ subTotal_price);
+            $('.total-price').text('Rs.'+ total_price);
+        }
+        updateTotalPrice();
+    });
 </script>
 @endsection
