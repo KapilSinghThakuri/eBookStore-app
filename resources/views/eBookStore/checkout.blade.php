@@ -61,20 +61,36 @@
                             <input class="form-control" type="text" placeholder="City">
                         </div>
                         <div class="col-md-6 form-group">
-                            <label>ZIP Code</label>
+                            <label>Postal Code</label>
                             <input class="form-control" type="text" placeholder="123">
                         </div>
-                        <div class="col-md-12 form-group">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="newaccount">
-                                <label class="custom-control-label" for="newaccount">Create an account</label>
+                    </div>
+                    <div class="card border-secondary mb-5">
+                        <div class="card-header bg-secondary border-0">
+                            <h4 class="font-weight-semi-bold m-0">Payment</h4>
+                        </div>
+                        <div class="card-body d-flex justify-content-center">
+                            <div class="form-group">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" name="payment" id="paypal">
+                                    <label class="custom-control-label" for="paypal">e-Sewa</label>
+                                </div>
+                            </div>
+                            <div class="form-group ml-5">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" name="payment" id="directcheck">
+                                    <label class="custom-control-label" for="directcheck">Mobile Banking</label>
+                                </div>
+                            </div>
+                            <div class="form-group ml-5">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" class="custom-control-input" name="payment" id="banktransfer">
+                                    <label class="custom-control-label" for="banktransfer">Cash On Delivery</label>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-12 form-group">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="shipto">
-                                <label class="custom-control-label" for="shipto"  data-toggle="collapse" data-target="#shipping-address">Ship to different address</label>
-                            </div>
+                        <div class="card-footer border-secondary bg-transparent">
+                            <button class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Place Order</button>
                         </div>
                     </div>
                 </div>
@@ -109,7 +125,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card border-secondary mb-5">
+                <!-- <div class="card border-secondary mb-5">
                     <div class="card-header bg-secondary border-0">
                         <h4 class="font-weight-semi-bold m-0">Payment</h4>
                     </div>
@@ -136,7 +152,7 @@
                     <div class="card-footer border-secondary bg-transparent">
                         <button class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Place Order</button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
