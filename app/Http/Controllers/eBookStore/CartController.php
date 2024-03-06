@@ -16,7 +16,7 @@ class CartController extends Controller
             $userDetails = Auth::user()->id;
         }
         else{
-            return redirect('/Home')->with('message','Please login first.');
+            return redirect('/login')->with('message','Please login first.');
         }
 
         // $cartDetails = ShoppingCart::where('user_id', $userDetails)->pluck('book_id');
