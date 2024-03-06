@@ -44,6 +44,8 @@ Route::get('/', function () {
     Route::get('/getCartItemCount', [ShoppingCartController::class, 'getCartItemCount']);
 
     Route::get('/checkOut',[CheckOutController::class,'index']);
+    // for saving the orders details to order table
+    Route::post('/checkOut/orderSubmitting',[CheckOutController::class,'store']);
 
     Route::get('/contact',[ContactController::class,'index']);
 

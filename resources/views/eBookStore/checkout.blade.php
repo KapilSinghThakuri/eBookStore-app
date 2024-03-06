@@ -23,46 +23,52 @@
     <div class="container-fluid pt-5">
         <div class="row px-xl-5">
             <div class="col-lg-8">
+
+            <form id="order_items">
                 <div class="mb-4" id="shipping-address">
                     <h4 class="font-weight-semi-bold mb-4">Billing Address</h4>
+
+                    <ul id="saveForm_errlist"></ul>
                     <div class="row">
                         <div class="col-md-6 form-group">
                             <label>Full Name</label>
-                            <input class="form-control" type="text" value="{{ $userName }}">
+                            <input name="name" class="form-control" type="text" value="{{ $userName }}">
                         </div>
                         <div class="col-md-6 form-group">
                             <label>E-mail</label>
-                            <input class="form-control" type="text" placeholder="example@email.com">
+                            <input name="email" class="form-control" type="text" placeholder="example@email.com">
                         </div>
                         <div class="col-md-6 form-group">
                             <label>Mobile No</label>
-                            <input class="form-control" type="text" placeholder="98********">
+                            <input name="phone" class="form-control" type="text" placeholder="98********">
                         </div>
-                        <div class="col-md-6 form-group">
-                            <label>Address Line 1</label>
-                            <input class="form-control" type="text" placeholder="123 Street">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <label>Address Line 2</label>
-                            <input class="form-control" type="text" placeholder="123 Street">
-                        </div>
+
                         <div class="col-md-6 form-group">
                             <label>Province</label>
-                            <select class="custom-select">
+                            <select name="province" class="custom-select">
                                 <option selected>Select Province</option>
-                                <option>Gandaki</option>
-                                <option>Bagmati</option>
-                                <option>Lumbini</option>
-                                <option>Madesh</option>
+                                <option value="Gandaki">Gandaki</option>
+                                <option value="Bagmati">Bagmati</option>
+                                <option value="Lumbini">Lumbini</option>
+                                <option value="Madesh">Madesh</option>
+                                <option value="Koshi">Koshi</option>
                             </select>
                         </div>
                         <div class="col-md-6 form-group">
                             <label>City</label>
-                            <input class="form-control" type="text" placeholder="City">
+                            <input name="city" class="form-control" type="text" placeholder="City">
                         </div>
                         <div class="col-md-6 form-group">
                             <label>Postal Code</label>
-                            <input class="form-control" type="text" placeholder="123">
+                            <input name="postalcode" class="form-control" type="text" placeholder="123">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Address Line 1</label>
+                            <input name="street1" class="form-control" type="text" placeholder="123 Street">
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label>Address Line 2</label>
+                            <input name="street2" class="form-control" type="text" placeholder="123 Street">
                         </div>
                     </div>
                     <div class="card border-secondary mb-5">
@@ -72,28 +78,31 @@
                         <div class="card-body d-flex justify-content-center">
                             <div class="form-group">
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" class="custom-control-input" name="payment" id="paypal">
+                                    <input type="radio" value="eSewa" class="custom-control-input" name="payment" id="paypal">
                                     <label class="custom-control-label" for="paypal">e-Sewa</label>
                                 </div>
                             </div>
                             <div class="form-group ml-5">
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" class="custom-control-input" name="payment" id="directcheck">
+                                    <input type="radio" value="MobileBanking" class="custom-control-input" name="payment" id="directcheck">
                                     <label class="custom-control-label" for="directcheck">Mobile Banking</label>
                                 </div>
                             </div>
                             <div class="form-group ml-5">
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" class="custom-control-input" name="payment" id="banktransfer">
+                                    <input type="radio" value="CashOnDelivery" class="custom-control-input" name="payment" id="banktransfer">
                                     <label class="custom-control-label" for="banktransfer">Cash On Delivery</label>
                                 </div>
                             </div>
                         </div>
                         <div class="card-footer border-secondary bg-transparent">
-                            <button class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Place Order</button>
+                            <button type="submit" class="orderPlace btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Place Order</button>
                         </div>
+                        <div class="success_message"></div>
                     </div>
                 </div>
+            </form>
+
             </div>
             <div class="col-lg-4">
                 <div class="card border-secondary mb-5">
@@ -171,6 +180,55 @@
                 $('.totalAmount').text('Rs.'+ totalAmountWithShipping);
             }
             calculatingTotalAmount() ;
+
+            $('.orderPlace').click(function(event){
+                event.preventDefault();
+
+                // var formData = $(this).serialize();
+                const form = $('#order_items')[0];
+                const formData = new FormData(form);
+            // Cache the button element
+                var $orderPlaceBtn = $(this);
+            // Change button text to indicate processing
+                $orderPlaceBtn.text('Order Placing...');
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    url: '/checkOut/orderSubmitting',
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        console.log(response);
+                        if(response.status == 200){
+                            $('.success_message').html("");
+                            $('.success_message').addClass('alert alert-success');
+                            $('.success_message').text(response.success);
+                            $('#order_items').find('input').val("");
+                        }
+                        else
+                        {
+                            $('#saveForm_errlist').html("");
+                            $('#saveForm_errlist').addClass('alert alert-danger');
+                            $.each(response.errors, function(key, err_values) {
+                            $('#saveForm_errlist').append('<li>'+ err_values + '</li>');
+                            });
+                            console.log('Error occurrred !!!');
+                        // Reset button text on error
+                            $orderPlaceBtn.text('Place Order');
+                        }
+                    },
+                    error: function(textStatus, errorThrown){
+                        console.log('error occurrred:',textStatus, errorThrown);
+                        $orderPlaceBtn.text('Place Order');
+                    }
+                });
+            });
         });
     </script>
 @endsection

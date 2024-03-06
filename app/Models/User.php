@@ -25,4 +25,10 @@ class User extends AuthenticatableUser implements Authenticatable
     {
         return $this->role_id == 2;
     }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+
 }

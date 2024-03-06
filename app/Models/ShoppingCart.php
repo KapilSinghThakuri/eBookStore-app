@@ -18,4 +18,8 @@ class ShoppingCart extends Model
     {
         return $this->belongsTo(Book::class, 'book_id');
     }
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class, 'cart_order','cart_id','order_id')->withTimestamps();
+    }
 }

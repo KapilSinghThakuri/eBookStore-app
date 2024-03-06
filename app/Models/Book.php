@@ -22,4 +22,8 @@ public function categories()
     {
         return $this->belongsToMany(Category::class, 'book_category', 'book_id', 'category_id')->withTimestamps();
     }
+// public function orders()
+// {
+//     return $this->belongsToMany(Order::class,'book_order','book_id','order_id')->withTimestamps();
+// }
 }

@@ -8,6 +8,8 @@ use App\Models\User;
 use App\Models\Book;
 use App\Models\Category;
 use App\Models\ShoppingCart;
+use Illuminate\Support\Facades\DB;
+
 
 use Illuminate\Support\Facades\Auth;
 
@@ -28,5 +30,15 @@ class UserController extends Controller
     //retrieves all the books associated with the category with ID 15
         // $highlyRecomenededBook = Category::find(15)->books;
         // dd($highlyRecomenededBook->all());
+
+    // method="POST" action="{{ url('/checkOut/orderSubmitting')}}"
+    // $cartItems = ShoppingCart::where('user_id', Auth::user()->id)->pluck('book_id')->toArray();
+    // dd($cartItems);
+
+    $cartIds = DB::table('shopping_carts')->select('id')->where('user_id', Auth::user()->id)->pluck('id');
+    dd($cartIds);
     }
+
+
+
 }
