@@ -280,6 +280,7 @@
             <div id="modalFooterContent">
                 <a href="/shoppingCart" id="viewCartBtn">View Cart(<span id="cartBookCount">0</span>)</a>
                 <a href="/checkOut" id="checkOutBtn" class="bg-primary text-white">Check out</a>
+                <a href="/Home" class="mt-1 text-center">Continue shopping</a>
             </div>
         </div>
     </div>
