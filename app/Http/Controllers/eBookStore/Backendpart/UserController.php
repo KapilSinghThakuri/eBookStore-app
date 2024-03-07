@@ -35,10 +35,16 @@ class UserController extends Controller
     // $cartItems = ShoppingCart::where('user_id', Auth::user()->id)->pluck('book_id')->toArray();
     // dd($cartItems);
 
-    $cartIds = DB::table('shopping_carts')->select('id')->where('user_id', Auth::user()->id)->pluck('id');
-    dd($cartIds);
+    // $cartIds = DB::table('shopping_carts')->select('id')->where('user_id', Auth::user()->id)->pluck('id');
+    // dd($cartIds);
+
+    $ShoppingCartItems = DB::table('shopping_carts')->join('books', 'shopping_carts.book_id', 'books.id')
+                        ->select('books.*')->where('user_id', Auth::user()->id) ->get();
+    $cartItems = ShoppingCart::where('user_id', Auth::user()->id)->get();
+    dd($ShoppingCartItems,$cartItems);
+
     }
-
-
-
 }
+
+
+

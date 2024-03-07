@@ -23,6 +23,7 @@ class BookController extends Controller
             'description' => 'required|string',
             'author'=> 'required|string',
             'price'=> 'required',
+            'quantity' => 'required',
             'image' => 'required|image|mimes:jpg,jpeg,png,gif|max:3072',
             'rating' => 'required|integer',
             'category_id' => 'required',
@@ -46,6 +47,7 @@ class BookController extends Controller
             'description' => $request->input('description'),
             'author'=> $request->input('author'),
             'price'=> $request->input('price'),
+            'quantity' => $request->input('quantity'),
             'image' => '/eBookStore/img/' . $fileName,
             'rating' => $request->input('rating'),
             ]);

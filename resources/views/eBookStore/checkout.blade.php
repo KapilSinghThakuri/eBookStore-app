@@ -210,6 +210,8 @@
                             $('.success_message').addClass('alert alert-success');
                             $('.success_message').text(response.success);
                             $('#order_items').find('input').val("");
+                            // Reset button text on error
+                            $orderPlaceBtn.text('Place Order');
                         }
                         else
                         {
@@ -219,8 +221,6 @@
                             $('#saveForm_errlist').append('<li>'+ err_values + '</li>');
                             });
                             console.log('Error occurrred !!!');
-                        // Reset button text on error
-                            $orderPlaceBtn.text('Place Order');
                         }
                     },
                     error: function(textStatus, errorThrown){

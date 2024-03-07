@@ -46,6 +46,14 @@
                 <label>Book Price</label>
                 <input type="text" name="price" class="price form-control" placeholder="Enter Book's price">
             </div>
+
+
+            <div class="form-group mb-3">
+                <label>Book Quantity</label>
+                <input type="text" name="quantity" class="quantity form-control" placeholder="Enter Book's quantity">
+            </div>
+
+
             <div class="form-group mb-3">
                 <label>Book image</label>
                 <input type="file" name="image" class="image form-control">
@@ -98,6 +106,7 @@
             formData.append('description', $('.description').val());
             formData.append('author', $('.author').val());
             formData.append('price', $('.price').val());
+            formData.append('quantity', $('.quantity').val());
             formData.append('image', $('.image')[0].files[0]); // Append the file object directly
             formData.append('rating', $('.rating').val());
 

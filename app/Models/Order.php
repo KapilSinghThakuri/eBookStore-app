@@ -32,6 +32,7 @@ class Order extends Model
     {
         return $this->belongsToMany(ShoppingCart::class, 'cart_order','order_id','cart_id')->withTimestamps();
     }
+
     // public function books()
     // {
     //     return $this->belongsToMany(Book::class, 'book_order','order_id','book_id')->withTimestamps();
