@@ -237,7 +237,7 @@ function updateCartItemCount(){
         success: function(response) {
             if (response.status == 200) {
                 // Update the UI with the cart item count
-                $('#cartItemCount').text(response.cart_item_count);
+                // $('#cartItemCount').text(response.cart_item_count);
                 $('#cartBookCount').text(response.cart_item_count);
             } else {
                 console.error('Error fetching cart item count:', response.errors);

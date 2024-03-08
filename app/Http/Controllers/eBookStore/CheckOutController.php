@@ -41,6 +41,7 @@ class CheckOutController extends Controller
             'city' => 'required|string',
             'street1' => 'required|string',
             'payment' => 'required',
+            'total_amount' => 'required|numeric',
         ],
         [
             'province.required' => 'Please provide province for delivery convenience.',
@@ -63,6 +64,7 @@ class CheckOutController extends Controller
             'province' => $request->input('province'),
             'city' => $request->input('city'),
             'street' => $request->input('street1'),
+            'total_amount' => $request->input('total_amount'),
             'payment' => $request->input('payment'),
         ]);
 
