@@ -5,6 +5,7 @@ namespace App\Http\Controllers\eBookStore;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Book;
@@ -28,13 +29,13 @@ class HomeController extends Controller
         $christianityBooks = $this->getChristianityBooks();
         $historyBiographyBooks = $this->getHistoryBiographyBooks();
         $fictionFantasyBooks = $this->getFictionFantasyBooks();
-        $cartItemCount = ShoppingCart::where('user_id', Auth::user()->id)->count();
+        // $cartItemCount = ShoppingCart::where('user_id', Auth::user()->id)->count();
 
         return view('eBookStore.index',
             compact('religionSpirituality','businessEssential','remainCategories','highlyRecommendedBooks',
                 'top10ComingSoonBooks','mysteryThrillerBooks','childrenBooks','buddhismBooks',
                 'hinduismBooks','islamBooks','christianityBooks','historyBiographyBooks',
-                'fictionFantasyBooks','cartItemCount'));
+                'fictionFantasyBooks'));
     }
     private function gethighlyRecomenededBooks()
     {

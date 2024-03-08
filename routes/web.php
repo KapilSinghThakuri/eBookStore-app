@@ -66,10 +66,10 @@ Route::get('/', function () {
 Route::get('/AdminDashboard',[AdminDashboardController::class,'index'])->middleware('Admin_verify');
 
     // Category part
-    Route::get('/AdminDashboard/Category/Create',[CategoryController::class,'create']);
-    Route::post('/AdminDashboard/Category/Store',[CategoryController::class,'store']);
-    Route::get('/AdminDashboard/Book/Create',[BookController::class,'create']);
-    Route::post('/AdminDashboard/Book/Store',[BookController::class,'store']);
+    Route::get('/AdminDashboard/Category/Create',[CategoryController::class,'create'])->middleware('Admin_verify');
+    Route::post('/AdminDashboard/Category/Store',[CategoryController::class,'store'])->middleware('Admin_verify');
+    Route::get('/AdminDashboard/Book/Create',[BookController::class,'create'])->middleware('Admin_verify');
+    Route::post('/AdminDashboard/Book/Store',[BookController::class,'store'])->middleware('Admin_verify');
 
 
 // For Testing

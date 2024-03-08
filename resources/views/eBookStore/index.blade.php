@@ -94,7 +94,7 @@
                 </a>
                 <a href="/shoppingCart" class="btn border">
                     <i class="fas fa-shopping-cart text-primary"></i>
-                    <span class="badge" id="cartItemCount">{{ $cartItemCount }}</span>
+                    <span class="badge" id="cartItemCount">0</span>
                 </a>
             </div>
         </div>
