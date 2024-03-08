@@ -104,8 +104,7 @@
 
 
 
-// For displaying user informations
-
+// FOR USER PROFILE INFORMATIONS & SETTING
 var profileBtn = document.getElementById('profileBtn');
 var profileModal = document.getElementById('profileModal');
 var cancelBtn = document.getElementById('cancelBtn');
@@ -118,49 +117,49 @@ cancelBtn.addEventListener('click',function(event){
     profileModal.style.display = 'none';
 });
 
-// For alerting card when customer click addtocart button
+// FOR VIEW DETAILS MODAL
 // This is just for displying modal incase of modal items are in loop
-    // var addToCartModal = document.getElementById('addToCartModal');
-    // var closeBtn = document.getElementById('closeBtn');
-    // var addToCartButton = document.querySelectorAll('.addToCartBtn');
+    // var viewDetail = document.getElementById('viewDetail');
+    // var viewDetailBtn = document.querySelectorAll('.viewDetailBtn');
 
-    // Iterate through each element with the class .addToCartBtn
-    // addToCartButton.forEach(function(element) {
-        // Attach click event listener to each element
+    // // Iterate through each element with the class .viewDetailBtn
+    // viewDetailBtn.forEach(function(element) {
+    //     // Attach click event listener to each element
     //     element.addEventListener('click', function(e) {
     //         e.preventDefault();
-    //         addToCartModal.style.display = 'block';
+    //         viewDetail.style.display = 'block';
     //         console.log("Modal Button Clicked");
     //     });
     // });
-    // closeBtn.onclick = function(){
-    //     addToCartModal.style.display = 'none';
-    // };
+    var closeDetailModal = document.getElementById('closeDetailModal');
+    closeDetailModal.onclick = function(){
+        viewDetail.style.display = 'none';
+    };
 // This is just for displying modal with associated data
-    // Add event listener to each "Add To Cart" button
-        // document.querySelectorAll('.addToCartBtn').forEach(function(button) {
-            // button.addEventListener('click', function(event) {
-                // event.preventDefault();
+    // Add event listener to each "View Book Details" button
+    document.querySelectorAll('.viewDetailBtn').forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
 
-                // // Get book details from data attributes
-                // var bookTitle = button.getAttribute('data-title');
-                // var bookPrice = button.getAttribute('data-price');
-                // var bookImage = button.getAttribute('data-image');
-                // var bookId = button.getAttribute('data-id');
+            // Get book details from data attributes
+            var bookTitle = button.getAttribute('data-title');
+            var bookPrice = button.getAttribute('data-price');
+            var bookImage = button.getAttribute('data-image');
+            var bookDescription = button.getAttribute('data-description');
 
-                // book_id = bookId;
-                // console.log(book_id);
+            // Populate modal with book details
+            document.querySelector('#viewDetail #viewDetailContent #book_image').src = bookImage;
+            document.querySelector('#viewDetail #viewDetailContent #bookDetails h5').textContent = bookTitle;
+            document.querySelector('#viewDetail #viewDetailContent #bookDetails p').textContent = "Rs."+ bookPrice;
+            document.querySelector('#viewDetail #viewDetailContent #bookDetails h6').textContent = bookDescription;
 
-                // // Populate modal with book details
-                // document.querySelector('#addToCartModal #bookInfo h5').textContent = bookTitle;
-                // document.querySelector('#addToCartModal #bookInfo h6').textContent = "Rs."+ bookPrice;
-                // document.querySelector('#addToCartModal #modalBodyContent img').src = bookImage;
+            // Show modal
+            document.getElementById('viewDetail').style.display = 'block';
+        });
+    });
 
-                // // Show modal
-                // document.getElementById('addToCartModal').style.display = 'block';
-            // });
-        // });
 
+// FOR ADD TO CART MODAL
 var selectedBookId;
 $('.addToCartBtn').click(function(event) {
     event.preventDefault();

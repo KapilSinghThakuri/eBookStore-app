@@ -149,3 +149,52 @@ html{
   cursor: pointer;
   border: 2px solid black;
 }
+#viewDetail{
+    display: none;
+    z-index: 100;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 500px;
+    width: 700px;
+    border: blanchedalmond solid 1px;
+    border-radius: 14px;
+    background-color: whitesmoke;
+}
+#viewDetailHeading{
+    display: flex;
+    justify-content: space-between;
+    height: 30px;
+    width: 100%;
+}
+#viewDetailHeading h2{
+    margin: 10px 0px 0 38%;
+    color: black;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+#viewDetailHeading i{
+    cursor: pointer;
+    font-size: 55px;
+}
+#viewDetailContent{
+    display: flex;
+    margin-top: 2.2rem;
+}
+#viewDetailContent #book_image{
+    height: 400px;
+    width: 230px;
+    margin: 10px 0 0 15px;
+    border: solid blanchedalmond  1px;
+    border-radius: 12px;
+    background-color: skyblue;
+}
+#bookDetails{
+    display: flex;
+    flex-direction: column;
+/*     justify-content: center; */
+    margin: 20px 0 0 20px;
+}
+
+

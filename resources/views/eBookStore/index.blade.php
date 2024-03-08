@@ -262,6 +262,22 @@
     </div>
     <!-- Categories End -->
 
+<!-- view details of book -->
+    <div id="viewDetail">
+        <div id="viewDetailHeading">
+            <h2>Book Details</h2>
+            <i id="closeDetailModal" class='bx bx-x'></i>
+        </div>
+        <div id="viewDetailContent">
+            <img src="" id="book_image">
+            <div id="bookDetails">
+                <h5>Book Title</h5>
+                <p>Book price</p>
+                <h6>Book Descriptions</h6>
+            </div>
+        </div>
+    </div>
+
 <!-- addToCart or buyMore books -->
     <div id="addToCartModalContent">
         <div id="addToCartModal" class="addToCart">
@@ -306,7 +322,13 @@
                             <div class="flex-grow-1"></div>
                         </div>
                         <div class="card-footer d-flex justify-content-between bg-light border">
-                            <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            <a href="#"
+                                data-title="{{ $book->title }}"
+                                data-price="{{ $book->price }}"
+                                data-description="{{ $book->description}}"
+                                data-image="{{ asset($book->image) }}"
+                                class="viewDetailBtn btn btn-sm text-dark p-0">
+                                <i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
                             <a href="#"
                                 data-title="{{ $book->title }}"
                                 data-price="{{ $book->price }}"
@@ -356,8 +378,13 @@
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href=""
+                        <a href="#"
+                            data-title="{{ $book->title }}"
+                            data-price="{{ $book->price }}"
+                            data-description="{{ $book->description}}"
+                            data-image="{{ asset($book->image) }}"
+                            class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="#"
                             data-title="{{ $book->title }}"
                             data-price="{{ $book->price }}"
                             data-image="{{ asset($book->image) }}"
@@ -383,8 +410,13 @@
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href=""
+                        <a href="#"
+                            data-title="{{ $book->title }}"
+                            data-price="{{ $book->price }}"
+                            data-description="{{ $book->description}}"
+                            data-image="{{ asset($book->image) }}"
+                            class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="#"
                         data-title="{{ $book->title }}"
                         data-price="{{ $book->price }}"
                         data-image="{{ asset($book->image) }}"
@@ -473,8 +505,13 @@
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href=""
+                        <a href="#"
+                            data-title="{{ $book->title }}"
+                            data-price="{{ $book->price }}"
+                            data-description="{{ $book->description}}"
+                            data-image="{{ asset($book->image) }}"
+                            class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="#"
                             data-title="{{ $book->title }}"
                             data-price="{{ $book->price }}"
                             data-image="{{ asset($book->image) }}"
@@ -498,8 +535,13 @@
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href=""
+                        <a href="#"
+                            data-title="{{ $book->title }}"
+                            data-price="{{ $book->price }}"
+                            data-description="{{ $book->description}}"
+                            data-image="{{ asset($book->image) }}"
+                        class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="#"
                         data-title="{{ $book->title }}"
                         data-price="{{ $book->price }}"
                         data-image="{{ asset($book->image) }}"
@@ -523,8 +565,13 @@
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href=""
+                        <a href="#"
+                            data-title="{{ $book->title }}"
+                            data-price="{{ $book->price }}"
+                            data-description="{{ $book->description}}"
+                            data-image="{{ asset($book->image) }}"
+                            class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="#"
                         data-title="{{ $book->title }}"
                         data-price="{{ $book->price }}"
                         data-image="{{ asset($book->image) }}"
@@ -548,8 +595,13 @@
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href=""
+                        <a href="#"
+                            data-title="{{ $book->title }}"
+                            data-price="{{ $book->price }}"
+                            data-description="{{ $book->description}}"
+                            data-image="{{ asset($book->image) }}"
+                        class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="#"
                             data-title="{{ $book->title }}"
                             data-price="{{ $book->price }}"
                             data-image="{{ asset($book->image) }}"
@@ -583,8 +635,13 @@
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href=""
+                        <a href="#"
+                            data-title="{{ $book->title }}"
+                            data-price="{{ $book->price }}"
+                            data-description="{{ $book->description}}"
+                            data-image="{{ asset($book->image) }}"
+                        class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="#"
                         data-title="{{ $book->title }}"
                         data-price="{{ $book->price }}"
                         data-image="{{ asset($book->image) }}"
@@ -618,8 +675,13 @@
                         </div>
                     </div>
                     <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href=""
+                        <a href="#"
+                            data-title="{{ $childreanBook->title }}"
+                            data-price="{{ $childreanBook->price }}"
+                            data-description="{{ $childreanBook->description}}"
+                            data-image="{{ asset($childreanBook->image) }}"
+                            class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        <a href="#"
                         data-title="{{ $childreanBook->title }}"
                         data-price="{{ $childreanBook->price }}"
                         data-image="{{ asset($childreanBook->image) }}"
