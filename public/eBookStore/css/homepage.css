@@ -32,6 +32,7 @@ html{
 .books:hover{
     transform: scale(1.1);
 }
+/*  FOR USER PROFILE INFORMATIONS & SETTING */
 #profileModal{
     display: none;
     position: absolute;
@@ -61,7 +62,7 @@ html{
     cursor: pointer;
 }
 
-
+/* FOR ADD TO CART MODAL */
 /* #addToCartModalContent{
     height: 100vh;
     width: 100vw;
@@ -149,6 +150,7 @@ html{
   cursor: pointer;
   border: 2px solid black;
 }
+/*  FOR VIEW DETAILS MODAL */
 #viewDetail{
     display: none;
     z-index: 100;
