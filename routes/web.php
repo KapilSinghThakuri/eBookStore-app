@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\eBookStore\CartController;
 use App\Http\Controllers\eBookStore\HomeController;
@@ -27,10 +26,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+// Route::group(['middleware'=>'Admin_verify'],function(){
     Route::get('/Home',[HomeController::class,'index'])->name('homepage');
 
-// Route::group(['middleware'=>'Admin_verify'],function(){
     Route::get('/shopDetail',[ShopDetailController::class,'index'])->name('shopdetail');
 
     Route::get('/shoppingCart',[CartController::class,'index'])->name('shoppingcart');
@@ -51,48 +49,43 @@ Route::get('/', function () {
     Route::get('/logout',[RegisterController::class,'logout'])->name('logout');
 // });
 
-    // For RegistrationPages Routing
+// For RegistrationPages Routing
 // Route::group(['middleware'=>'guest'],function(){
+Route::middleware('Loggedin_verify')->group(function(){
+    Route::get('/login',[LogInController::class,'index'])->name('login');
+    Route::post('/login',[LogInController::class,'store'])->name('login');
 
-    Route::get('/login',[LogInController::class,'index'])->name('login')->middleware('Loggedin_verify');
-    Route::post('/login',[LogInController::class,'store'])->name('login')->middleware('Loggedin_verify');
-
-    Route::get('/register',[RegisterController::class,'index'])->name('register')->middleware('Loggedin_verify');
-    Route::post('/register',[RegisterController::class,'store'])->name('register')->middleware('Loggedin_verify');
+    Route::get('/register',[RegisterController::class,'index'])->name('register');
+    Route::post('/register',[RegisterController::class,'store'])->name('register');
+});
 // });
 
 // Admin Panel Routing
-Route::get('/AdminDashboard',[AdminDashboardController::class,'index'])->middleware('Admin_verify');
+Route::middleware('Admin_verify')->group(function(){
+    Route::get('/AdminDashboard',[AdminDashboardController::class,'index']);
+    Route::get('/AdminDashboard/Category/Create',[CategoryController::class,'create']);
+    Route::post('/AdminDashboard/Category/Store',[CategoryController::class,'store']);
 
-    // Category part
-    Route::get('/AdminDashboard/Category/Create',[CategoryController::class,'create'])->middleware('Admin_verify');
-    Route::post('/AdminDashboard/Category/Store',[CategoryController::class,'store'])->middleware('Admin_verify');
-    Route::get('/AdminDashboard/Book/Create',[BookController::class,'create'])->middleware('Admin_verify');
-    Route::post('/AdminDashboard/Book/Store',[BookController::class,'store'])->middleware('Admin_verify');
-
-
-// For Testing
-Route::get('/UserDetails',[UserController::class,'getUserDetails']);
+    Route::get('/AdminDashboard/Book/Create',[BookController::class,'create']);
+    Route::post('/AdminDashboard/Book/Store',[BookController::class,'store']);
+});
 
 
-    // For FooterPages Routing
+// For Testing...
+    Route::get('/UserDetails',[UserController::class,'getUserDetails']);
 
+
+// For FooterPages Routing
     Route::get('/refundPolicy',[refundPolicyController::class,'index']);
-
     Route::get('/aboutUs',[AboutUsController::class,'index']);
-
     Route::get('/privacyPolicy',[PrivacyController::class,'index']);
-
     Route::get('/termCondition',[TermConditionController::class,'index']);
 
-    // For TopbarPages Routing
-
+// For TopbarPages Routing
     Route::get('/FAQ',[FAQController::class,'index']);
-
     Route::get('/help',[helpController::class,'index']);
-
     Route::get('/support',[supportController::class,'index']);
-
+// For not found error
     Route::fallback(function(){
         return "<h1> Page not found !!! </h1>";
     });
