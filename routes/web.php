@@ -27,14 +27,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//  eBookStore Routing 
+
+    Route::get('/Home',[HomeController::class,'index'])->name('homepage');
 
 // Route::group(['middleware'=>'Admin_verify'],function(){
-    Route::get('/Home',[HomeController::class,'index']);
+    Route::get('/shopDetail',[ShopDetailController::class,'index'])->name('shopdetail');
 
-    Route::get('/shopDetail',[ShopDetailController::class,'index']);
-
-    Route::get('/shoppingCart',[CartController::class,'index']);
+    Route::get('/shoppingCart',[CartController::class,'index'])->name('shoppingcart');
     // for removing cart items from cart table
     Route::DELETE('/shoppingCart/{id}',[CartController::class,'destroy']);
 
@@ -43,11 +42,11 @@ Route::get('/', function () {
     // for counting the cart items
     Route::get('/getCartItemCount', [ShoppingCartController::class, 'getCartItemCount']);
 
-    Route::get('/checkOut',[CheckOutController::class,'index']);
+    Route::get('/checkOut',[CheckOutController::class,'index'])->name('checkout');
     // for saving the orders details to order table
     Route::post('/checkOut/orderSubmitting',[CheckOutController::class,'store']);
 
-    Route::get('/contact',[ContactController::class,'index']);
+    Route::get('/contact',[ContactController::class,'index'])->name('contact');
 
     Route::get('/logout',[RegisterController::class,'logout'])->name('logout');
 // });
@@ -94,36 +93,6 @@ Route::get('/UserDetails',[UserController::class,'getUserDetails']);
 
     Route::get('/support',[supportController::class,'index']);
 
-
-
-
-
-
-// USING Prefix Routing with Controllers
-
-// Route::prefix('eBookStore')->group( function(){
-    
-//     Route::controller(App\Http\Controllers\eBookStore\HomeController::class)->group(function (){
-//         Route::get('/homePage','index');
-//     });
-
-//     Route::controller(App\Http\Controllers\eBookStore\ShopDetailController::class)->group(function (){
-//         Route::get('/shopDetail','index');
-//     });
-
-//     Route::controller(App\Http\Controllers\eBookStore\CartController::class)->group(function (){
-//         Route::get('/shoppingCart','index');
-//     });
-
-//     Route::controller(App\Http\Controllers\eBookStore\CheckOutController::class)->group(function (){
-//         Route::get('/checkOut','index');
-//     });
-
-//     Route::controller(App\Http\Controllers\eBookStore\ContactController::class)->group(function (){
-//         Route::get('/contact','index');
-//     });
-
-//     Route::controller(App\Http\Controllers\eBookStore\LogInController::class)->group(function (){
-//         Route::get('/login','index');
-//     });
-// });
+    Route::fallback(function(){
+        return "<h1> Page not found !!! </h1>";
+    });

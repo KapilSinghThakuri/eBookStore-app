@@ -2,7 +2,7 @@
  <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
         <div class="row px-xl-5 pt-5">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
-                <a href="{{ url('/Home') }}" class="text-decoration-none">
+                <a href="{{ route('homepage') }}" class="text-decoration-none">
                     <h1 class="mb-4 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border border-white px-3 mr-1">E</span>Books</h1>
                 </a>
                 <p>Dolore erat dolor sit lorem vero amet. Sed sit lorem magna, ipsum no sit erat lorem et magna ipsum dolore amet erat.</p>
@@ -25,11 +25,11 @@
                     <div class="col-md-4 mb-5">
                         <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-dark mb-2" href="{{ url('/Home') }}"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-dark mb-2" href="{{ url('/shopDetail') }}"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
-                            <a class="text-dark mb-2" href="{{ url('/shoppingCart') }}"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                            <a class="text-dark mb-2" href="{{ url('/checkOut') }}"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                            <a class="text-dark" href="{{ url('/contact') }}"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                            <a class="text-dark mb-2" href="{{ route('homepage') }}"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <a class="text-dark mb-2" href="{{ route('shopdetail') }}"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
+                            <a class="text-dark mb-2" href="{{ route('shoppingcart') }}"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
+                            <a class="text-dark mb-2" href="{{ route('checkout') }}"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
+                            <a class="text-dark" href="{{ route('contact') }}"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
                         </div>
                     </div>
                     <div class="col-md-4 mb-5">
@@ -74,14 +74,24 @@
     <!-- JavaScript Libraries -->
     <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script> -->
-    <script src="eBookStore/lib/easing/easing.min.js"></script>
-    <script src="eBookStore/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- <script src="eBookStore/lib/easing/easing.min.js"></script> -->
+    <script src="{{ asset('eBookStore/lib/easing/easing.min.js')}}"></script>
+
+    <!-- <script src="eBookStore/lib/owlcarousel/owl.carousel.min.js"></script> -->
+    <script src="{{ asset('eBookStore/lib/owlcarousel/owl.carousel.min.js')}}"></script>
 
     <!-- Contact Javascript File -->
-    <script src="eBookStore/mail/jqBootstrapValidation.min.js"></script>
-    <script src="eBookStore/mail/contact.js"></script>
+    <!-- <script src="eBookStore/mail/jqBootstrapValidation.min.js"></script> -->
+    <script src="{{ asset('eBookStore/mail/jqBootstrapValidation.min.js')}}"></script>
+
+    <!-- <script src="eBookStore/mail/contact.js"></script> -->
+    <script src="{{ asset('eBookStore/mail/contact.js')}}"></script>
+
 
     <!-- Main Javascript -->
-    <script src="eBookStore/js/main.js"></script>
+    <!-- <script src="eBookStore/js/main.js"></script> -->
+    <script src="{{ asset('eBookStore/js/main.js') }}"></script>
+
 </body>
 </html>

@@ -5,8 +5,6 @@
     <meta charset="utf-8">
     <title> eBookStore </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
 
     <!-- x-csrf tokens -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -71,7 +69,7 @@
         </div>
         <div class="row align-items-center py-3 px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
-                <a href="{{ url('/Home') }}" class="text-decoration-none">
+                <a href="{{ route('homepage') }}" class="text-decoration-none">
                     <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Books</h1>
                 </a>
             </div>
@@ -136,7 +134,7 @@
             </div>
             <div class="col-lg-9">
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-                    <a href="{{ url('/Home') }}" class="text-decoration-none d-block d-lg-none">
+                    <a href="{{ route('homepage') }}" class="text-decoration-none d-block d-lg-none">
                         <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Books</h1>
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -144,17 +142,17 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
-                            <a href="{{ url('/Home') }}" class="nav-item nav-link active">Home</a>
+                            <a href="{{ route('homepage') }}" class="nav-item nav-link active">Home</a>
                             <!-- <a href="shop.html" class="nav-item nav-link">Shop</a> -->
-                            <a href="{{ url('/shopDetail') }}" class="nav-item nav-link">Shop Detail</a>
+                            <a href="{{ route('shopdetail') }}" class="nav-item nav-link">Shop Detail</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="{{ url('/shoppingCart') }}" class="dropdown-item">Shopping Cart</a>
-                                    <a href="{{ url('/checkOut') }}" class="dropdown-item">Checkout</a>
+                                    <a href="{{ route('shoppingcart') }}" class="dropdown-item">Shopping Cart</a>
+                                    <a href="{{ route('checkout') }}" class="dropdown-item">Checkout</a>
                                 </div>
                             </div>
-                            <a href="{{ url('/contact') }}" class="nav-item nav-link">Contact</a>
+                            <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
                         </div>
 
                         <div class="navbar-nav ml-auto py-0">
@@ -167,9 +165,9 @@
                                     <a href="#" id="profileBtn" class="nav-item nav-link">{{ $userName }} </a>
                                     <a href="{{ url('/logout') }}" class="nav-item nav-link">Logout</a>
                                 @else
-                                    <a href="{{ url('/login') }}" class="nav-item nav-link">Login</a>
+                                    <a href="{{ route('login') }}" class="nav-item nav-link">Login</a>
                                     @if (Route::has('register'))
-                                    <a href="{{ url('/register') }}" class="nav-item nav-link">Register</a>
+                                    <a href="{{ route('register') }}" class="nav-item nav-link">Register</a>
                                     @endif
                                 @endauth
                             </div>
@@ -461,7 +459,7 @@
     <!-- Offer End -->
 
     <!-- Subscribe for membership Start -->
-    <div class="container-fluid bg-secondary my-5" style="background-image: url( eBookStore/img/uniqueCover.jpeg );">
+        <div class="container-fluid bg-secondary my-5" style="background-image: url('{{ asset('eBookStore/img/uniqueCover.jpeg') }}');">
         <div class="row justify-content-md-center py-5 px-xl-5">
             <div class="col-md-6 col-12 py-5">
                 <div class="text-center mb-2 pb-2">
@@ -703,6 +701,8 @@
                 <div class="owl-carousel vendor-carousel">
                     <div class="vendor-item border p-4">
                         <img src="/eBookStore/img/vendor-1.jpg" alt="">
+                        <!-- <img src="{{ asset('eBookStore/img/vendor-1.jpg') }}" alt=""> -->
+
                     </div>
                     <div class="vendor-item border p-4">
                         <img src="/eBookStore/img/vendor-2.jpg " alt="">
@@ -736,7 +736,7 @@
     <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
         <div class="row px-xl-5 pt-5">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
-                <a href="/Home" class="text-decoration-none">
+                <a href="{{ route('homepage') }}" class="text-decoration-none">
                     <h1 class="mb-4 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border border-white px-3 mr-1">E</span>Books</h1>
                 </a>
                 <p>Dolore erat dolor sit lorem vero amet. Sed sit lorem magna, ipsum no sit erat lorem et magna ipsum dolore amet erat.</p>
@@ -758,7 +758,7 @@
                     <div class="col-md-4 mb-5">
                         <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
                         <div class="d-flex flex-column justify-content-start">
-                            <a class="text-dark mb-2" href="/Home"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <a class="text-dark mb-2" href="{{ route('homepage') }}"><i class="fa fa-angle-right mr-2"></i>Home</a>
                             <a class="text-dark mb-2" href="/shopDetail"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
                             <a class="text-dark mb-2" href="/shoppingCart"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
                             <a class="text-dark mb-2" href="/checkOut"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
@@ -804,15 +804,24 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 
-    <script src="eBookStore/lib/easing/easing.min.js"></script>
-    <script src="eBookStore/lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- <script src="eBookStore/lib/easing/easing.min.js"></script> -->
+    <script src="{{ asset('eBookStore/lib/easing/easing.min.js')}}"></script>
+
+    <!-- <script src="eBookStore/lib/owlcarousel/owl.carousel.min.js"></script> -->
+    <script src="{{ asset('eBookStore/lib/owlcarousel/owl.carousel.min.js')}}"></script>
+
 
     <!-- Contact Javascript File -->
-    <script src="eBookStore/mail/jqBootstrapValidation.min.js"></script>
-    <script src="eBookStore/mail/contact.js"></script>
+    <!-- <script src="eBookStore/mail/jqBootstrapValidation.min.js"></script> -->
+    <script src="{{ asset('eBookStore/mail/jqBootstrapValidation.min.js')}}"></script>
+
+    <!-- <script src="eBookStore/mail/contact.js"></script> -->
+    <script src="{{ asset('eBookStore/mail/contact.js')}}"></script>
+
 
     <!-- Main Javascript -->
-    <script src="eBookStore/js/main.js"></script>
+    <!-- <script src="eBookStore/js/main.js"></script> -->
+    <script src="{{ asset('eBookStore/js/main.js') }}"></script>
 
 
 </body>
