@@ -6,8 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-
-class IsLoggedin
+class AlreadyLoggedIn
 {
     /**
      * Handle an incoming request.
@@ -18,9 +17,20 @@ class IsLoggedin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (!Auth::check()) {
-            return redirect()->route('login');
+        if ($request->is('login') || $request->is('register')) {
+            if (Auth::check()) {
+                return redirect('/Home');
+            }
         }
         return $next($request);
+
+        // if (Auth::check())
+        // {
+        //     return redirect('/Home');
+        // }
+        // else
+        // {
+        //     return $next($request);
+        // }
     }
 }

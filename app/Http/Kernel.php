@@ -66,5 +66,6 @@ class Kernel extends HttpKernel
 
         'Admin_verify' => \App\Http\Middleware\AdminAccess::class,
         'Loggedin_verify' => \App\Http\Middleware\IsLoggedin::class,
+        'alreadyLoggedIn_verify' => \App\Http\Middleware\AlreadyLoggedIn::class,
     ];
 }

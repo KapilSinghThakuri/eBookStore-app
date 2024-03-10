@@ -26,8 +26,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::group(['middleware'=>'Admin_verify'],function(){
-    Route::get('/Home',[HomeController::class,'index'])->name('homepage');
+    Route::get('/Home',[HomeController::class,'index'])->name('homepage')->middleware('Loggedin_verify');
 
     Route::get('/shopDetail',[ShopDetailController::class,'index'])->name('shopdetail');
 
@@ -47,18 +46,15 @@ Route::get('/', function () {
     Route::get('/contact',[ContactController::class,'index'])->name('contact');
 
     Route::get('/logout',[RegisterController::class,'logout'])->name('logout');
-// });
 
 // For RegistrationPages Routing
-// Route::group(['middleware'=>'guest'],function(){
-Route::middleware('Loggedin_verify')->group(function(){
+Route::middleware('alreadyLoggedIn_verify')->group(function(){
     Route::get('/login',[LogInController::class,'index'])->name('login');
     Route::post('/login',[LogInController::class,'store'])->name('login');
 
     Route::get('/register',[RegisterController::class,'index'])->name('register');
     Route::post('/register',[RegisterController::class,'store'])->name('register');
 });
-// });
 
 // Admin Panel Routing
 Route::middleware('Admin_verify')->group(function(){
