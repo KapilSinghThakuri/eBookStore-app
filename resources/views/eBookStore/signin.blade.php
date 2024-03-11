@@ -2,22 +2,15 @@
 @extends('eBookStore.layout.main')
 
 @section('main')
+<!-- Login section start -->
 
-<!-- @if (Route::has('login'))
-
-        @auth
-           <div class="alert alert-warning">You're already Loggedin. </div>
-        @else -->
-
-        <!-- Login section start -->
-    <div class="container" >
+    <div class="signinContainer">
         @if (session('fail'))
-            <div class="alert alert-danger">
-                {{ session('fail') }}
-            </div>
+        <div class="alert alert-danger" style="width: 450px; left: 30%; border-radius: 12px;">
+            {{ session('fail') }}
+        </div>
         @endif
         <div class="wrapper" style="background-color: #D19C97;">
-
             <form action="{{ url('/login')}}" method="post" title="Login">
                 @csrf
                 <h1>Login</h1>
@@ -54,8 +47,4 @@
         </div>
     </div>
 <!-- Login section end -->
-<!--         @endauth
-
-    @endif -->
-
 @endsection

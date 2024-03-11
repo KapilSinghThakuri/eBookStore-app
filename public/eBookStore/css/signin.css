@@ -13,15 +13,14 @@ body{
     background-size: cover;
     min-height: 100vh;
 }
-.container{
+.signinContainer{
     width: 100%;
-    display: flex;
-    justify-content: center;
+    margin-top: 60px;
 }
 .wrapper{
     width: 450px;
     height: 80vh;
-    margin-top: 60px;
+    margin-left: 30%;
     background: transparent;
     border: solid rgba(255, 255, 255, .2);
     backdrop-filter: blur(20px);
@@ -182,14 +181,39 @@ body{
 
 
 /* Registrations Page Styles start here */
-
-/* .form-control::placeholder {
-    color: white;
-} */ 
-
 #register-card{
     box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 2px rgba(0, 0, 0, .19);
     width: 450px;
     border-radius: 8px;
     background-color: whitesmoke;
+}
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+    .wrapper {
+        width: 80%; /* Adjust width for smaller screens */
+        margin-left: 10%; /* Adjust margin */
+        padding: 20px; /* Adjust padding */
+    }
+    .input-box {
+        width: 100%; /* Adjust input box width */
+    }
+    .google {
+        width: 250px; /* Adjust Google button width */
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    .wrapper {
+        width: 90%;
+        margin-left: 5%;
+        padding: 15px;
+    }
+    .input-box {
+        width: 100%;
+    }
+    .google {
+        width: 200px;
+    }
 }
