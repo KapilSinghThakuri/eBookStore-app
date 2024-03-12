@@ -20,7 +20,7 @@ class UserController extends Controller
     // for the test only
         if (Auth::check()) {
             $user = Auth::user();
-            dd($user);
+            // dd($user);
             $userName = $user->name;
             $userEmail = $user->email;
         }
@@ -40,7 +40,8 @@ class UserController extends Controller
                         ->select('books.*')->where('user_id', Auth::user()->id) ->get();
     $cartItems = ShoppingCart::where('user_id', Auth::user()->id)->get();
     // dd($ShoppingCartItems,$cartItems);
-
+    $userInfo = User::where('id', Auth::user()->id)->get('email');
+    dd($userInfo);
     }
 }
 

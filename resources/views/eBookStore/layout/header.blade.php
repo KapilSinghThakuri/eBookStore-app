@@ -171,7 +171,6 @@
                                     <a href="{{ url('/AdminDashboard') }}" class="nav-item nav-link">AdminHome</a>
                                     @endif
                                     <a href="#" id="profileBtn"  class="nav-item nav-link">{{$userName}}</a>
-                                    <a href="{{ url('/logout') }}" class="nav-item nav-link">Logout</a>
                                 @else
                                     <a href="{{ url('/login') }}" class="nav-item nav-link">Login</a>
                                     @if (Route::has('register'))
@@ -190,6 +189,18 @@
                         <h5>{{$userName}}</h5>
                         <i id="cancelBtn" class='bx bx-x'></i>
                     </nav>
+                    <div id="profilePicture">
+                        <div id="profile-img"></div>
+                    </div>
+                    <div id="profile-info">
+                        <h5>{{ $userName }}</h5>
+                        <!--  -->
+                    </div>
+                    <div id="logout-btn">
+                        @auth
+                            <a href="{{ url('/logout') }}">Logout</a>
+                        @endauth
+                    </div>
                 </div>
 
             </div>

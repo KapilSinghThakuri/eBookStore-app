@@ -17,6 +17,7 @@ class HomeController extends Controller
         $religionSpirituality = Category::orderBy('id')->take(4)->get();
         $businessEssential = Category::orderBy('id')->skip(4)->take(4)->get();
         $remainCategories = Category::orderBy('id')->skip(8)->take(6)->get();
+        $userInfo = User::where('id', Auth::user()->id)->get('email');
 
         $highlyRecommendedBooks = $this->getHighlyRecomenededBooks();
         // dd($highlyRecommendedBooks->all());
@@ -32,7 +33,7 @@ class HomeController extends Controller
         // $cartItemCount = ShoppingCart::where('user_id', Auth::user()->id)->count();
 
         return view('eBookStore.index',
-            compact('religionSpirituality','businessEssential','remainCategories','highlyRecommendedBooks',
+            compact('userInfo','religionSpirituality','businessEssential','remainCategories','highlyRecommendedBooks',
                 'top10ComingSoonBooks','mysteryThrillerBooks','childrenBooks','buddhismBooks',
                 'hinduismBooks','islamBooks','christianityBooks','historyBiographyBooks',
                 'fictionFantasyBooks'));

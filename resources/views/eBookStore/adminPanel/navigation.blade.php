@@ -12,10 +12,6 @@
               <li class="nav-item">
                 <a class="nav-link" id="profileBtn" style="color: white;" href="#">{{ $userName }}</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" style="color: white;" href="{{ url('/logout') }}">Logout</a>
-              </li>
-
               @else
             @endauth
         @endif
@@ -29,6 +25,17 @@
               <h5>{{ $userName }}</h5>
               <i id="cancelBtn" class='bx bx-x'></i>
           </nav>
+          <div id="profilePicture">
+              <div id="profile-img"></div>
+          </div>
+          <div id="profile-info">
+              <h5>{{ $userName }}</h5>
+          </div>
+          <div id="logout-btn">
+              @auth
+                  <a href="{{ url('/logout') }}">Logout</a>
+              @endauth
+          </div>
       </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

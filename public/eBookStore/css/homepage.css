@@ -61,6 +61,62 @@ html{
     font-size: 30px;
     cursor: pointer;
 }
+#profilePicture{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+#profilePicture #profile-img{
+    height: 100px;
+    width: 100px;
+    border: solid blanchedalmond 2px;
+    border-radius: 50px;
+    background-image: url('/eBookStore/img/ProfileIMG.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+#profile-info{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+}
+#profile-info h5{
+    text-align: center;
+    font-size: 1em;
+    color: black;
+    font-family: sans-serif;
+}
+#profile-info p{
+    text-align: center;
+    font-size: 1em;
+    font-family: sans-serif;
+    color: black;
+}
+#logout-btn{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 8px;
+    background-color: darkcyan;
+}
+#logout-btn a{
+    text-decoration: none;
+    font-size: 1.4em;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: white;
+    transition: font-size 0.1s ease;
+}
+#logout-btn a:hover{
+    font-size: 1.5em;
+}
 
 /* FOR ADD TO CART MODAL */
 /* #addToCartModalContent{
