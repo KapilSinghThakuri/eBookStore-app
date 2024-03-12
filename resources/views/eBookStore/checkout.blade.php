@@ -139,40 +139,14 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="card border-secondary mb-5">
-                    <div class="card-header bg-secondary border-0">
-                        <h4 class="font-weight-semi-bold m-0">Payment</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="paypal">
-                                <label class="custom-control-label" for="paypal">e-Sewa</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="directcheck">
-                                <label class="custom-control-label" for="directcheck">Mobile Banking</label>
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="custom-control custom-radio">
-                                <input type="radio" class="custom-control-input" name="payment" id="banktransfer">
-                                <label class="custom-control-label" for="banktransfer">Cash On Delivery</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer border-secondary bg-transparent">
-                        <button class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Place Order</button>
-                    </div>
-                </div> -->
             </div>
         </div>
     </div>
     <!-- Checkout End -->
     <script type="text/javascript">
         $(document).ready(function(){
+            var totalAmountWithShipping;
+
             function calculatingTotalAmount() {
                 var totalAmount = 0;
                 $('.checkoutItems').each(function () {
@@ -180,7 +154,7 @@
                     var numAmount = parseFloat(strAmount.replace('Rs.','').trim());
                     totalAmount += numAmount;
                 });
-                var totalAmountWithShipping = totalAmount + 110;
+                totalAmountWithShipping = totalAmount + 110;
                 $('.subTotalAmt').text('Rs.'+ totalAmount);
                 $('.totalAmount').text('Rs.'+ totalAmountWithShipping);
                 $('.totalPaybleAmt').val(totalAmountWithShipping); // Set total amount to hidden input field
@@ -228,8 +202,6 @@
                             $('.success_message').addClass('alert alert-success');
                             $('.success_message').text(response.success);
                             $('#order_items').find('input').val("");
-                            // Reset button text on error
-                            $orderPlaceBtn.text('Place Order');
                         }
                         else
                         {

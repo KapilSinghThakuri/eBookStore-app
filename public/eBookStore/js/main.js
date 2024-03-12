@@ -131,10 +131,7 @@ cancelBtn.addEventListener('click',function(event){
     //         console.log("Modal Button Clicked");
     //     });
     // });
-    var closeDetailModal = document.getElementById('closeDetailModal');
-    closeDetailModal.onclick = function(){
-        viewDetail.style.display = 'none';
-    };
+
 // This is just for displying modal with associated data
     // Add event listener to each "View Book Details" button
     document.querySelectorAll('.viewDetailBtn').forEach(function(button) {
@@ -157,7 +154,10 @@ cancelBtn.addEventListener('click',function(event){
             document.getElementById('viewDetail').style.display = 'block';
         });
     });
-
+    var closeDetailModal = document.getElementById('closeDetailModal');
+        closeDetailModal.onclick = function(){
+            viewDetail.style.display = 'none';
+        };
 
 // FOR ADD TO CART MODAL
 var selectedBookId;

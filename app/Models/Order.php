@@ -17,6 +17,7 @@ class Order extends Model
         'province',
         'city',
         'street',
+        'total_amount',
         'payment_method',
         'order_status',
         'order_date',
@@ -32,9 +33,4 @@ class Order extends Model
     {
         return $this->belongsToMany(ShoppingCart::class, 'cart_order','order_id','cart_id')->withTimestamps();
     }
-
-    // public function books()
-    // {
-    //     return $this->belongsToMany(Book::class, 'book_order','order_id','book_id')->withTimestamps();
-    // }
 }

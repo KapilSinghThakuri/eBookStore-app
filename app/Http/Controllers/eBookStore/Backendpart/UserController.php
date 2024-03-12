@@ -25,23 +25,10 @@ class UserController extends Controller
             $userEmail = $user->email;
         }
 
-    //retrieves all the books associated with the category with ID 15
-        // $highlyRecomenededBook = Category::find(15)->books;
-        // dd($highlyRecomenededBook->all());
 
-    // method="POST" action="{{ url('/checkOut/orderSubmitting')}}"
-    // $cartItems = ShoppingCart::where('user_id', Auth::user()->id)->pluck('book_id')->toArray();
-    // dd($cartItems);
-
-    // $cartIds = DB::table('shopping_carts')->select('id')->where('user_id', Auth::user()->id)->pluck('id');
-    // dd($cartIds);
-
-    $ShoppingCartItems = DB::table('shopping_carts')->join('books', 'shopping_carts.book_id', 'books.id')
-                        ->select('books.*')->where('user_id', Auth::user()->id) ->get();
-    $cartItems = ShoppingCart::where('user_id', Auth::user()->id)->get();
-    // dd($ShoppingCartItems,$cartItems);
-    $userInfo = User::where('id', Auth::user()->id)->get('email');
-    dd($userInfo);
+    $orderBookIds = ShoppingCart::where('user_id', Auth::id())->pluck('book_id')->toArray();
+    // $cartIds = DB::table('shopping_carts')->where('user_id', Auth::user()->id)->pluck('book_id');
+    dd($orderBookIds);
     }
 }
 
