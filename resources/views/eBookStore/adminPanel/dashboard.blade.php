@@ -147,8 +147,15 @@
                         $('#success_message').addClass('alert alert-success');
                         $('#success_message').text(response.success);
                         $('#addBookModal').modal('hide');
-                        $('.bookForm').find('input').val("");
+                        $('#bookForm').find('input').val(" ");
                     }
+                },
+                error: function(){
+                    console.log('Can not upload books data!!!');
+                },
+                complete: function(){
+                    $('.addBook').text('Save');
+                    $('#bookForm').find('input').val(" ");
                 }
             })
         });
