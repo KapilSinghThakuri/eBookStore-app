@@ -283,6 +283,11 @@
             <div id="bookDetails">
                 <h5>Book Title</h5>
                 <p>Book price</p>
+                <div class="mb-1">
+                    <div class="rating text-primary mr-2">
+                    </div>
+                    <small class="pt-1">(50 Reviews)</small>
+                </div>
                 <h6>Book Descriptions</h6>
             </div>
         </div>
@@ -337,6 +342,7 @@
                                 data-price="{{ $book->price }}"
                                 data-description="{{ $book->description}}"
                                 data-image="{{ asset($book->image) }}"
+                                data-rating="{{ $book->rating }}"
                                 class="viewDetailBtn btn btn-sm text-dark p-0">
                                 <i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
                             <a href="#"
@@ -392,6 +398,7 @@
                             data-title="{{ $book->title }}"
                             data-price="{{ $book->price }}"
                             data-description="{{ $book->description}}"
+                            data-rating="{{ $book->rating }}"
                             data-image="{{ asset($book->image) }}"
                             class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
                         <a href="#"
@@ -424,6 +431,7 @@
                             data-title="{{ $book->title }}"
                             data-price="{{ $book->price }}"
                             data-description="{{ $book->description}}"
+                            data-rating="{{ $book->rating }}"
                             data-image="{{ asset($book->image) }}"
                             class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
                         <a href="#"
@@ -519,6 +527,7 @@
                             data-title="{{ $book->title }}"
                             data-price="{{ $book->price }}"
                             data-description="{{ $book->description}}"
+                            data-rating="{{ $book->rating }}"
                             data-image="{{ asset($book->image) }}"
                             class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
                         <a href="#"
@@ -549,6 +558,7 @@
                             data-title="{{ $book->title }}"
                             data-price="{{ $book->price }}"
                             data-description="{{ $book->description}}"
+                            data-rating="{{ $book->rating }}"
                             data-image="{{ asset($book->image) }}"
                         class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
                         <a href="#"
@@ -579,6 +589,7 @@
                             data-title="{{ $book->title }}"
                             data-price="{{ $book->price }}"
                             data-description="{{ $book->description}}"
+                            data-rating="{{ $book->rating }}"
                             data-image="{{ asset($book->image) }}"
                             class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
                         <a href="#"
@@ -609,6 +620,7 @@
                             data-title="{{ $book->title }}"
                             data-price="{{ $book->price }}"
                             data-description="{{ $book->description}}"
+                            data-rating="{{ $book->rating }}"
                             data-image="{{ asset($book->image) }}"
                         class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
                         <a href="#"
@@ -649,6 +661,7 @@
                             data-title="{{ $book->title }}"
                             data-price="{{ $book->price }}"
                             data-description="{{ $book->description}}"
+                            data-rating="{{ $book->rating }}"
                             data-image="{{ asset($book->image) }}"
                         class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
                         <a href="#"
@@ -689,6 +702,7 @@
                             data-title="{{ $childreanBook->title }}"
                             data-price="{{ $childreanBook->price }}"
                             data-description="{{ $childreanBook->description}}"
+                            data-rating="{{ $childreanBook->rating }}"
                             data-image="{{ asset($childreanBook->image) }}"
                             class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
                         <a href="#"

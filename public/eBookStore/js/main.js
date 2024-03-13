@@ -142,6 +142,7 @@ cancelBtn.addEventListener('click',function(event){
             var bookTitle = button.getAttribute('data-title');
             var bookPrice = button.getAttribute('data-price');
             var bookImage = button.getAttribute('data-image');
+            var bookRating = button.getAttribute('data-rating');
             var bookDescription = button.getAttribute('data-description');
 
             // Populate modal with book details
@@ -150,8 +151,28 @@ cancelBtn.addEventListener('click',function(event){
             document.querySelector('#viewDetail #viewDetailContent #bookDetails p').textContent = "Rs."+ bookPrice;
             document.querySelector('#viewDetail #viewDetailContent #bookDetails h6').textContent = bookDescription;
 
-            // Show modal
-            document.getElementById('viewDetail').style.display = 'block';
+        // Showing book's rating
+        var previousRatingDiv = document.querySelector('#viewDetail #viewDetailContent #bookDetails .rating .mb-1');
+        if (previousRatingDiv) {
+            previousRatingDiv.remove();
+        }
+        const ratingDiv = document.createElement('div');
+        ratingDiv.classList.add('mb-1');
+        for (let i = 1; i <= 5; i++) {
+            const star = document.createElement('small');
+            if (i <= bookRating) {
+                star.classList.add('fas', 'fa-star'); // Full star
+            } else if (i - 0.5 === bookRating) {
+                star.classList.add('fas', 'fa-star-half-alt'); // Half-star
+            } else {
+                star.classList.add('far', 'fa-star'); // Empty star
+            }
+            ratingDiv.appendChild(star);
+        }
+        document.querySelector('#viewDetail #viewDetailContent #bookDetails .rating').appendChild(ratingDiv);
+
+        // Show modal
+        document.getElementById('viewDetail').style.display = 'block';
         });
     });
     var closeDetailModal = document.getElementById('closeDetailModal');
