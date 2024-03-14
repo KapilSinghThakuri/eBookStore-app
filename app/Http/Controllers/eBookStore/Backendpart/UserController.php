@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Book;
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\ShoppingCart;
 use Illuminate\Support\Facades\DB;
 
@@ -26,9 +27,23 @@ class UserController extends Controller
         }
 
 
-    $orderBookIds = ShoppingCart::where('user_id', Auth::id())->pluck('book_id')->toArray();
-    // $cartIds = DB::table('shopping_carts')->where('user_id', Auth::user()->id)->pluck('book_id');
-    dd($orderBookIds);
+    $ordersPersonDetails = Order::where('user_id', Auth::id())->get();
+    // $orderId = Order::where('user_id', Auth::id())->get('id');
+    $orderId = DB::table('orders')->select('id')->where('user_id', Auth::id())->first();
+    // dd($orderId);
+    // $ordersBooksDetails = Db::table('books_order')
+    //     ->join('books', 'books_order.book_id', 'books.id')
+    //     ->where(DB::table('orders')->select('id')->where('user_id', Auth::id())->first(), '=', 'books_order.order_id')
+    //     ->select('books.*')
+    //     ->get();
+
+    $ordersBooksDetails = DB::table('books_order')
+            ->join('books', 'books_order.book_id', '=', 'books.id')
+            ->join('orders', 'books_order.order_id', '=', 'orders.id')
+            ->where('orders.user_id', Auth::id())
+            ->select('books.*')
+            ->get();
+    dd($ordersBooksDetails);
     }
 }
 

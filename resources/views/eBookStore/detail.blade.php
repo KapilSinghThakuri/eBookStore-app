@@ -10,11 +10,6 @@
         <div class="d-flex flex-column align-items-center justify-content-start" style="min-height: 300px">
             <h1 class="font-weight-semi-bold text-uppercase mt-4 mb-3" 
             style="color: papayawhip;">Shop Detail</h1>
-            <!-- <div class="d-inline-flex">
-                <p class="m-0"><a href="">Home</a></p>
-                <p class="m-0 px-2">-</p>
-                <p class="m-0">Shop Detail</p>
-            </div> -->
         </div>
     </div>
 
@@ -29,18 +24,14 @@
             <div class="col-lg-5 pb-5">
                 <div id="product-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner border">
-                        <div class="carousel-item active">
-                            <img class="w-100 h-100" src="{{ url('eBookStore/img/HarryPotter.jpg') }}" alt="Image">
+                        @foreach($myOrderedBookDetails as $key => $book)
+                        <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
+                            <img class="w-100 h-100" src="{{ asset($book -> image) }}" alt="Image">
                         </div>
-                        <div class="carousel-item">
+                        @endforeach
+                        <!-- <div class="carousel-item">
                             <img class="w-100 h-100" src="{{ url('eBookStore/img/HarryPotter.jpg') }}" alt="Image">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="w-100 h-100" src="{{ url('eBookStore/img/HarryPotter.jpg') }}" alt="Image">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="w-100 h-100" src="{{ url('eBookStore/img/HarryPotter.jpg') }}" alt="Image">
-                        </div>
+                        </div> -->
                     </div>
                     <a class="carousel-control-prev" href="#product-carousel" data-slide="prev">
                         <i class="fa fa-2x fa-angle-left text-dark"></i>
@@ -52,7 +43,8 @@
             </div>
 
             <div class="col-lg-7 pb-5">
-                <h3 class="font-weight-semi-bold">HarryPotter</h3>
+                @foreach($myOrderedBookDetails as $key => $book)
+                <h3 class="font-weight-semi-bold">{{ $book->title }}</h3>
                 <div class="d-flex mb-3">
                     <div class="text-primary mr-2">
                         <small class="fas fa-star"></small>
@@ -64,28 +56,9 @@
                     <small class="pt-1">(50 Reviews)</small>
                 </div>
 
-                <h3 class="font-weight-semi-bold mb-4">$150.00</h3>
-                <p class="mb-4">Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit 
-                    clita ea. Sanc invidunt ipsum et, labore clita lorem magna lorem ut. Erat lorem duo dolor no 
-                    sea nonumy. Accus labore stet, est lorem sit diam sea et justo, amet at lorem et eirmod ipsum 
-                    diam et rebum kasd rebum.</p>
-                
-                <div class="d-flex align-items-center mb-4 pt-2">
-                    <div class="input-group quantity mr-3" style="width: 130px;">
-                        <div class="input-group-btn">
-                            <button class="btn btn-primary btn-minus" >
-                            <i class="fa fa-minus"></i>
-                            </button>
-                        </div>
-                        <input type="text" class="form-control bg-secondary text-center" value="1">
-                        <div class="input-group-btn">
-                            <button class="btn btn-primary btn-plus">
-                                <i class="fa fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Add To Cart</button>
-                </div>
+                <h3 class="font-weight-semi-bold mb-4">Rs.{{ $book->price }}</h3>
+                <p class="mb-4"> {{ $book->description }} </p>
+                @endforeach
                 <div class="d-flex pt-2">
                     <p class="text-dark font-weight-medium mb-0 mr-2">Share on:</p>
                     <div class="d-inline-flex">
@@ -105,7 +78,6 @@
                 </div>
             </div>
         </div>
-
         <div class="row px-xl-5">
             <div class="col">
                 <div class="nav nav-tabs justify-content-center border-secondary mb-4">
