@@ -84,6 +84,14 @@
                         </div>
                     </div>
                 </form>
+
+                <!-- Searched Contents Here -->
+                <!-- <div class="form-group border mt-1">
+                    <div class="card-body">
+                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod </p>
+                    </div>
+                </div> -->
+                <!-- Searched Contents End Here -->
             </div>
             <div class="col-lg-3 col-6 text-right">
                 <a href="" class="btn border">

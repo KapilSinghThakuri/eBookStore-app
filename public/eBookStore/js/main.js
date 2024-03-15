@@ -269,6 +269,22 @@ function updateCartItemCount(){
     });
 }
 
+// document.addEventListener('DOMContentLoaded', function() {
+//         const addToCartButtons = document.querySelectorAll('.addToCartBtn');
+
+//         addToCartButtons.forEach(function(button) {
+//             button.addEventListener('click', function(event) {
+//                 // Prevent the default action of the link
+//                    event.preventDefault();
+
+//                 // Check if the user is authenticated
+//                 @if(auth()->guest())
+//                     alert('Please login first to add items to your cart.');
+//                 @endif
+//             });
+//         });
+//     });
+
 
 
 
