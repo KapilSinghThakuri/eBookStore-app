@@ -6,7 +6,7 @@
 
     <div class="signinContainer">
         @if (session('fail'))
-        <div class="alert alert-danger" style="width: 450px; left: 30%; border-radius: 12px;">
+        <div class="alert alert-danger" style="width: 450px; left: 33%; border-radius: 12px;">
             {{ session('fail') }}
         </div>
         @endif
@@ -15,7 +15,7 @@
                 @csrf
                 <h1>Login</h1>
                 <div class="input-box">
-                    <input type="text" name="email" value="{{old('email')}}" autofocus placeholder="Username or email">
+                    <input type="text" name="email" value="{{old('email')}}" autofocus placeholder="Email address">
                     <i class='bx bxs-user'></i>
                     @error('email')
                     <span class="text-danger">{{ $message }}</span>

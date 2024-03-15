@@ -10,11 +10,6 @@
         <div class="d-flex flex-column align-items-center justify-content-start" style="min-height: 300px">
             <h1 class="font-weight-semi-bold text-uppercase mt-4 mb-3"
             style="color: papayawhip;">Shopping Cart</h1>
-            <!-- <div class="d-inline-flex">
-                <p class="m-0"><a href="">Home</a></p>
-                <p class="m-0 px-2">-</p>
-                <p class="m-0">Shopping Cart</p>
-            </div> -->
         </div>
     </div>
     <!-- Page Header End -->
@@ -35,7 +30,7 @@
                         </tr>
                     </thead>
                     <tbody class="tablebody align-middle">
-                        @foreach($cartDetails as $itemDetail)
+                        @forelse($cartDetails as $itemDetail)
                         <tr class="tablerow">
                             <td class="d-flex align-items-center">
                                 <img class="img-fluid" style="width: 20%; height: auto;" src="{{ asset($itemDetail -> image) }}">
@@ -44,22 +39,6 @@
                                     <p>Rs.{{ $itemDetail->price }}</p>
                                 </div>
                             </td>
-                            <!-- <td class="align-middle">$150</td> -->
-                            <!-- <td class="align-middle">
-                                <div class="input-group quantity mx-auto" style="width: 100px;">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-minus" >
-                                        <i class="fa fa-minus"></i>
-                                        </button>
-                                    </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary text-center" value="1">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-primary btn-plus">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </td> -->
                             <td class="align-middle cartItem_price">Rs.{{ $itemDetail->price }}</td>
 
                             <td class="align-middle">
@@ -68,8 +47,14 @@
                                     <i class="fa fa-times"></i>
                                 </a>
                             </td>
+                            @empty
+                            <tr>
+                                <td colspan="3">
+                                    <h3 class="fs-5">Please select your best book first !!!</h3>
+                                </td>
+                            </tr>
                         </tr>
-                        @endforeach
+                        @endforelse
                     </tbody>
                 </table>
             </div>
