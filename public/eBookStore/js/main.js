@@ -268,23 +268,26 @@ function updateCartItemCount(){
         }
     });
 }
+$('#searchBook').on('keyup', function(event) {
+    event.preventDefault();
+    var searchText = $(this).val();
 
-// document.addEventListener('DOMContentLoaded', function() {
-//         const addToCartButtons = document.querySelectorAll('.addToCartBtn');
+    if (searchText.trim() !== '') {
+        $('#searchOverlay').show();
 
-//         addToCartButtons.forEach(function(button) {
-//             button.addEventListener('click', function(event) {
-//                 // Prevent the default action of the link
-//                    event.preventDefault();
-
-//                 // Check if the user is authenticated
-//                 @if(auth()->guest())
-//                     alert('Please login first to add items to your cart.');
-//                 @endif
-//             });
-//         });
-//     });
-
+        $.ajax({
+            url: '/searchProducts',
+            type: 'GET',
+            data: {'searchBook': searchText },
+            success: function(data) {
+                $('#searchContent').html(data);
+            }
+        });
+    }
+    else {
+        $('#searchOverlay').hide();
+    }
+});
 
 
 

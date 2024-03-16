@@ -71,4 +71,28 @@ class HomeController extends Controller
     private function getFictionFantasyBooks(){
         return Category::find(10)->books;
     }
+
+    public function search(Request $request){
+    $output = "";
+
+    // Fetch the data based on the search query
+    $fetchedData = Book::where('title', 'LIKE', '%' . $request->searchBook . '%')->get();
+
+    foreach ($fetchedData as $product) {
+        $output .=
+            '<div class="border-bottom mb-3">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src=" '.$product->image.' " alt="Book Image" class="img-fluid"
+                        style= "width: 60px; height: auto;">
+                    </div>
+                    <div class="col-md-8">
+                        <h5> <a href="#"> '. $product->title .' </a></h5>
+                        <p>'.'Rs.' . $product->price . '</p>
+                    </div>
+                </div>
+            </div>';
+        }
+    return response($output);
+    }
 }
