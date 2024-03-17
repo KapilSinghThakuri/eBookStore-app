@@ -86,7 +86,7 @@
                 </form>
 
                 <!-- Searched Contents Here -->
-                <div id="searchOverlay" class="col-lg-6 col-md-8 col-sm-12 col-6 text-center">
+                <div id="searchOverlay" class="col-lg-6 col-6 text-center rounded-bottom">
                     <div class="form-group mt-1">
                             <p id="searchTitle">Products</p>
                             <div id="searchContent">
@@ -322,7 +322,7 @@
             <div id="modalFooterContent">
                 <a href="/shoppingCart" id="viewCartBtn">View Cart(<span id="cartBookCount">0</span>)</a>
                 <a href="/checkOut" id="checkOutBtn" class="bg-primary text-white">Check out</a>
-                <a href="/Home" class="mt-1 text-center">Continue shopping</a>
+                <a href="#" id="continueShoppingBtn" class="mt-1 text-center">Continue shopping</a>
             </div>
         </div>
     </div>
@@ -461,33 +461,6 @@
         </div>
     </div>
     <!-- Products End (Mystery & Thriller Books)-->
-
-    <!-- Offer Start -->
-     <!-- <div class="container-fluid offer pt-5">
-        <div class="row px-xl-5">
-            <div class="col-md-6 pb-4">
-                <div class="position-relative bg-secondary text-center text-md-right text-white mb-2 py-5 px-5">
-                    <img src="{{ url('eBookStore/img/offer-1.png') }}" alt="">
-                    <div class="position-relative" style="z-index: 1;">
-                        <h5 class="text-uppercase text-primary mb-3">20% off the all order</h5>
-                        <h1 class="mb-4 font-weight-semi-bold">Spring Collection</h1>
-                        <a href="" class="btn btn-outline-primary py-md-2 px-md-3">Shop Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 pb-4">
-                <div class="position-relative bg-secondary text-center text-md-left text-white mb-2 py-5 px-5">
-                    <img src="img/offer-2.png" alt="">
-                    <div class="position-relative" style="z-index: 1;">
-                        <h5 class="text-uppercase text-primary mb-3">20% off the all order</h5>
-                        <h1 class="mb-4 font-weight-semi-bold">Winter Collection</h1>
-                        <a href="" class="btn btn-outline-primary py-md-2 px-md-3">Shop Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Offer End -->
 
     <!-- Subscribe for membership Start -->
         <div class="container-fluid bg-secondary my-5" style="background-image: url('{{ asset('eBookStore/img/uniqueCover.jpeg') }}');">
