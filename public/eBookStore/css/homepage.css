@@ -266,4 +266,5 @@ html{
 #searchContent{
     overflow-y: auto;
     max-height: 350px;
+    overflow-x: hidden;
 }

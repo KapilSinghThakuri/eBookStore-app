@@ -78,7 +78,8 @@ class HomeController extends Controller
     // Fetch the data based on the search query
     $fetchedData = Book::where('title', 'LIKE', '%' . $request->searchBook . '%')->get();
 
-    foreach ($fetchedData as $product) {
+    if (!empty($fetchedData)) {
+        foreach ($fetchedData as $product) {
         $output .=
             '<div class="border-bottom mb-3">
                 <div class="row">
@@ -94,5 +95,17 @@ class HomeController extends Controller
             </div>';
         }
     return response($output);
+    }
+    else{
+        $output .=
+            '<div class="border-bottom mb-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Your searched products are not available.</p>;
+                    </div>
+                </div>
+            </div>';
+        }
+        return response($output);
     }
 }
