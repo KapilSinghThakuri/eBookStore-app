@@ -88,6 +88,22 @@
         </div>
     </div>
 </div>
+
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card card-bordered mb-3" style="height: 27vh;">
+                <div class="card-header bg-none border-none"><p> Weekly Sales</p></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-bordered mb-3" style="height: 27vh;"> Total Orders</div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-bordered mb-3" style="height: 27vh;"> Total Book Count</div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('scripts')

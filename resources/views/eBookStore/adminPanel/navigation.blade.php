@@ -1,7 +1,7 @@
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <!-- <div class="offcanvas offcanvas-start" id="demo">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="offcanvas offcanvas-start" id="demo">
         <div class="offcanvas-header">
           <h1 class="offcanvas-title">Dashboard</h1>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
@@ -12,7 +12,7 @@
           <p>Categories</p>
           <button class="btn btn-secondary" type="button">Button</button>
         </div>
-      </div> -->
+      </div>
       <div class="container-fluid">
         <button class="btn btn-primary bg-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
           <span class="navbar-toggler-icon"></span>
@@ -36,7 +36,55 @@
         @endif
         </ul>
       </div>
+    </nav> -->
+
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <!-- Toggle button for offcanvas -->
+        <button class="btn btn-primary bg-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#demo">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Brand -->
+        <div class="navbar-brand ml-4">
+          <h1 class="m-0 display-5 font-weight-semi-bold">
+            <span class="text-primary font-weight-bold border px-3 mr-1">E</span>Books
+          </h1>
+        </div>
+
+        <!-- Right-aligned nav items -->
+        <ul class="navbar-nav ml-auto">
+          @if (Route::has('login'))
+            @auth
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url('/Home') }}">UserHome</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="profileBtn" href="#">{{ $userName }}</a>
+              </li>
+            @else
+            @endauth
+          @endif
+        </ul>
+      </div>
     </nav>
+
+<!-- Offcanvas content -->
+<div class="offcanvas offcanvas-start" id="demo">
+  <div class="offcanvas-header">
+    <h2 class="offcanvas-title border-bottom">Admin Panel</h2>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <a href="">Emails</a>
+    <p>Calendar</p>
+    <p>Books</p>
+    <p>Categories</p>
+    <button class="btn btn-secondary" type="button">Button</button>
+  </div>
+</div>
+
 
   <!-- Profile informations modal -->
       <div id="profileModal" style="margin-top: 10px;">
