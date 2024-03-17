@@ -59,7 +59,7 @@ Route::middleware('alreadyLoggedIn_verify')->group(function(){
 
 // Admin Panel Routing
 Route::middleware('Admin_verify')->group(function(){
-    Route::get('/AdminDashboard',[AdminDashboardController::class,'index']);
+    Route::get('/AdminDashboard',[AdminDashboardController::class,'index'])->name('admindashboard');
     Route::get('/AdminDashboard/Category/Create',[CategoryController::class,'create']);
     Route::post('/AdminDashboard/Category/Store',[CategoryController::class,'store']);
 
