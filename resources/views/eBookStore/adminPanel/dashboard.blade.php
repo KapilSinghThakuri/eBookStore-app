@@ -93,7 +93,7 @@
     <div class="row px-xl-5 pb-3">
         <div class="col-md-4">
             <a href="{{ route('orderDetail')}}" class="card-img position-relative overflow-hidden mb-3" style="text-decoration: none;">
-                <div class="card card-bordered d-flex flex-column border mb-4" style="height: 27vh; padding: 30px;">
+                <div class="card card-bordered d-flex flex-column border mb-4 bg-warning" style="height: 27vh; padding: 30px;">
                     <p class="text-right">{{ $totalOrderCount }} Orders</p>
                     <h5 class="font-weight-semi-bold m-0 mt-4" style="font-size: 2rem;">Total Orders</h5>
                 </div>
@@ -101,7 +101,7 @@
         </div>
         <div class="col-md-4">
             <a href="{{ route('bookDetail')}}" class="card-img position-relative overflow-hidden mb-3" style="text-decoration: none;">
-                <div class="card card-bordered d-flex flex-column border mb-4" style="height: 27vh; padding: 30px;">
+                <div class="card card-bordered d-flex flex-column border mb-4 bg-success" style="height: 27vh; padding: 30px;">
                     <p class="text-right">{{ $totalBookCount }} Books</p>
                     <h5 class="font-weight-semi-bold m-0 mt-4" style="font-size: 2rem;">Total Books</h5>
                 </div>
@@ -109,7 +109,7 @@
         </div>
         <div class="col-md-4">
             <a href="{{ route('categoryDetail')}}" class="card-img position-relative overflow-hidden mb-3" style="text-decoration: none;">
-                <div class="card card-bordered d-flex flex-column border mb-4" style="height: 27vh; padding: 30px;">
+                <div class="card card-bordered d-flex flex-column border mb-4 bg-info" style="height: 27vh; padding: 30px;">
                     <p class="text-right">{{ $totalCategoryCount }} Categories</p>
                     <h5 class="font-weight-semi-bold m-0 mt-4" style="font-size: 2rem;">Total Categories</h5>
                 </div>
@@ -117,7 +117,7 @@
         </div>
         <div class="col-md-4">
             <a href="" class="card-img position-relative overflow-hidden mb-3" style="text-decoration: none;">
-                <div class="card card-bordered d-flex flex-column border mb-4" style="height: 27vh; padding: 30px;">
+                <div class="card card-bordered d-flex flex-column border mb-4 bg-secondary" style="height: 27vh; padding: 30px;">
                     <p class="text-right">15 Products</p>
                     <h5 class="font-weight-semi-bold m-0 mt-4" style="font-size: 2rem;">Weekly Sales</h5>
                 </div>

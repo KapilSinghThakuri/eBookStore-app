@@ -39,7 +39,7 @@
     </nav> -->
 
 
-  <nav class="navbar navbar-expand-lg navbar-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
     <div class="container-fluid">
       <!-- Toggle button for offcanvas -->
       <button id="offcanvasToggleButton" class="btn btn-primary bg-white" type="button">
@@ -49,7 +49,7 @@
       <!-- Brand -->
       <div class="navbar-brand ml-4">
         <h1 class="m-0 display-5 font-weight-semi-bold">
-          <span class="text-primary font-weight-bold border px-3 mr-1">E</span>Books
+          <span class="text-primary font-weight-bold px-3 mr-1" style="border: 1px solid #EDF1FF; background-color: white;">E</span>Books
         </h1>
       </div>
 

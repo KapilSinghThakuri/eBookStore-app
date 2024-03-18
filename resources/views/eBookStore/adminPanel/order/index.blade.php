@@ -7,7 +7,7 @@
             <div class="card mt-4">
                 <div class="card-header">
                     <h5 class="font-weight-semi-bold" style="font-size: 2rem;">Order Details
-                    <a href="{{ url('/AdminDashboard')}}" class="btn border border-info rounded float-end">Back</a>
+                    <a href="{{ url('/AdminDashboard')}}" class="btn btn-outline-primary rounded float-end">Back</a>
                     </h5>
                 </div>
                 <div class="card-body">
@@ -36,7 +36,7 @@
                       @endforeach
                       </tbody>
                     </table>
-                    <div class="text-center">
+                    <div class="d-flex justify-content-center">
                         {{ $totalOrders ->links() }}
                     </div>
                 </div>

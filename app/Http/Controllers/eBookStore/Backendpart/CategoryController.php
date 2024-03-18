@@ -12,7 +12,8 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        return view('eBookStore.adminPanel.category.index');
+        $totalCategories = Category::simplePaginate(6);
+        return view('eBookStore.adminPanel.category.index',compact('totalCategories'));
     }
     public function create()
     {
