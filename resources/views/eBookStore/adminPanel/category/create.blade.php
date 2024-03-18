@@ -1,4 +1,5 @@
-@include('eBookStore.adminPanel.header')
+@extends('eBookStore.adminPanel.layout')
+@section('body')
 
 <div class="container-fluid mt-3">
     <div class="row">
@@ -34,7 +35,9 @@
         </div>
     </div>
 </div>
+@endsection
 
+@section('scripts')
 <!-- <script src="{{ asset('eBookStore/backendJS/category.js') }}"></script> -->
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -79,3 +82,6 @@ $(document).ready(function () {
     });
 });
 </script>
+@endsection
+
+

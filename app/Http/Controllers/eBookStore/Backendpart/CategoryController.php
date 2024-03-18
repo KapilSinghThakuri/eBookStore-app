@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
+    public function index()
+    {
+        return view('eBookStore.adminPanel.category.index');
+    }
     public function create()
     {
         return view('eBookStore.adminPanel.category.create');

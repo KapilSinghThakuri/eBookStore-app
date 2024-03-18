@@ -7,7 +7,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Add Books</h5>
-        <button type="button" class="btn-close rounded" data-bs-dismiss="modal" aria-label="Close">close</button>
+        <button type="button" class="btn-close rounded" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         @if(session('message'))
@@ -74,7 +74,7 @@
 {{-- End- addBookModal --}}
 
 
-<div class="container-fluid mt-2">
+<!-- <div class="container-fluid mt-2">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -87,21 +87,45 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
-<div class="container-fluid mt-3">
-    <div class="row">
+<div class="container-fluid mt-5">
+    <div class="row px-xl-5 pb-3">
         <div class="col-md-4">
-            <div class="card card-bordered mb-3" style="height: 27vh;">
-                <div class="card-header bg-none border-none"><p> Weekly Sales</p></div>
-            </div>
+            <a href="{{ route('orderDetail')}}" class="card-img position-relative overflow-hidden mb-3" style="text-decoration: none;">
+                <div class="card card-bordered d-flex flex-column border mb-4" style="height: 27vh; padding: 30px;">
+                    <p class="text-right">{{ $totalOrderCount }} Orders</p>
+                    <h5 class="font-weight-semi-bold m-0 mt-4" style="font-size: 2rem;">Total Orders</h5>
+                </div>
+            </a>
         </div>
         <div class="col-md-4">
-            <div class="card card-bordered mb-3" style="height: 27vh;"> Total Orders</div>
+            <a href="{{ route('bookDetail')}}" class="card-img position-relative overflow-hidden mb-3" style="text-decoration: none;">
+                <div class="card card-bordered d-flex flex-column border mb-4" style="height: 27vh; padding: 30px;">
+                    <p class="text-right">{{ $totalBookCount }} Books</p>
+                    <h5 class="font-weight-semi-bold m-0 mt-4" style="font-size: 2rem;">Total Books</h5>
+                </div>
+            </a>
         </div>
         <div class="col-md-4">
+            <a href="{{ route('categoryDetail')}}" class="card-img position-relative overflow-hidden mb-3" style="text-decoration: none;">
+                <div class="card card-bordered d-flex flex-column border mb-4" style="height: 27vh; padding: 30px;">
+                    <p class="text-right">{{ $totalCategoryCount }} Categories</p>
+                    <h5 class="font-weight-semi-bold m-0 mt-4" style="font-size: 2rem;">Total Categories</h5>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a href="" class="card-img position-relative overflow-hidden mb-3" style="text-decoration: none;">
+                <div class="card card-bordered d-flex flex-column border mb-4" style="height: 27vh; padding: 30px;">
+                    <p class="text-right">15 Products</p>
+                    <h5 class="font-weight-semi-bold m-0 mt-4" style="font-size: 2rem;">Weekly Sales</h5>
+                </div>
+            </a>
+        </div>
+        <!-- <div class="col-md-4">
             <div class="card card-bordered mb-3" style="height: 27vh;"> Total Book Count</div>
-        </div>
+        </div> -->
     </div>
 </div>
 @endsection

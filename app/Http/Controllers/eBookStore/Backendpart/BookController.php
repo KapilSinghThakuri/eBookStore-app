@@ -11,6 +11,11 @@ use App\Models\Category;
 
 class BookController extends Controller
 {
+    public function index()
+    {
+        $totalBooks = Book::paginate(10);
+        return view('eBookStore.adminPanel.book.index',compact('totalBooks'));
+    }
     public function create()
     {
         return view('eBookStore.adminPanel.book.create');

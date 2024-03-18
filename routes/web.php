@@ -20,6 +20,7 @@ use App\Http\Controllers\eBookStore\Backendpart\CategoryController;
 use App\Http\Controllers\eBookStore\Backendpart\BookController;
 use App\Http\Controllers\eBookStore\Backendpart\UserController;
 use App\Http\Controllers\eBookStore\Backendpart\ShoppingCartController;
+use App\Http\Controllers\eBookStore\Backendpart\OrderController;
 
 
 Route::get('/', function () {
@@ -60,11 +61,15 @@ Route::middleware('alreadyLoggedIn_verify')->group(function(){
 // Admin Panel Routing
 Route::middleware('Admin_verify')->group(function(){
     Route::get('/AdminDashboard',[AdminDashboardController::class,'index'])->name('admindashboard');
+    Route::get('/AdminDashboard/Category/index',[CategoryController::class,'index'])->name('categoryDetail');
     Route::get('/AdminDashboard/Category/Create',[CategoryController::class,'create']);
     Route::post('/AdminDashboard/Category/Store',[CategoryController::class,'store']);
 
+    Route::get('/AdminDashboard/Book/index',[BookController::class,'index'])->name('bookDetail');
     Route::get('/AdminDashboard/Book/Create',[BookController::class,'create']);
     Route::post('/AdminDashboard/Book/Store',[BookController::class,'store']);
+
+    Route::get('/AdminDashboard/Order/index',[OrderController::class,'index'])->name('orderDetail');
 });
 
 

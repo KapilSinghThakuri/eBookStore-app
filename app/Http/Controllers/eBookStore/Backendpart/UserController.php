@@ -27,9 +27,9 @@ class UserController extends Controller
         }
 
 
-    $ordersPersonDetails = Order::where('user_id', Auth::id())->get();
+    // $ordersPersonDetails = Order::where('user_id', Auth::id())->get();
     // $orderId = Order::where('user_id', Auth::id())->get('id');
-    $orderId = DB::table('orders')->select('id')->where('user_id', Auth::id())->first();
+    // $orderId = DB::table('orders')->select('id')->where('user_id', Auth::id())->first();
     // dd($orderId);
     // $ordersBooksDetails = Db::table('books_order')
     //     ->join('books', 'books_order.book_id', 'books.id')
@@ -37,13 +37,15 @@ class UserController extends Controller
     //     ->select('books.*')
     //     ->get();
 
-    $ordersBooksDetails = DB::table('books_order')
-            ->join('books', 'books_order.book_id', '=', 'books.id')
-            ->join('orders', 'books_order.order_id', '=', 'orders.id')
-            ->where('orders.user_id', Auth::id())
-            ->select('books.*')
-            ->get();
-    dd($ordersBooksDetails);
+    // $ordersBooksDetails = DB::table('books_order')
+    //         ->join('books', 'books_order.book_id', '=', 'books.id')
+    //         ->join('orders', 'books_order.order_id', '=', 'orders.id')
+    //         ->where('orders.user_id', Auth::id())
+    //         ->select('books.*')
+    //         ->get();
+        // $totalCountOrders = Order::count();
+    $orderCount = Order::all()->count();
+    dd($orderCount);
     }
 }
 
