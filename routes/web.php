@@ -65,11 +65,17 @@ Route::middleware('Admin_verify')->group(function(){
     Route::get('/AdminDashboard/Category/Create',[CategoryController::class,'create']);
     Route::post('/AdminDashboard/Category/Store',[CategoryController::class,'store']);
     Route::delete('/AdminDashboard/Category/{id}/Destroy',[CategoryController::class,'remove']);
+    Route::get('/AdminDashboard/Category/{id}/Edit',[CategoryController::class,'edit']);
+    Route::put('/AdminDashboard/Category/{id}/Update',[CategoryController::class,'update']);
+
 
     Route::get('/AdminDashboard/Book/index',[BookController::class,'index'])->name('bookDetail');
     Route::get('/AdminDashboard/Book/Create',[BookController::class,'create']);
     Route::post('/AdminDashboard/Book/Store',[BookController::class,'store']);
     Route::delete('/AdminDashboard/Book/{id}/Destroy',[BookController::class,'remove']);
+    Route::get('/AdminDashboard/Book/{id}/Edit',[BookController::class,'edit']);
+    Route::put('/AdminDashboard/Book/{id}/Update',[BookController::class,'update']);
+
 
     Route::get('/AdminDashboard/Order/index',[OrderController::class,'index'])->name('orderDetail');
 });

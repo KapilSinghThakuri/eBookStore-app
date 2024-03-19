@@ -44,8 +44,10 @@ class UserController extends Controller
     //         ->select('books.*')
     //         ->get();
         // $totalCountOrders = Order::count();
-    $orderCount = Order::all()->count();
-    dd($orderCount);
+    // $orderCount = Order::all()->count();
+
+        $category = Category::find(22);
+        dd($category);
     }
 }
 

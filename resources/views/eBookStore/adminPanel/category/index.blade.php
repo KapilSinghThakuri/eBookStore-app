@@ -5,6 +5,9 @@
     <div class="row">
         <div class="col-lg-12 col-12">
             <div class="mt-2" id="successMessage"></div>
+            @if(session('success'))
+                <div class="alert alert-success">{{ session('success') }}</div>
+            @endif
 
             <div class="card mt-4">
                 <div class="card-header">
@@ -29,7 +32,7 @@
                             <td>{{ $category -> name }}</td>
                             <td>
                                 <a href="#" data-category-id="{{ $category->id }}" class="removeBtn btn btn-outline-danger rounded">Remove</a>
-                                <a href="" class="btn btn-outline-success rounded">Edit</a>
+                                <a href="/AdminDashboard/Category/{{ $category->id }}/Edit" class="btn btn-outline-success rounded">Edit</a>
                             </td>
                           </tr>
                         @endforeach

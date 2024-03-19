@@ -56,4 +56,44 @@ class CategoryController extends Controller
             'message' => "Category Deleted Successfully !!!",
         ]);
     }
+    public function edit($id)
+    {
+        $categoryId = Category::findOrFail($id);
+        return view('eBookStore.adminPanel.category.edit',compact('categoryId'));
+    }
+    public function update(Request $request ,$id)
+    {
+        $validator = Validator::make($request->all(),[
+            'name' => 'required|string',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 400,
+                'errors' => $validator->messages(),
+            ]);
+        }
+        else{
+            $category = Category::find($id);
+            if($category){
+                // $category -> name = $request -> input('name');
+                // $category -> update();
+                $category->update([
+                    'name' => $request->input('name'),
+                ]);
+
+                // return back()->with('success', 'Category Updated Successfully');
+                return response()->json([
+                    'status' => 200,
+                    'message' => 'Category Updated Successfully',
+                ]);
+            }
+            else{
+                return response()->json([
+                    'status' => 404,
+                    'error' => 'Category not found',
+                ]);
+            }
+        }
+    }
 }

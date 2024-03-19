@@ -32,8 +32,8 @@
                             <td>{{ $book->price }}</td>
                             <td>{{ $book->quantity }}</td>
                             <td>
-                                <a href="" class="removeBtn btn btn-outline-danger rounded" data-book-id= "{{ $book->id }}">Remove</a>
-                                <a href="" class="btn btn-outline-success rounded">Edit</a>
+                                <a href="#" class="removeBtn btn btn-outline-danger rounded" data-book-id= "{{ $book->id }}">Remove</a>
+                                <a href="/AdminDashboard/Book/{{ $book->id }}/Edit" class="btn btn-outline-success rounded">Edit</a>
                             </td>
                           </tr>
                         @endforeach
