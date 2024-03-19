@@ -98,28 +98,34 @@
     $(document).ready(function(){
         $(document).on('click', '.deleteBtn', function(event) {
             event.preventDefault();
-            var cartItemId = $(this).data('id');
+            var deleteBtn = $(this);
+            var cartItemId = deleteBtn.data('id');
+            deleteBtn.html('<span class="spinner-border spinner-border-sm"></span>');
 
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
             $.ajax({
                 url: '/shoppingCart/' + cartItemId,
                 type: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
                 success: function (response) {
-                        console.log(response);
-                        if (response.status == 200) {
-                            console.log('Item deleted successfully');
-                            updateTotalPrice();
-                        }else
-                        {
-                           console.log('You can not remove this item.');
-                        }
+                    console.log(response);
+                    if (response.status == 200) {
+                        console.log('Item deleted successfully');
+                        // Remove the corresponding item from the DOM
+                        deleteBtn.closest('tr').remove(); // Assuming each item is wrapped in a table row (<tr>)
+                        updateTotalPrice(); // Update total price after item removal if needed
+                    } else {
+                        console.log('You cannot remove this item.');
                     }
-                });
+                },
+                error: function(xhr, status, error) {
+                    console.error(xhr.responseText);
+                    console.log('Error occurred while deleting the item.');
+                }
             });
+        });
+
         function updateTotalPrice(){
             var total_price = 0;
             $('.tablerow').each(function(){

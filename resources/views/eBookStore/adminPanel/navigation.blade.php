@@ -77,6 +77,9 @@
   </div>
   <div class="offcanvas-body">
     <div class="mb-3">
+      <a href="{{ url('/AdminDashboard')}}" class="btn btn-outline-primary rounded">Dashboard</a>
+    </div>
+    <div class="mb-3">
       <a href="{{ url('/AdminDashboard/Category/Create')}}" class="btn btn-outline-info rounded">Add Category</a>
     </div>
     <div class="mb-3">

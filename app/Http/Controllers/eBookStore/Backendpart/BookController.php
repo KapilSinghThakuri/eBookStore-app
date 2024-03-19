@@ -66,4 +66,13 @@ class BookController extends Controller
             ]);
         }
     }
+    public function remove($id)
+    {
+        $book = Book::find($id);
+        $book->delete();
+        return response()->json([
+            'status' => 200,
+            'message' => "Book Deleted Successfully !!!",
+        ]);
+    }
 }

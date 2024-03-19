@@ -64,10 +64,12 @@ Route::middleware('Admin_verify')->group(function(){
     Route::get('/AdminDashboard/Category/index',[CategoryController::class,'index'])->name('categoryDetail');
     Route::get('/AdminDashboard/Category/Create',[CategoryController::class,'create']);
     Route::post('/AdminDashboard/Category/Store',[CategoryController::class,'store']);
+    Route::delete('/AdminDashboard/Category/{id}/Destroy',[CategoryController::class,'remove']);
 
     Route::get('/AdminDashboard/Book/index',[BookController::class,'index'])->name('bookDetail');
     Route::get('/AdminDashboard/Book/Create',[BookController::class,'create']);
     Route::post('/AdminDashboard/Book/Store',[BookController::class,'store']);
+    Route::delete('/AdminDashboard/Book/{id}/Destroy',[BookController::class,'remove']);
 
     Route::get('/AdminDashboard/Order/index',[OrderController::class,'index'])->name('orderDetail');
 });

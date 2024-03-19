@@ -4,6 +4,8 @@
 <div class="container-fluid" m-3>
     <div class="row">
         <div class="col-lg-12 col-12">
+            <div class="mt-2" id="successMessage"></div>
+
             <div class="card mt-4">
                 <div class="card-header">
                     <h5 class="font-weight-semi-bold" style="font-size: 2rem;">Category Details
@@ -17,7 +19,6 @@
                           <tr>
                             <th style="background-color: rgba(128, 128, 128, 0.5);">S no.</th>
                             <th style="background-color: rgba(128, 128, 128, 0.5);">Category Title</th>
-                            <!-- <th style="background-color: rgba(128, 128, 128, 0.5);">Price</th> -->
                             <th style="background-color: rgba(128, 128, 128, 0.5);">Action</th>
                           </tr>
                         </thead>
@@ -26,9 +27,8 @@
                           <tr>
                             <td>{{ $loop -> index+1 }}</td>
                             <td>{{ $category -> name }}</td>
-                            <!-- <td></td> -->
                             <td>
-                                <a href="" class="btn btn-outline-danger rounded">Remove</a>
+                                <a href="#" data-category-id="{{ $category->id }}" class="removeBtn btn btn-outline-danger rounded">Remove</a>
                                 <a href="" class="btn btn-outline-success rounded">Edit</a>
                             </td>
                           </tr>
@@ -44,4 +44,43 @@
     </div>
 </div>
 
+@endsection
+
+@section('scripts')
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.removeBtn').on('click', function (event) {
+            event.preventDefault();
+            var removeBtn = $(this);
+            var categoryId = removeBtn.data('category-id');
+
+            // Update button text to indicate removal
+            removeBtn.text('Removing..').prop('disabled', true);
+
+            $.ajax({
+                url: '/AdminDashboard/Category/' + categoryId + '/Destroy',
+                type: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function (response) {
+                    if (response.status == 200) {
+                        console.log(response.message);
+                        // Remove the corresponding row from the table
+                        removeBtn.closest('tr').remove();
+
+                        // Show success message
+                        $('#successMessage').addClass('alert alert-success').text(response.message);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    // Handle error response
+                    console.error(xhr.responseText);
+                    removeBtn.text('Remove').prop('disabled', false);
+                    $('#successMessage').addClass('alert alert-danger').text('Error removing category. Please try again.');
+                }
+            });
+        });
+    });
+</script>
 @endsection

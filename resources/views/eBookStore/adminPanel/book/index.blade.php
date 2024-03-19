@@ -4,6 +4,8 @@
 <div class="container-fluid" m-3>
     <div class="row">
         <div class="col-lg-12 col-12">
+            <div class="mt-2" id="successMessage"></div>
+
             <div class="card mt-4">
                 <div class="card-header">
                     <h5 class="font-weight-semi-bold" style="font-size: 2rem;">Books Details
@@ -30,7 +32,7 @@
                             <td>{{ $book->price }}</td>
                             <td>{{ $book->quantity }}</td>
                             <td>
-                                <a href="" class="btn btn-outline-danger rounded">Remove</a>
+                                <a href="" class="removeBtn btn btn-outline-danger rounded" data-book-id= "{{ $book->id }}">Remove</a>
                                 <a href="" class="btn btn-outline-success rounded">Edit</a>
                             </td>
                           </tr>
@@ -45,5 +47,43 @@
         </div>
     </div>
 </div>
+@endsection
 
+@section('scripts')
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.removeBtn').on('click', function (event) {
+            event.preventDefault();
+            var removeBtn = $(this);
+            var bookId = removeBtn.data('book-id');
+
+            // Update button text to indicate removal
+            removeBtn.text('Removing..').prop('disabled', true);
+
+            $.ajax({
+                url: '/AdminDashboard/Book/' + bookId + '/Destroy',
+                type: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function (response) {
+                    if (response.status == 200) {
+                        console.log(response.message);
+                        // Remove the corresponding row from the table
+                        removeBtn.closest('tr').remove();
+
+                        // Show success message
+                        $('#successMessage').addClass('alert alert-success').text(response.message);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    // Handle error response
+                    console.error(xhr.responseText);
+                    removeBtn.text('Remove').prop('disabled', false);
+                    $('#successMessage').addClass('alert alert-danger').text('Error removing book. Please try again.');
+                }
+            });
+        });
+    });
+</script>
 @endsection
