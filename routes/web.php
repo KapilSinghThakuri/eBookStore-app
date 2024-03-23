@@ -21,7 +21,7 @@ use App\Http\Controllers\eBookStore\Backendpart\BookController;
 use App\Http\Controllers\eBookStore\Backendpart\UserController;
 use App\Http\Controllers\eBookStore\Backendpart\ShoppingCartController;
 use App\Http\Controllers\eBookStore\Backendpart\OrderController;
-
+use App\Http\Controllers\eBookStore\Backendpart\SalesController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -49,7 +49,7 @@ Route::get('/', function () {
 
     Route::get('/logout',[RegisterController::class,'logout'])->name('logout');
 
-// For RegistrationPages Routing
+// For Signup-Signin Routing
 Route::middleware('alreadyLoggedIn_verify')->group(function(){
     Route::get('/login',[LogInController::class,'index'])->name('login');
     Route::post('/login',[LogInController::class,'store'])->name('login');
@@ -68,7 +68,6 @@ Route::middleware('Admin_verify')->group(function(){
     Route::get('/AdminDashboard/Category/{id}/Edit',[CategoryController::class,'edit']);
     Route::put('/AdminDashboard/Category/{id}/Update',[CategoryController::class,'update']);
 
-
     Route::get('/AdminDashboard/Book/index',[BookController::class,'index'])->name('bookDetail');
     Route::get('/AdminDashboard/Book/Create',[BookController::class,'create']);
     Route::post('/AdminDashboard/Book/Store',[BookController::class,'store']);
@@ -76,13 +75,15 @@ Route::middleware('Admin_verify')->group(function(){
     Route::get('/AdminDashboard/Book/{id}/Edit',[BookController::class,'edit']);
     Route::put('/AdminDashboard/Book/{id}/Update',[BookController::class,'update']);
 
+    Route::get('/AdminDashboard/Sales/index',[SalesController::class,'index'])->name('sales');
 
+    Route::delete('/User/{id}/Delete',[AdminDashboardController::class,'destroy']);
     Route::get('/AdminDashboard/Order/index',[OrderController::class,'index'])->name('orderDetail');
 });
 
 
 // For Testing...
-    Route::get('/UserDetails',[UserController::class,'getUserDetails']);
+    // Route::get('/UserDetails',[UserController::class,'getUserDetails']);
 
 
 // For FooterPages Routing
