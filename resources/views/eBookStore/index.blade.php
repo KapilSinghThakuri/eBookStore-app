@@ -437,6 +437,7 @@
                             data-rating="{{ $book->rating }}"
                             data-image="{{ asset($book->image) }}"
                             class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        @if(auth()->check())
                         <a href="#"
                             data-title="{{ $book->title }}"
                             data-price="{{ $book->price }}"
@@ -444,6 +445,10 @@
                             data-id="{{ $book->id }}"
                         class="addToCartBtn btn btn-sm text-dark p-0">
                         <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        @else
+                        <button class="btn btn-sm text-dark p-0" onclick="showLoginMessage()">
+                        <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -470,6 +475,7 @@
                             data-rating="{{ $book->rating }}"
                             data-image="{{ asset($book->image) }}"
                             class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        @if(auth()->check())
                         <a href="#"
                         data-title="{{ $book->title }}"
                         data-price="{{ $book->price }}"
@@ -477,6 +483,10 @@
                         data-id="{{ $book->id }}"
                         class="addToCartBtn btn btn-sm text-dark p-0">
                         <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        @else
+                        <button class="btn btn-sm text-dark p-0" onclick="showLoginMessage()">
+                        <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -539,6 +549,7 @@
                             data-rating="{{ $book->rating }}"
                             data-image="{{ asset($book->image) }}"
                             class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        @if(auth()->check())
                         <a href="#"
                             data-title="{{ $book->title }}"
                             data-price="{{ $book->price }}"
@@ -546,6 +557,10 @@
                             data-id="{{ $book->id }}"
                         class="addToCartBtn btn btn-sm text-dark p-0">
                         <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        @else
+                        <button class="btn btn-sm text-dark p-0" onclick="showLoginMessage()">
+                        <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -570,13 +585,18 @@
                             data-rating="{{ $book->rating }}"
                             data-image="{{ asset($book->image) }}"
                         class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        <a href="#"
+                        @if(auth()->check())
+                     <a href="#"
                         data-title="{{ $book->title }}"
                         data-price="{{ $book->price }}"
                         data-image="{{ asset($book->image) }}"
                         data-id="{{ $book->id }}"
                         class="addToCartBtn btn btn-sm text-dark p-0">
                         <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        @else
+                            <button class="btn btn-sm text-dark p-0" onclick="showLoginMessage()">
+                            <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
+                            @endif
                     </div>
                 </div>
             </div>
@@ -601,6 +621,7 @@
                             data-rating="{{ $book->rating }}"
                             data-image="{{ asset($book->image) }}"
                             class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        @if(auth()->check())
                         <a href="#"
                         data-title="{{ $book->title }}"
                         data-price="{{ $book->price }}"
@@ -608,6 +629,10 @@
                         data-id="{{ $book->id }}"
                         class="addToCartBtn btn btn-sm text-dark p-0">
                         <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        @else
+                            <button class="btn btn-sm text-dark p-0" onclick="showLoginMessage()">
+                            <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
+                            @endif
                     </div>
                 </div>
             </div>
@@ -632,6 +657,7 @@
                             data-rating="{{ $book->rating }}"
                             data-image="{{ asset($book->image) }}"
                         class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        @if(auth()->check())
                         <a href="#"
                             data-title="{{ $book->title }}"
                             data-price="{{ $book->price }}"
@@ -639,6 +665,10 @@
                             data-id="{{ $book->id }}"
                             class="addToCartBtn btn btn-sm text-dark p-0">
                             <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                            @else
+                            <button class="btn btn-sm text-dark p-0" onclick="showLoginMessage()">
+                            <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
+                            @endif
                     </div>
                 </div>
             </div>
@@ -673,6 +703,7 @@
                             data-rating="{{ $book->rating }}"
                             data-image="{{ asset($book->image) }}"
                         class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        @if(auth()->check())
                         <a href="#"
                         data-title="{{ $book->title }}"
                         data-price="{{ $book->price }}"
@@ -680,6 +711,10 @@
                         data-id="{{ $book->id }}"
                         class="addToCartBtn btn btn-sm text-dark p-0">
                         <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        @else
+                            <button class="btn btn-sm text-dark p-0" onclick="showLoginMessage()">
+                            <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
+                            @endif
                     </div>
                 </div>
             </div>
@@ -714,6 +749,7 @@
                             data-rating="{{ $childreanBook->rating }}"
                             data-image="{{ asset($childreanBook->image) }}"
                             class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                        @if(auth()->check())
                         <a href="#"
                         data-title="{{ $childreanBook->title }}"
                         data-price="{{ $childreanBook->price }}"
@@ -721,6 +757,10 @@
                         data-id="{{ $childreanBook->id }}"
                         class="addToCartBtn btn btn-sm text-dark p-0">
                         <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                        @else
+                            <button class="btn btn-sm text-dark p-0" onclick="showLoginMessage()">
+                            <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
+                            @endif
                     </div>
                 </div>
             </div>

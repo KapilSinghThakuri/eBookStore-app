@@ -30,9 +30,9 @@ Route::get('/', function () {
     Route::get('/Home',[HomeController::class,'index'])->name('homepage');
     Route::get('/searchProducts',[HomeController::class,'search'])->name('search');
 
-    Route::get('/shopDetail',[ShopDetailController::class,'index'])->name('shopdetail');
+    Route::get('/shopDetail',[ShopDetailController::class,'index'])->name('shopdetail')->middleware('Loggedin_verify');
 
-    Route::get('/shoppingCart',[CartController::class,'index'])->name('shoppingcart');
+    Route::get('/shoppingCart',[CartController::class,'index'])->name('shoppingcart')->middleware('Loggedin_verify');
     // for removing cart items from cart table
     Route::DELETE('/shoppingCart/{id}',[CartController::class,'destroy']);
 
@@ -41,7 +41,7 @@ Route::get('/', function () {
     // for counting the cart items
     Route::get('/getCartItemCount', [ShoppingCartController::class, 'getCartItemCount']);
 
-    Route::get('/checkOut',[CheckOutController::class,'index'])->name('checkout');
+    Route::get('/checkOut',[CheckOutController::class,'index'])->name('checkout')->middleware('Loggedin_verify');
     // for saving the orders details to order table
     Route::post('/checkOut/orderSubmitting',[CheckOutController::class,'store']);
 

@@ -105,20 +105,8 @@
 function showLoginMessage() {
         $('#loginModal').modal('show');
     }
-document.getElementById('shopDetailLink').addEventListener('click', function(event) {
-    event.preventDefault();
-    $('#loginModal').modal('show');
-});
 
-document.getElementById('shoppingCartLink').addEventListener('click', function(event) {
-    event.preventDefault();
-    $('#loginModal').modal('show');
-});
 
-document.getElementById('checkoutLink').addEventListener('click', function(event) {
-    event.preventDefault();
-    $('#loginModal').modal('show');
-});
 
 // FOR USER PROFILE INFORMATIONS & SETTING
 var profileBtn = document.getElementById('profileBtn');
