@@ -17,8 +17,10 @@ class HomeController extends Controller
         $religionSpirituality = Category::orderBy('id')->take(4)->get();
         $businessEssential = Category::orderBy('id')->skip(4)->take(4)->get();
         $remainCategories = Category::orderBy('id')->skip(8)->take(6)->get();
-        $userInfo = User::where('id', Auth::user()->id)->get('email');
-
+        $userInfo = "";
+        if (Auth::user()) {
+            $userInfo = User::where('id', Auth::user()->id)->get('email');
+        }
         $highlyRecommendedBooks = $this->getHighlyRecomenededBooks();
         // dd($highlyRecommendedBooks->all());
         $top10ComingSoonBooks = $this->getTop10ComingSoonBooks();
@@ -87,9 +89,13 @@ class HomeController extends Controller
                         <img src=" '.$product->image.' " alt="Book Image" class="img-fluid"
                         style= "width: 60px; height: auto;">
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-6">
                         <h5> <a href="#"> '. $product->title .' </a></h5>
                         <p>'.'Rs.' . $product->price . '</p>
+                    </div>
+                    <div class="col-md-2">
+                        <a href="#" data-id = '. $product->id .'class="addToCartBtn btn btn-sm text-dark p-0" style="text-decoration: none;">
+                        <i class="fas fa-shopping-cart text-primary mr-1 mt-2"></i>Add To Cart</a>
                     </div>
                 </div>
             </div>';

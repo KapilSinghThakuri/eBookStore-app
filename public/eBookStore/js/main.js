@@ -102,7 +102,23 @@
     
 })(jQuery);
 
+function showLoginMessage() {
+        $('#loginModal').modal('show');
+    }
+document.getElementById('shopDetailLink').addEventListener('click', function(event) {
+    event.preventDefault();
+    $('#loginModal').modal('show');
+});
 
+document.getElementById('shoppingCartLink').addEventListener('click', function(event) {
+    event.preventDefault();
+    $('#loginModal').modal('show');
+});
+
+document.getElementById('checkoutLink').addEventListener('click', function(event) {
+    event.preventDefault();
+    $('#loginModal').modal('show');
+});
 
 // FOR USER PROFILE INFORMATIONS & SETTING
 var profileBtn = document.getElementById('profileBtn');
@@ -118,67 +134,57 @@ cancelBtn.addEventListener('click',function(event){
 });
 
 // FOR VIEW DETAILS MODAL
-// This is just for displying modal incase of modal items are in loop
-    // var viewDetail = document.getElementById('viewDetail');
-    // var viewDetailBtn = document.querySelectorAll('.viewDetailBtn');
+document.querySelectorAll('.viewDetailBtn').forEach(function(button) {
+    button.addEventListener('click', function(event) {
+        event.preventDefault();
 
-    // // Iterate through each element with the class .viewDetailBtn
-    // viewDetailBtn.forEach(function(element) {
-    //     // Attach click event listener to each element
-    //     element.addEventListener('click', function(e) {
-    //         e.preventDefault();
-    //         viewDetail.style.display = 'block';
-    //         console.log("Modal Button Clicked");
-    //     });
-    // });
+        // Get book details from data attributes
+        var bookTitle = button.getAttribute('data-title');
+        var bookPrice = button.getAttribute('data-price');
+        var bookImage = button.getAttribute('data-image');
+        var bookRating = button.getAttribute('data-rating');
+        var bookDescription = button.getAttribute('data-description');
 
-// This is just for displying modal with associated data
-    // Add event listener to each "View Book Details" button
-    document.querySelectorAll('.viewDetailBtn').forEach(function(button) {
-        button.addEventListener('click', function(event) {
-            event.preventDefault();
+        // Populate modal with book details
+        document.querySelector('#viewDetail #viewDetailContent #book_image').src = bookImage;
+        document.querySelector('#viewDetail #viewDetailContent #bookDetails h5').textContent = bookTitle;
+        document.querySelector('#viewDetail #viewDetailContent #bookDetails p').textContent = "Rs."+ bookPrice;
+        document.querySelector('#viewDetail #viewDetailContent #bookDetails h6').textContent = bookDescription;
 
-            // Get book details from data attributes
-            var bookTitle = button.getAttribute('data-title');
-            var bookPrice = button.getAttribute('data-price');
-            var bookImage = button.getAttribute('data-image');
-            var bookRating = button.getAttribute('data-rating');
-            var bookDescription = button.getAttribute('data-description');
+    // Showing book's rating
+    var previousRatingDiv = document.querySelector('#viewDetail #viewDetailContent #bookDetails .rating .mb-1');
+    if (previousRatingDiv) {
+        previousRatingDiv.remove();
+    }
+    const ratingDiv = document.createElement('div');
 
-            // Populate modal with book details
-            document.querySelector('#viewDetail #viewDetailContent #book_image').src = bookImage;
-            document.querySelector('#viewDetail #viewDetailContent #bookDetails h5').textContent = bookTitle;
-            document.querySelector('#viewDetail #viewDetailContent #bookDetails p').textContent = "Rs."+ bookPrice;
-            document.querySelector('#viewDetail #viewDetailContent #bookDetails h6').textContent = bookDescription;
+    ratingDiv.classList.add('mb-1');
 
-        // Showing book's rating
-        var previousRatingDiv = document.querySelector('#viewDetail #viewDetailContent #bookDetails .rating .mb-1');
-        if (previousRatingDiv) {
-            previousRatingDiv.remove();
+    for (let i = 1; i <= 5; i++) {
+        const star = document.createElement('small');
+        if (i <= bookRating) {
+            star.classList.add('fas', 'fa-star'); // Full star
+        } else if (i - 0.5 === bookRating) {
+            star.classList.add('fas', 'fa-star-half-alt'); // Half-star
+        } else {
+            star.classList.add('far', 'fa-star'); // Empty star
         }
-        const ratingDiv = document.createElement('div');
-        ratingDiv.classList.add('mb-1');
-        for (let i = 1; i <= 5; i++) {
-            const star = document.createElement('small');
-            if (i <= bookRating) {
-                star.classList.add('fas', 'fa-star'); // Full star
-            } else if (i - 0.5 === bookRating) {
-                star.classList.add('fas', 'fa-star-half-alt'); // Half-star
-            } else {
-                star.classList.add('far', 'fa-star'); // Empty star
-            }
-            ratingDiv.appendChild(star);
-        }
-        document.querySelector('#viewDetail #viewDetailContent #bookDetails .rating').appendChild(ratingDiv);
+        ratingDiv.appendChild(star);
+    }
+    document.querySelector('#viewDetail #viewDetailContent #bookDetails .rating').appendChild(ratingDiv);
 
-        // Show modal
-        document.getElementById('viewDetail').style.display = 'block';
-        });
+    // Show modal
+    document.getElementById('viewDetail').style.display = 'block';
     });
-    var closeDetailModal = document.getElementById('closeDetailModal');
-        closeDetailModal.onclick = function(){
-            viewDetail.style.display = 'none';
-        };
+});
+$('#closeDetailModal').click(function(event) {
+        event.preventDefault();
+        $('#viewDetail').hide();
+    });
+// var closeDetailModal = document.getElementById('closeDetailModal');
+//     closeDetailModal.onclick = function(){
+//         viewDetail.style.display = 'none';
+//     };
 
 // FOR ADD TO CART MODAL
 var selectedBookId;
@@ -268,6 +274,10 @@ function updateCartItemCount(){
         }
     });
 }
+$(document).ready(function() {
+    updateCartItemCount();
+});
+
 $('#searchBook').on('keyup', function(event) {
     event.preventDefault();
     var searchText = $(this).val();
@@ -279,6 +289,9 @@ $('#searchBook').on('keyup', function(event) {
             url: '/searchProducts',
             type: 'GET',
             data: {'searchBook': searchText },
+            beforeSend: function () {
+                $('#searchContent').html('Searching product...');
+            },
             success: function(data) {
                 $('#searchContent').html(data);
             }
@@ -288,6 +301,8 @@ $('#searchBook').on('keyup', function(event) {
         $('#searchOverlay').hide();
     }
 });
+
+
 
 
 

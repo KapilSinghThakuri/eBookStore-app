@@ -27,7 +27,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-    Route::get('/Home',[HomeController::class,'index'])->name('homepage')->middleware('Loggedin_verify');
+    Route::get('/Home',[HomeController::class,'index'])->name('homepage');
     Route::get('/searchProducts',[HomeController::class,'search'])->name('search');
 
     Route::get('/shopDetail',[ShopDetailController::class,'index'])->name('shopdetail');

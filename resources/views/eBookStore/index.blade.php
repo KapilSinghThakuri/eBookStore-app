@@ -90,7 +90,7 @@
                     <div class="form-group mt-1">
                             <p id="searchTitle">Products</p>
                             <div id="searchContent">
-
+                                <!-- Search results are appear here... -->
                             </div>
                     </div>
                 </div>
@@ -155,12 +155,12 @@
                         <div class="navbar-nav mr-auto py-0">
                             <a href="{{ route('homepage') }}" class="nav-item nav-link active">Home</a>
                             <!-- <a href="shop.html" class="nav-item nav-link">Shop</a> -->
-                            <a href="{{ route('shopdetail') }}" class="nav-item nav-link">Shop Detail</a>
+                            <a href="{{ route('shopdetail') }}" class="nav-item nav-link" id="shopDetailLink">Shop Detail</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="{{ route('shoppingcart') }}" class="dropdown-item">Shopping Cart</a>
-                                    <a href="{{ route('checkout') }}" class="dropdown-item">Checkout</a>
+                                    <a href="{{ route('shoppingcart') }}" class="dropdown-item" id="shoppingCartLink">Shopping Cart</a>
+                                    <a href="{{ route('checkout') }}" class="dropdown-item" id="checkoutLink">Checkout</a>
                                 </div>
                             </div>
                             <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
@@ -186,6 +186,7 @@
                     </div>
                 </nav>
 
+                @auth
                 <!-- Profile informations modal -->
                 <div id="profileModal">
                     <nav>
@@ -202,12 +203,10 @@
                         @endforeach
                     </div>
                     <div id="logout-btn">
-                        @auth
-                            <a href="{{ url('/logout') }}">Logout</a>
-                        @endauth
+                        <a href="{{ url('/logout') }}">Logout</a>
                     </div>
                 </div>
-
+                @endauth
 
                 <div id="header-carousel" class="carousel slide" data-ride="carousel">
 
@@ -327,6 +326,27 @@
         </div>
     </div>
 
+<!-- Login Suggestion modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content rounded">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login Required !!!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Please sign in first to access all the features.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary rounded" data-dismiss="modal">Close</button>
+                    <a href="{{ route('login')}}" class="btn btn-outline-primary rounded">Sign In</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Highly Recomended Books -->
     <div class="container-fluid py-4" id="highly-recomended">
         <div class="text-center mb-4">
@@ -356,6 +376,7 @@
                                 data-rating="{{ $book->rating }}"
                                 class="viewDetailBtn btn btn-sm text-dark p-0">
                                 <i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                            @if(auth()->check())
                             <a href="#"
                                 data-title="{{ $book->title }}"
                                 data-price="{{ $book->price }}"
@@ -363,6 +384,10 @@
                                 data-id="{{ $book->id }}"
                                 class="addToCartBtn btn btn-sm text-dark p-0">
                             <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                            @else
+                            <button class="btn btn-sm text-dark p-0" onclick="showLoginMessage()">
+                            <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
+                            @endif
                         </div>
                     </div>
                     @endforeach
