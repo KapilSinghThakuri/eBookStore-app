@@ -79,7 +79,7 @@
             <div class="col-lg-6 col-6 text-left">
                 <form action="">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for products">
+                        <input type="text" name="searchBook" id="searchBook" class="form-control" placeholder="Search for products">
                         <div class="input-group-append">
                             <span class="input-group-text bg-transparent text-primary">
                                 <i class="fa fa-search"></i>
@@ -87,6 +87,17 @@
                         </div>
                     </div>
                 </form>
+
+                <!-- Searched Contents Here -->
+                <div id="searchOverlay" class="col-lg-6 col-6 text-center rounded-bottom">
+                    <div class="form-group mt-1">
+                            <p id="searchTitle">Products</p>
+                            <div id="searchContent">
+                                <!-- Search results are appear here... -->
+                            </div>
+                    </div>
+                </div>
+                <!-- Searched Contents End Here -->
             </div>
             <div class="col-lg-3 col-6 text-right">
                 <a href="" class="btn border">
@@ -151,17 +162,16 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
                             <a href="{{ route('homepage') }}" class="nav-item nav-link">Home</a>
-                            <a href="{{ url('/shopDetail') }}" class="nav-item nav-link">Shop Detail</a>
+                            <a href="{{ url('/shopDetail') }}" class="nav-item nav-link {{ request()->routeIs('shopdetail') ? 'active' : '' }}">Shop Detail</a>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                                <a href="#" class="nav-link dropdown-toggle {{ request()->routeIs('shoppingcart') || request()->routeIs('checkout') ? 'active' : '' }}" data-toggle="dropdown">Pages</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="{{ url('/shoppingCart') }}" class="dropdown-item">Shopping Cart</a>
-                                    <a href="{{ url('/checkOut') }}" class="dropdown-item">Checkout</a>
+                                    <a href="{{ url('/shoppingCart') }}" class="dropdown-item {{ request()->routeIs('shoppingcart') ? 'active' : '' }}">Shopping Cart</a>
+                                    <a href="{{ url('/checkOut') }}" class="dropdown-item {{ request()->routeIs('checkout') ? 'active' : '' }}">Checkout</a>
                                 </div>
                             </div>
-                            <a href="{{ url('/contact') }}" class="nav-item nav-link">Contact</a>
+                            <a href="{{ url('/contact') }}" class="nav-item nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">Contact</a>
                         </div>
-
 
                         <div class="navbar-nav ml-auto py-0">
                             @if (Route::has('login'))
@@ -172,9 +182,9 @@
                                     @endif
                                     <a href="#" id="profileBtn"  class="nav-item nav-link">{{$userName}}</a>
                                 @else
-                                    <a href="{{ url('/login') }}" class="nav-item nav-link">Login</a>
+                                    <a href="{{ url('/login') }}" class="nav-item nav-link {{ request()->routeIs('login') ? 'active' : '' }}">Login</a>
                                     @if (Route::has('register'))
-                                    <a href="{{ url('/register') }}" class="nav-item nav-link">Register</a>
+                                    <a href="{{ url('/register') }}" class="nav-item nav-link {{ request()->routeIs('register') ? 'active' : '' }}">Register</a>
                                     @endif
                                 @endauth
                             </div>
@@ -182,6 +192,7 @@
                         </div>
                     </div>
                 </nav>
+
 
         <!-- Profile informations modal -->
                 <div id="profileModal">

@@ -14,7 +14,7 @@
             <div class="alert alert-warning">
                 {{session('message')}}
             </div>
-            @endif
+        @endif
             <ul id="saveForm_errlist"></ul>
             <div id="success_message"></div>
         <form id="bookForm" method="POST" enctype="multipart/form-data">
@@ -123,40 +123,46 @@
                 </div>
             </a>
         </div>
-        <div class="col-md-8">
-            <div class="row ">
-                <div class="col-md-12">
-                    <h3 class="text-center rounded text-primary bg-secondary">Active Users</h3>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h3 class="mb-2 text-center">Active Users</h3>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($totalUsers as $user)
+                            <tr>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>123-456-7890</td>
+                                <td>
+                                    <form action="/User/{{ $user->id }}/Delete" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-outline-danger btn-action rounded">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-center mt-2">
+                    <a href="{{ route('add-user')}}" class="btn btn-primary btn-lg rounded btn-add">Add User</a>
                 </div>
             </div>
-            <table class="table table-bordered table-hover">
-                <thead>
-                    <tr>
-                        <th>Username</th>
-                        <th>Email</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($totalUsers as $user)
-                    <tr>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>
-                            <form action="/User/{{ $user->id }}/Delete" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-outline-danger rounded">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
         </div>
-        <!-- <div class="col-md-4">
-            <div class="card card-bordered mb-3" style="height: 27vh;"> Total Book Count</div>
-        </div> -->
     </div>
 </div>
 @endsection

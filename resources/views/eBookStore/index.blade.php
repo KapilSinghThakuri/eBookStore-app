@@ -154,7 +154,6 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
                             <a href="{{ route('homepage') }}" class="nav-item nav-link active">Home</a>
-                            <!-- <a href="shop.html" class="nav-item nav-link">Shop</a> -->
                             <a href="{{ route('shopdetail') }}" class="nav-item nav-link" id="shopDetailLink">Shop Detail</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
@@ -175,9 +174,9 @@
                                     @endif
                                     <a href="#" id="profileBtn" class="nav-item nav-link">{{ $userName }} </a>
                                 @else
-                                    <a href="{{ route('login') }}" class="nav-item nav-link">Login</a>
+                                    <a href="{{ route('login') }}" class="nav-item nav-link {{ request()->routeIs('login') ? 'active' : '' }}">Login</a>
                                     @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="nav-item nav-link">Register</a>
+                                    <a href="{{ route('register') }}" class="nav-item nav-link {{ request()->routeIs('register') ? 'active' : '' }}">Register</a>
                                     @endif
                                 @endauth
                             </div>

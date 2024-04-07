@@ -9,6 +9,7 @@ use App\Models\Order;
 use App\Models\Book;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 
 class AdminDashboardController extends Controller
@@ -51,6 +52,25 @@ class AdminDashboardController extends Controller
                         ->sum('total_amount');
 
         return $weeklySales;
+    }
+
+    public function createUser()
+    {
+        return view('eBookStore.adminPanel.user.add-user');
+    }
+    public function storeUser(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users|max:255',
+            'password' => 'required|string|min:6|max:255',
+        ]);
+        User::create([
+            'name' => $validatedData['name'],
+            'email' => $validatedData['email'],
+            'password' => Hash::make($validatedData['password']),
+        ]);
+        return redirect()->route('admindashboard')->with('success_message','New user addded successfully!!!');
     }
     public function destroy(String $id)
     {

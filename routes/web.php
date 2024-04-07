@@ -77,6 +77,8 @@ Route::middleware('Admin_verify')->group(function(){
 
     Route::get('/AdminDashboard/Sales/index',[SalesController::class,'index'])->name('sales');
 
+    Route::get('/User/add',[AdminDashboardController::class,'createUser'])->name('add-user');
+    Route::POST('/User/add/store',[AdminDashboardController::class,'storeUser'])->name('add-user.store');
     Route::delete('/User/{id}/Delete',[AdminDashboardController::class,'destroy']);
     Route::get('/AdminDashboard/Order/index',[OrderController::class,'index'])->name('orderDetail');
 });

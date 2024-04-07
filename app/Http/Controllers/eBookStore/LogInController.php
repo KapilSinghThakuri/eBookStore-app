@@ -19,13 +19,10 @@ class LogInController extends Controller
 
     public function store(UserLoginRequest $request)
     {
-        // dd($request->email);
         $email = $request->email;
         $user = User::where('email', $email )->first();
         $roles = $user->role_id;
-        // dd($roles);
         $validated = $request->validated();
-        // dd($validated);
         if(Auth::attempt($request ->only('email','password'))){
             if($roles == 1){
             return redirect('/AdminDashboard');
@@ -35,7 +32,7 @@ class LogInController extends Controller
             }
         }
         else{
-            return back()->with('fail','Email or password does not match !!!');
+            return back()->with('fail','Credentials does not match !!!');
         }
     }
 }

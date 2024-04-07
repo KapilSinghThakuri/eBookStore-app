@@ -17,20 +17,17 @@ class AlreadyLoggedIn
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->is('login') || $request->is('register')) {
-            if (Auth::check()) {
-                return redirect('/Home');
-            }
-        }
-        return $next($request);
+        // if ($request->routeIs('login') || $request->routeIs('register')) {
+        //     if (Auth::check()) {
+        //         return redirect('/Home');
+        //     }
+        // }
+        // return $next($request);
 
-        // if (Auth::check())
-        // {
-        //     return redirect('/Home');
-        // }
-        // else
-        // {
-        //     return $next($request);
-        // }
+        if (!Auth::check()) {
+            return $next($request);
+        }else{
+            return redirect('/Home');
+        }
     }
 }
