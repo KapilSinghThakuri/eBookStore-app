@@ -12,9 +12,6 @@
             style="color: papayawhip;">Shop Detail</h1>
         </div>
     </div>
-
-    <!-- SANO SCREEN KO LAGI Mediaframe USE GARERA RESPONSIVE BANAUNA BAKI ( YO SECTION KO SABAI PAGE MA )-->
-
     <!-- Page Header End -->
 
 

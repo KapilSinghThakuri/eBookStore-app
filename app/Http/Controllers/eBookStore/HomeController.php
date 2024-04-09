@@ -74,46 +74,6 @@ class HomeController extends Controller
         return Category::find(10)->books;
     }
 
-    // public function search(Request $request){
-    // $output = "";
-
-    // // Fetch the data based on the search query
-    // $fetchedData = Book::where('title', 'LIKE', '%' . $request->searchBook . '%')->get();
-
-    //     if (!empty($fetchedData)) {
-    //     foreach ($fetchedData as $product) {
-    //     $output .=
-    //         '<div class="border-bottom mb-3">
-    //             <div class="row">
-    //                 <div class="col-md-4">
-    //                     <img src=" '.$product->image.' " alt="Book Image" class="img-fluid"
-    //                     style= "width: 60px; height: auto;">
-    //                 </div>
-    //                 <div class="col-md-6">
-    //                     <h5> <a href="#"> '. $product->title .' </a></h5>
-    //                     <p>'.'Rs.' . $product->price . '</p>
-    //                 </div>
-    //                 <div class="col-md-2">
-    //                     <a href="#" data-id = '. $product->id .'class="addToCartBtn btn btn-sm text-dark p-0" style="text-decoration: none;">
-    //                     <i class="fas fa-shopping-cart text-primary mr-1 mt-2"></i>Add To Cart</a>
-    //                 </div>
-    //             </div>
-    //         </div>';
-    //         }
-    //     return response($output);
-    //     }else{
-    //     $output .=
-    //         '<div class="border-bottom mb-3">
-    //             <div class="row">
-    //                 <div class="col-md-12">
-    //                     <p>Your searched products are not available.</p>;
-    //                 </div>
-    //             </div>
-    //         </div>';
-    //     }
-    //     return response($output);
-    // }
-
     // Search and fetching the data using Linear Search Algorithm
     public function search(Request $request)
     {

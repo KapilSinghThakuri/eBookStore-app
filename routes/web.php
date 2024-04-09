@@ -79,6 +79,10 @@ Route::middleware('Admin_verify')->group(function(){
 
     Route::get('/User/add',[AdminDashboardController::class,'createUser'])->name('add-user');
     Route::POST('/User/add/store',[AdminDashboardController::class,'storeUser'])->name('add-user.store');
+    Route::get('/User/{user}/edit',[AdminDashboardController::class,'editUser'])->name('add-user.edit');
+    Route::PUT('/User/edit/{user}/update',[AdminDashboardController::class,'updateUser'])->name('add-user.update');
+
+
     Route::delete('/User/{id}/Delete',[AdminDashboardController::class,'destroy']);
     Route::get('/AdminDashboard/Order/index',[OrderController::class,'index'])->name('orderDetail');
 });

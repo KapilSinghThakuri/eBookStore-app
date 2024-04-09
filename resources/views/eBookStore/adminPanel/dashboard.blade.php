@@ -146,11 +146,12 @@
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>123-456-7890</td>
-                                <td>
+                                <td class="d-flex">
+                                    <a href="{{ route('add-user.edit', ['user' => $user->id]) }}" class="btn btn-outline-success rounded">Edit</a>
                                     <form action="/User/{{ $user->id }}/Delete" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-outline-danger btn-action rounded">Delete</button>
+                                        <button type="submit" class="btn btn-outline-danger rounded">Delete</button>
                                     </form>
                                 </td>
                             </tr>

@@ -248,7 +248,7 @@
     <!-- Navbar End -->
 
     <!-- Categories Start -->
-    <div class="container-fluid pt-5">
+    <!-- <div class="container-fluid pt-5">
         <div class="row px-xl-5 pb-3">
             <div class="col-lg-4 col-md-6 pb-1">
                 <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
@@ -278,7 +278,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Categories End -->
 
 <!-- view details of book -->
@@ -896,7 +896,5 @@
     <!-- Main Javascript -->
     <!-- <script src="eBookStore/js/main.js"></script> -->
     <script src="{{ asset('eBookStore/js/main.js') }}"></script>
-
-
 </body>
 </html>

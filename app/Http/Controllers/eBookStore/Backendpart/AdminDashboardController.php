@@ -72,6 +72,26 @@ class AdminDashboardController extends Controller
         ]);
         return redirect()->route('admindashboard')->with('success_message','New user addded successfully!!!');
     }
+    public function editUser($id)
+    {
+        $user = User::where('id', $id)->first();
+        return view('eBookStore.adminPanel.user.edit-user',compact('user'));
+    }
+    public function updateUser(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'name' => 'nullable|string|max:255',
+            'email' => 'nullable|email',
+            'password' => 'nullable|string|min:6|max:255',
+        ]);
+        $user = User::find($id);
+        $user->update([
+            'name' => $validatedData['name'],
+            'email' => $validatedData['email'],
+            'password' => Hash::make($validatedData['password']),
+        ]);
+        return redirect()->route('admindashboard')->with('success_message','New user updated successfully!!!');
+    }
     public function destroy(String $id)
     {
         $user = User::find($id);
