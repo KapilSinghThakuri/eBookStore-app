@@ -16,7 +16,7 @@ class CreateBillingAddressesTable extends Migration
         Schema::create('billing_addresses', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('book_order_id')->constrained('book_order');
+            $table->foreignId('book_order_id')->constrained('books_order');
             $table->integer('phone');
             $table->string('province');
             $table->string('city');

@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\eBookStore\CartController;
 use App\Http\Controllers\eBookStore\HomeController;
@@ -14,95 +15,87 @@ use App\Http\Controllers\eBookStore\TermConditionController;
 use App\Http\Controllers\eBookStore\TopbarController\FAQController;
 use App\Http\Controllers\eBookStore\TopbarController\helpController;
 use App\Http\Controllers\eBookStore\TopbarController\supportController;
-
 use App\Http\Controllers\eBookStore\Backendpart\AdminDashboardController;
 use App\Http\Controllers\eBookStore\Backendpart\CategoryController;
 use App\Http\Controllers\eBookStore\Backendpart\BookController;
-use App\Http\Controllers\eBookStore\Backendpart\UserController;
 use App\Http\Controllers\eBookStore\Backendpart\ShoppingCartController;
 use App\Http\Controllers\eBookStore\Backendpart\OrderController;
 use App\Http\Controllers\eBookStore\Backendpart\SalesController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('homepage');
+Route::get('/searchProducts', [HomeController::class, 'search'])->name('search');
 
-    Route::get('/Home',[HomeController::class,'index'])->name('homepage');
-    Route::get('/searchProducts',[HomeController::class,'search'])->name('search');
+Route::get('/shopDetail', [ShopDetailController::class, 'index'])->name('shopdetail')->middleware('Loggedin_verify');
 
-    Route::get('/shopDetail',[ShopDetailController::class,'index'])->name('shopdetail')->middleware('Loggedin_verify');
+Route::get('/shoppingCart', [CartController::class, 'index'])->name('shoppingcart')->middleware('Loggedin_verify');
+// for removing cart items from cart table
+Route::DELETE('/shoppingCart/{id}', [CartController::class, 'destroy']);
 
-    Route::get('/shoppingCart',[CartController::class,'index'])->name('shoppingcart')->middleware('Loggedin_verify');
-    // for removing cart items from cart table
-    Route::DELETE('/shoppingCart/{id}',[CartController::class,'destroy']);
+// for saving cart items to cart table & displaying cart modal
+Route::post('/addToCartDetailStore', [ShoppingCartController::class, 'saveCartDetails']);
+// for counting the cart items
+Route::get('/getCartItemCount', [ShoppingCartController::class, 'getCartItemCount']);
 
-    // for saving cart items to cart table & displaying cart modal
-    Route::post('/addToCartDetailStore',[ShoppingCartController::class,'saveCartDetails']);
-    // for counting the cart items
-    Route::get('/getCartItemCount', [ShoppingCartController::class, 'getCartItemCount']);
+Route::get('/checkOut', [CheckOutController::class, 'index'])->name('checkout')->middleware('Loggedin_verify');
+// for saving the orders details to order table
+Route::post('/checkOut/orderSubmitting', [CheckOutController::class, 'store']);
 
-    Route::get('/checkOut',[CheckOutController::class,'index'])->name('checkout')->middleware('Loggedin_verify');
-    // for saving the orders details to order table
-    Route::post('/checkOut/orderSubmitting',[CheckOutController::class,'store']);
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
-    Route::get('/contact',[ContactController::class,'index'])->name('contact');
-
-    Route::get('/logout',[RegisterController::class,'logout'])->name('logout');
+Route::get('/logout', [RegisterController::class, 'logout'])->name('logout');
 
 // For Signup-Signin Routing
-Route::middleware('alreadyLoggedIn_verify')->group(function(){
-    Route::get('/login',[LogInController::class,'index'])->name('login');
-    Route::post('/login',[LogInController::class,'store'])->name('login');
+Route::middleware('alreadyLoggedIn_verify')->group(function () {
+    Route::get('/login', [LogInController::class, 'index'])->name('login');
+    Route::post('/login', [LogInController::class, 'store'])->name('login');
 
-    Route::get('/register',[RegisterController::class,'index'])->name('register');
-    Route::post('/register',[RegisterController::class,'store'])->name('register');
+    Route::get('/register', [RegisterController::class, 'index'])->name('register');
+    Route::post('/register', [RegisterController::class, 'store'])->name('register');
 });
 
 // Admin Panel Routing
-Route::middleware('Admin_verify')->group(function(){
-    Route::get('/AdminDashboard',[AdminDashboardController::class,'index'])->name('admindashboard');
-    Route::get('/AdminDashboard/Category/index',[CategoryController::class,'index'])->name('categoryDetail');
-    Route::get('/AdminDashboard/Category/Create',[CategoryController::class,'create']);
-    Route::post('/AdminDashboard/Category/Store',[CategoryController::class,'store']);
-    Route::delete('/AdminDashboard/Category/{id}/Destroy',[CategoryController::class,'remove']);
-    Route::get('/AdminDashboard/Category/{id}/Edit',[CategoryController::class,'edit']);
-    Route::put('/AdminDashboard/Category/{id}/Update',[CategoryController::class,'update']);
+Route::middleware('Admin_verify')->group(function () {
+    Route::get('/AdminDashboard', [AdminDashboardController::class, 'index'])->name('admindashboard');
+    Route::get('/AdminDashboard/Category/index', [CategoryController::class, 'index'])->name('categoryDetail');
+    Route::get('/AdminDashboard/Category/Create', [CategoryController::class, 'create']);
+    Route::post('/AdminDashboard/Category/Store', [CategoryController::class, 'store']);
+    Route::delete('/AdminDashboard/Category/{id}/Destroy', [CategoryController::class, 'remove']);
+    Route::get('/AdminDashboard/Category/{id}/Edit', [CategoryController::class, 'edit']);
+    Route::put('/AdminDashboard/Category/{id}/Update', [CategoryController::class, 'update']);
 
-    Route::get('/AdminDashboard/Book/index',[BookController::class,'index'])->name('bookDetail');
-    Route::get('/AdminDashboard/Book/Create',[BookController::class,'create']);
-    Route::post('/AdminDashboard/Book/Store',[BookController::class,'store']);
-    Route::delete('/AdminDashboard/Book/{id}/Destroy',[BookController::class,'remove']);
-    Route::get('/AdminDashboard/Book/{id}/Edit',[BookController::class,'edit']);
-    Route::put('/AdminDashboard/Book/{id}/Update',[BookController::class,'update']);
+    Route::get('/AdminDashboard/Book/index', [BookController::class, 'index'])->name('bookDetail');
+    Route::get('/AdminDashboard/Book/Create', [BookController::class, 'create']);
+    Route::post('/AdminDashboard/Book/Store', [BookController::class, 'store']);
+    Route::delete('/AdminDashboard/Book/{id}/Destroy', [BookController::class, 'remove']);
+    Route::get('/AdminDashboard/Book/{id}/Edit', [BookController::class, 'edit']);
+    Route::put('/AdminDashboard/Book/{id}/Update', [BookController::class, 'update']);
 
-    Route::get('/AdminDashboard/Sales/index',[SalesController::class,'index'])->name('sales');
+    Route::get('/AdminDashboard/Sales/index', [SalesController::class, 'index'])->name('sales');
 
-    Route::get('/User/add',[AdminDashboardController::class,'createUser'])->name('add-user');
-    Route::POST('/User/add/store',[AdminDashboardController::class,'storeUser'])->name('add-user.store');
-    Route::get('/User/{user}/edit',[AdminDashboardController::class,'editUser'])->name('add-user.edit');
-    Route::PUT('/User/edit/{user}/update',[AdminDashboardController::class,'updateUser'])->name('add-user.update');
+    Route::get('/User/add', [AdminDashboardController::class, 'createUser'])->name('add-user');
+    Route::POST('/User/add/store', [AdminDashboardController::class, 'storeUser'])->name('add-user.store');
+    Route::get('/User/{user}/edit', [AdminDashboardController::class, 'editUser'])->name('add-user.edit');
+    Route::PUT('/User/edit/{user}/update', [AdminDashboardController::class, 'updateUser'])->name('add-user.update');
 
-
-    Route::delete('/User/{id}/Delete',[AdminDashboardController::class,'destroy']);
-    Route::get('/AdminDashboard/Order/index',[OrderController::class,'index'])->name('orderDetail');
+    Route::delete('/User/{id}/Delete', [AdminDashboardController::class, 'destroy']);
+    Route::get('/AdminDashboard/Order/index', [OrderController::class, 'index'])->name('orderDetail');
 });
 
-
 // For Testing...
-    // Route::get('/UserDetails',[UserController::class,'getUserDetails']);
-
+// Route::get('/UserDetails',[UserController::class,'getUserDetails']);
 
 // For FooterPages Routing
-    Route::get('/refundPolicy',[refundPolicyController::class,'index']);
-    Route::get('/aboutUs',[AboutUsController::class,'index']);
-    Route::get('/privacyPolicy',[PrivacyController::class,'index']);
-    Route::get('/termCondition',[TermConditionController::class,'index']);
+Route::get('/refundPolicy', [refundPolicyController::class, 'index']);
+Route::get('/aboutUs', [AboutUsController::class, 'index']);
+Route::get('/privacyPolicy', [PrivacyController::class, 'index']);
+Route::get('/termCondition', [TermConditionController::class, 'index']);
 
 // For TopbarPages Routing
-    Route::get('/FAQ',[FAQController::class,'index']);
-    Route::get('/help',[helpController::class,'index']);
-    Route::get('/support',[supportController::class,'index']);
+Route::get('/FAQ', [FAQController::class, 'index']);
+Route::get('/help', [helpController::class, 'index']);
+Route::get('/support', [supportController::class, 'index']);
+
 // For not found error
-    Route::fallback(function(){
-        return "<h1> Page not found !!! </h1>";
-    });
+Route::fallback(function () {
+    return "<h1> Page not found !!! </h1>";
+});

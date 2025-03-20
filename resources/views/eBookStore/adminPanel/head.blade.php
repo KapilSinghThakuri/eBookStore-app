@@ -37,3 +37,4 @@
     <link href="{{ url('eBookStore/css/style.css') }}" rel="stylesheet">
 </head>
 
+<body>

@@ -22,23 +22,35 @@ class AdminDashboardController extends Controller
         $totalUsers = $this->totalUsers();
         $weeklySales = $this->getWeeklySales();
         $categories = Category::all();
-        return view('eBookStore.adminPanel.dashboard',
-            compact('categories','totalOrderCount','totalBookCount','totalCategoryCount','totalUsers'
-                    ,'weeklySales'));
+        return view(
+            'eBookStore.adminPanel.dashboard',
+            compact(
+                'categories',
+                'totalOrderCount',
+                'totalBookCount',
+                'totalCategoryCount',
+                'totalUsers',
+                'weeklySales'
+            )
+        );
     }
-    private function totalOrders(){
+    private function totalOrders()
+    {
         $orderCount = Order::all()->count();
         return $orderCount;
     }
-    private function totalBooks(){
+    private function totalBooks()
+    {
         $bookCount = Book::all()->count();
         return $bookCount;
     }
-    private function totalCategory(){
+    private function totalCategory()
+    {
         $categoryCount = Category::all()->count();
         return $categoryCount;
     }
-    private function totalUsers(){
+    private function totalUsers()
+    {
         $users = User::all()->where('role_id', '==', 2);
         return $users;
     }
@@ -49,7 +61,7 @@ class AdminDashboardController extends Controller
 
         // Fetch weekly sales from the orders table
         $weeklySales = Order::whereBetween(DB::raw('DATE(order_date)'), [$startDate, $endDate])
-                        ->sum('total_amount');
+            ->sum('total_amount');
 
         return $weeklySales;
     }
@@ -69,13 +81,14 @@ class AdminDashboardController extends Controller
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
             'password' => Hash::make($validatedData['password']),
+            'role_id' => 2
         ]);
-        return redirect()->route('admindashboard')->with('success_message','New user addded successfully!!!');
+        return redirect()->route('admindashboard')->with('success_message', 'New user addded successfully!!!');
     }
     public function editUser($id)
     {
         $user = User::where('id', $id)->first();
-        return view('eBookStore.adminPanel.user.edit-user',compact('user'));
+        return view('eBookStore.adminPanel.user.edit-user', compact('user'));
     }
     public function updateUser(Request $request, $id)
     {
@@ -90,13 +103,13 @@ class AdminDashboardController extends Controller
             'email' => $validatedData['email'],
             'password' => Hash::make($validatedData['password']),
         ]);
-        return redirect()->route('admindashboard')->with('success_message','New user updated successfully!!!');
+        return redirect()->route('admindashboard')->with('success_message', 'New user updated successfully!!!');
     }
     public function destroy(String $id)
     {
         $user = User::find($id);
         if (!$user) {
-            return back()->with('message','User not found !!!');
+            return back()->with('message', 'User not found !!!');
         }
 
         $userOrders = Order::where('user_id', $id)->get();
@@ -105,6 +118,6 @@ class AdminDashboardController extends Controller
         }
 
         $user->delete();
-        return back()->with('message','User with all associated history deleted successfully !!!');
+        return back()->with('message', 'User with all associated history deleted successfully !!!');
     }
 }

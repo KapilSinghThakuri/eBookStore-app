@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Role;
+
 class RoleSeeder extends Seeder
 {
     /**
@@ -13,8 +14,14 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        $role = new Role;
-        $role->name = "User";
-        $role->save();
+        $roles = [
+            'Admin',
+            'User'
+        ];
+        foreach ($roles as $value) {
+            Role::create([
+                'name' => $value,
+            ]);
+        }
     }
 }

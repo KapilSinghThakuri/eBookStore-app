@@ -1,4 +1,4 @@
-@include('eBookStore.adminPanel.header')
+@include('eBookStore.adminPanel.head')
 
 @include('eBookStore.adminPanel.navigation')
 

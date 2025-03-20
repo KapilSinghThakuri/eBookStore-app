@@ -8,7 +8,8 @@
 
     <!-- x-csrf tokens -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 
     <!-- Boxicons icons link -->
@@ -22,7 +23,8 @@
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -35,8 +37,7 @@
 </head>
 
 <body>
-    <!-- Topbar Start -->
-    <div class="container-fluid">
+    <div class="container-fluid mb-5 mt-1">
         <div class="row bg-secondary py-2 px-xl-5">
             <div class="col-lg-6 d-none d-lg-block">
                 <div class="d-inline-flex align-items-center">
@@ -67,86 +68,15 @@
                 </div>
             </div>
         </div>
-        <div class="row align-items-center py-3 px-xl-5">
-            <div class="col-lg-3 d-none d-lg-block">
-                <a href="{{ route('homepage') }}" class="text-decoration-none">
-                    <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Books</h1>
-                </a>
-            </div>
-            <div class="col-lg-6 col-6 text-left">
-                <form action="">
-                    <div class="input-group">
-                        <input type="text" name="searchBook" id="searchBook" class="form-control" placeholder="Search for products">
-                        <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-primary">
-                                <i class="fa fa-search"></i>
-                            </span>
-                        </div>
-                    </div>
-                </form>
-
-                <!-- Searched Contents Here -->
-                <div id="searchOverlay" class="col-lg-6 col-6 text-center rounded-bottom">
-                    <div class="form-group mt-1">
-                            <p id="searchTitle">Products</p>
-                            <div id="searchContent">
-                                <!-- Search results are appear here... -->
-                            </div>
-                    </div>
-                </div>
-                <!-- Searched Contents End Here -->
-            </div>
-            <div class="col-lg-3 col-6 text-right">
-                <a href="" class="btn border">
-                    <i class="fas fa-heart text-primary"></i>
-                    <span class="badge">0</span>
-                </a>
-                <a href="/shoppingCart" class="btn border">
-                    <i class="fas fa-shopping-cart text-primary"></i>
-                    <span class="badge" id="cartItemCount">0</span>
-                </a>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
-
-
-    <!-- Navbar Start -->
-    <div class="container-fluid mb-5 mt-1">
         <div class="row border-top px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
-                <a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
-                    <h6 class="m-0">Categories</h6>
-                    <i class="fa fa-angle-down text-dark"></i>
-                </a>
-                <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0" id="navbar-vertical">
-                    <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link" data-toggle="dropdown">Religion & Spirituality <i class="fa fa-angle-down float-right mt-1"></i></a>
-                            <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                            @foreach($religionSpirituality as $religionCategory)
-                                <a href="#Religion-Spirituality" class="dropdown-item">{{ $religionCategory ->name }}</a>
-                            @endforeach
-                            </div>
-                        </div>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link" data-toggle="dropdown">Business Essentials<i class="fa fa-angle-down float-right mt-1"></i></a>
-                            <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                @foreach($businessEssential as $businessCategory)
-                                <a href="#business-investing" class="dropdown-item">{{ $businessCategory -> name}}</a>
-                                @endforeach
-                            </div>
-                        </div>
-                        @foreach($remainCategories as $remainCategory)
-                        <a href="" class="nav-item nav-link">{{ $remainCategory -> name }}</a>
-                        @endforeach
-                    </div>
-                </nav>
+                @include('eBookStore.partials.categories')
             </div>
             <div class="col-lg-9">
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                     <a href="{{ route('homepage') }}" class="text-decoration-none d-block d-lg-none">
-                        <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Books</h1>
+                        <h1 class="m-0 display-5 font-weight-semi-bold"><span
+                                class="text-primary font-weight-bold border px-3 mr-1">E</span>Books</h1>
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
@@ -154,12 +84,15 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
                             <a href="{{ route('homepage') }}" class="nav-item nav-link active">Home</a>
-                            <a href="{{ route('shopdetail') }}" class="nav-item nav-link" id="shopDetailLink">Shop Detail</a>
+                            <a href="{{ route('shopdetail') }}" class="nav-item nav-link" id="shopDetailLink">Shop
+                                Detail</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="{{ route('shoppingcart') }}" class="dropdown-item" id="shoppingCartLink">Shopping Cart</a>
-                                    <a href="{{ route('checkout') }}" class="dropdown-item" id="checkoutLink">Checkout</a>
+                                    <a href="{{ route('shoppingcart') }}" class="dropdown-item"
+                                        id="shoppingCartLink">Shopping Cart</a>
+                                    <a href="{{ route('checkout') }}" class="dropdown-item"
+                                        id="checkoutLink">Checkout</a>
                                 </div>
                             </div>
                             <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
@@ -167,45 +100,26 @@
 
                         <div class="navbar-nav ml-auto py-0">
                             @if (Route::has('login'))
-                            <div class="hidden d-flex">
-                                @auth
-                                    @if( $roleId == 1)
-                                    <a href="{{ url('/AdminDashboard') }}" class="nav-item nav-link">AdminHome</a>
-                                    @endif
-                                    <a href="#" id="profileBtn" class="nav-item nav-link">{{ $userName }} </a>
-                                @else
-                                    <a href="{{ route('login') }}" class="nav-item nav-link {{ request()->routeIs('login') ? 'active' : '' }}">Login</a>
-                                    @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="nav-item nav-link {{ request()->routeIs('register') ? 'active' : '' }}">Register</a>
-                                    @endif
-                                @endauth
-                            </div>
+                                <div class="hidden d-flex">
+                                    @auth
+                                        @if ($roleId == 1)
+                                            <a href="{{ route('admindashboard') }}" class="nav-item nav-link">Dashboard</a>
+                                        @endif
+                                        <a href="#" id="profileBtn" class="nav-item nav-link">{{ $userName }}
+                                        </a>
+                                    @else
+                                        <a href="{{ route('login') }}"
+                                            class="nav-item nav-link {{ request()->routeIs('login') ? 'active' : '' }}">Login</a>
+                                        @if (Route::has('register'))
+                                            <a href="{{ route('register') }}"
+                                                class="nav-item nav-link {{ request()->routeIs('register') ? 'active' : '' }}">Register</a>
+                                        @endif
+                                    @endauth
+                                </div>
                             @endif
                         </div>
                     </div>
                 </nav>
-
-                @auth
-                <!-- Profile informations modal -->
-                <div id="profileModal">
-                    <nav>
-                        <h5>{{ $userName }}</h5>
-                        <i id="cancelBtn" class='bx bx-x'></i>
-                    </nav>
-                    <div id="profilePicture">
-                        <div id="profile-img"></div>
-                    </div>
-                    <div id="profile-info">
-                        <h5>{{ $userName }}</h5>
-                        @foreach($userInfo as $user)
-                            <p>{{ $user->email }}</p>
-                        @endforeach
-                    </div>
-                    <div id="logout-btn">
-                        <a href="{{ url('/logout') }}">Logout</a>
-                    </div>
-                </div>
-                @endauth
 
                 <div id="header-carousel" class="carousel slide" data-ride="carousel">
 
@@ -214,8 +128,10 @@
                             <img class="img-fluid" src="{{ url('eBookStore/img/Home2.jpg') }}" alt="Image">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
-                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Read, Lead & Succeed.</h3>
+                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First
+                                        Order</h4>
+                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Read, Lead & Succeed.
+                                    </h3>
                                     <a href="#highly-recomended" class="btn btn-light py-2 px-3">Shop Now</a>
                                 </div>
                             </div>
@@ -224,8 +140,9 @@
                             <img class="img-fluid" src="{{ url('eBookStore/img/Home2.jpg') }}" alt="Image">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
-                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First Order</h4>
-                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price</h3>
+                                    <h4 class="text-light text-uppercase font-weight-medium mb-3">10% Off Your First
+                                        Order</h4>
+                                    <h3 class="display-4 text-white font-weight-semi-bold mb-4">Reasonable Price </h3>
                                     <a href="#highly-recomended" class="btn btn-light py-2 px-3">Shop Now</a>
                                 </div>
                             </div>
@@ -244,120 +161,81 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Navbar End -->
 
-    <!-- Categories Start -->
-    <!-- <div class="container-fluid pt-5">
-        <div class="row px-xl-5 pb-3">
-            <div class="col-lg-4 col-md-6 pb-1">
-                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="" alt="">
-                    </a>
-                    <h5 class="font-weight-semi-bold m-0">Kids & Teens</h5>
-                </div>
+        <div id="viewDetail">
+            <div id="viewDetailHeading">
+                <h2>Book Details</h2>
+                <i id="closeDetailModal" class='bx bx-x'></i>
             </div>
-            <div class="col-lg-4 col-md-6 pb-1">
-                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="" alt="">
-                    </a>
-                    <h5 class="font-weight-semi-bold m-0">History & Biography</h5>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 pb-1">
-                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
-                    <p class="text-right">15 Products</p>
-                    <a href="" class="cat-img position-relative overflow-hidden mb-3">
-                        <img class="img-fluid" src="{{ url('eBookStore/img/') }}" alt="">
-                    </a>
-                    <h5 class="font-weight-semi-bold m-0">Technology</h5>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Categories End -->
-
-<!-- view details of book -->
-    <div id="viewDetail">
-        <div id="viewDetailHeading">
-            <h2>Book Details</h2>
-            <i id="closeDetailModal" class='bx bx-x'></i>
-        </div>
-        <div id="viewDetailContent">
-            <img src="" id="book_image">
-            <div id="bookDetails">
-                <h5>Book Title</h5>
-                <p>Book price</p>
-                <div class="mb-1">
-                    <div class="rating text-primary mr-2">
+            <div id="viewDetailContent">
+                <img src="" id="book_image" alt="">
+                <div id="bookDetails">
+                    <h5>Book Title</h5>
+                    <p>Book price</p>
+                    <div class="mb-1">
+                        <div class="rating text-primary mr-2">
+                        </div>
+                        <small class="pt-1">(50 Reviews)</small>
                     </div>
-                    <small class="pt-1">(50 Reviews)</small>
+                    <h6>Book Descriptions</h6>
                 </div>
-                <h6>Book Descriptions</h6>
             </div>
         </div>
-    </div>
 
-<!-- addToCart or buyMore books -->
-    <div id="addToCartModalContent">
-        <div id="addToCartModal" class="addToCart">
-            <div id="modalHeadingContent">
-                <p id="bookAddedMessage"></p> <!-- Here, book added to cart table  -->
-                <i id="closeBtn" class='bx bx-x'></i>
-            </div>
-            <div id="modalBodyContent">
-                <img src=""> <!-- Here, Added book image  -->
-                <div id="bookInfo">
-                    <p>{{ $userName }} eBookStore</p>
-                    <h5></h5> <!-- Here, Added book name  -->
-                    <h6></h6> <!-- Here, Added book price  -->
+        <div id="addToCartModalContent">
+            <div id="addToCartModal" class="addToCart">
+                <div id="modalHeadingContent">
+                    <p id="bookAddedMessage"></p> <i id="closeBtn" class='bx bx-x'></i>
+                </div>
+                <div id="modalBodyContent">
+                    <img src="" alt="">
+                    <div id="bookInfo">
+                        <p>{{ $userName }} eBookStore</p>
+                        <h5></h5>
+                        <h6></h6>
+                    </div>
+                </div>
+                <div id="modalFooterContent">
+                    <a href="/shoppingCart" id="viewCartBtn">View Cart(<span id="cartBookCount">0</span>)</a>
+                    <a href="/checkOut" id="checkOutBtn" class="bg-primary text-white">Check out</a>
+                    <a href="#" id="continueShoppingBtn" class="mt-1 text-center">Continue shopping</a>
                 </div>
             </div>
-            <div id="modalFooterContent">
-                <a href="/shoppingCart" id="viewCartBtn">View Cart(<span id="cartBookCount">0</span>)</a>
-                <a href="/checkOut" id="checkOutBtn" class="bg-primary text-white">Check out</a>
-                <a href="#" id="continueShoppingBtn" class="mt-1 text-center">Continue shopping</a>
-            </div>
         </div>
-    </div>
 
-<!-- Login Suggestion modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content rounded">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="loginModalLabel">Login Required !!!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Please sign in first to access all the features.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary rounded" data-dismiss="modal">Close</button>
-                    <a href="{{ route('login')}}" class="btn btn-outline-primary rounded">Sign In</a>
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content rounded">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">Login Required !!!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Please sign in first to access all the features.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-secondary rounded"
+                            data-dismiss="modal">Close</button>
+                        <a href="{{ route('login') }}" class="btn btn-outline-primary rounded">Sign In</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Highly Recomended Books -->
-    <div class="container-fluid py-4" id="highly-recomended">
-        <div class="text-center mb-4">
-            <h2 class="section-title px-5"><span class="px-2">Highly Recomended Books</span></h2>
-        </div>
-        <div class="row px-xl-5">
-            <div class="col">
-                <div class="owl-carousel related-carousel d-flex flex-wrap">
-                    @foreach($highlyRecommendedBooks as $book)
+        <div class="container-fluid py-4" id="highly-recomended">
+            <div class="text-center mb-4">
+                <h2 class="section-title px-5"><span class="px-2">Highly Recomended Books</span></h2>
+            </div>
+            <div class="row px-xl-5">
+                <div class="col">
+                    <div class="owl-carousel related-carousel d-flex flex-wrap">
+                        {{-- @foreach ($highlyRecommendedBooks as $book)
                     <div class="card product-item border-0 flex-grow-1" style="max-width: 200px; margin: 0 20px;">
                         <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                            <img class="img-fluid w-100" src="{{ asset($book->image) }}">
+                            <img class="img-fluid w-100" src="{{ asset($book->image) }}" alt="">
                         </div>
                         <div class="card-body border-left border-right text-center p-0 pt-4 pb-3 flex-grow-1 d-flex flex-column">
                             <h6 class="text-truncate mb-3">{{ $book->title }}</h6>
@@ -375,7 +253,7 @@
                                 data-rating="{{ $book->rating }}"
                                 class="viewDetailBtn btn btn-sm text-dark p-0">
                                 <i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                            @if(auth()->check())
+                            @if (auth()->check())
                             <a href="#"
                                 data-title="{{ $book->title }}"
                                 data-price="{{ $book->price }}"
@@ -389,38 +267,32 @@
                             @endif
                         </div>
                     </div>
-                    @endforeach
+                    @endforeach --}}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Highly Recomended Books end -->
-
-    <!--Top 10 Coming Soon -->
-    <div class="lovedBooks">
-        <div class="text-center mb-4">
-            <h2 class="section-title px-5"><span class="px-2">Top 10 Coming Soon Books</span></h2>
-        </div>
-        @foreach($top10ComingSoonBooks as $book)
-        <div class="books"> 
+        <div class="lovedBooks">
+            <div class="text-center mb-4">
+                <h2 class="section-title px-5"><span class="px-2">Top 10 Coming Soon Books</span></h2>
+            </div>
+            {{-- @foreach ($top10ComingSoonBooks as $book)
+        <div class="books">
             <a href="#"> <img src="{{ asset($book -> image) }}" alt="book1" height="230px" width="250px"> </a>
             <div class="description"> {{ $book -> description }} </div>
         </div>
-        @endforeach()
-    </div>
-    <!-- End Top 10 Coming Soon -->
-
-    <!-- Products Start (Mystery & Thriller Books)-->
-    <div class="container-fluid pt-5" id="">
-        <div class="text-center mb-4">
-            <h2 class="section-title px-5"><span class="px-2">Mystery & Thriller Books</span></h2>
+        @endforeach() --}}
         </div>
-        <div class="row px-3 pb-3">
-            @foreach( $mysteryThrillerBooks as $book)
+        <div class="container-fluid pt-5" id="">
+            <div class="text-center mb-4">
+                <h2 class="section-title px-5"><span class="px-2">Mystery & Thriller Books</span></h2>
+            </div>
+            <div class="row px-3 pb-3">
+                {{-- @foreach ($mysteryThrillerBooks as $book)
             <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
                 <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="{{ asset($book -> image) }}">
+                        <img class="img-fluid w-100" src="{{ asset($book -> image) }}" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
                         <h6 class="text-truncate mb-2">{{ $book-> title }}</h6>
@@ -436,7 +308,7 @@
                             data-rating="{{ $book->rating }}"
                             data-image="{{ asset($book->image) }}"
                             class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        @if(auth()->check())
+                        @if (auth()->check())
                         <a href="#"
                             data-title="{{ $book->title }}"
                             data-price="{{ $book->price }}"
@@ -451,14 +323,13 @@
                     </div>
                 </div>
             </div>
-            @endforeach
+            @endforeach --}}
 
-    <!-- Products Start (Science Fictions & Fantasy Books)-->
-            @foreach( $fictionFantasyBooks as $book)
+                {{-- @foreach ($fictionFantasyBooks as $book)
             <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
                 <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="{{ asset($book -> image) }}">
+                        <img class="img-fluid w-100" src="{{ asset($book -> image) }}" alt="">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
                         <h6 class="text-truncate mb-2">{{ $book-> title }}</h6>
@@ -474,7 +345,7 @@
                             data-rating="{{ $book->rating }}"
                             data-image="{{ asset($book->image) }}"
                             class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        @if(auth()->check())
+                        @if (auth()->check())
                         <a href="#"
                         data-title="{{ $book->title }}"
                         data-price="{{ $book->price }}"
@@ -489,412 +360,45 @@
                     </div>
                 </div>
             </div>
-            @endforeach
-    <!-- Products End (Science Fictions & Fantasy Books)-->
-
-        </div>
-    </div>
-    <!-- Products End (Mystery & Thriller Books)-->
-
-    <!-- Subscribe for membership Start -->
-        <div class="container-fluid bg-secondary my-5" style="background-image: url('{{ asset('eBookStore/img/uniqueCover.jpeg') }}');">
-        <div class="row justify-content-md-center py-5 px-xl-5">
-            <div class="col-md-6 col-12 py-5">
-                <div class="text-center mb-2 pb-2">
-                    <h2 class="px-5 mb-3">
-                        <span class="px-2" style="color: white; font-size: 2.4 rem; font-weight: 600; letter-spacing: 4px;">Get Membership</span>
-                    </h2>
-                    <p style="color: whitesmoke;">"Unlock a world of knowledge and adventure – subscribe now to elevate
-                     your reading experience with our exclusive collection at the online book store!"
-                    </p>
-                </div>
-                <form action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control border-white p-4" placeholder="Email Goes Here">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary px-4">Subscribe</button>
-                        </div>
-                    </div>
-                </form>
+            @endforeach --}}
             </div>
         </div>
-    </div>
-    <!-- Subscribe for membership End -->
-
-
-    <!-- Products Start ( Religion & Spirituality Books)-->
-    <div class="container-fluid pt-5" id="Religion-Spirituality">
-        <div class="text-center mb-4">
-            <h2 class="section-title px-5"><span class="px-2">Religion & Spirituality Books</span></h2>
-        </div>
-        <div class="row px-3 pb-3">
-            @foreach( $buddhismBooks as $book)
-            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
-                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="{{ asset($book -> image)}}" alt="">
+        <div class="container-fluid bg-secondary my-5"
+            style="background-image: url('{{ asset('eBookStore/img/uniqueCover.jpeg') }}');">
+            <div class="row justify-content-md-center py-5 px-xl-5">
+                <div class="col-md-6 col-12 py-5">
+                    <div class="text-center mb-2 pb-2">
+                        <h2 class="px-5 mb-3">
+                            <span class="px-2"
+                                style="color: white; font-size: 2.4 rem; font-weight: 600; letter-spacing: 4px;">Get
+                                Membership</span>
+                        </h2>
+                        <p style="color: whitesmoke;">"Unlock a world of knowledge and adventure – subscribe now to
+                            elevate
+                            your reading experience with our exclusive collection at the online book store!"
+                        </p>
                     </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
-                        <h6 class="text-truncate mb-2">{{$book->title}}</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>Rs.{{ $book -> price }}</h6><h6 class="text-muted ml-2"><del>Rs.123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="#"
-                            data-title="{{ $book->title }}"
-                            data-price="{{ $book->price }}"
-                            data-description="{{ $book->description}}"
-                            data-rating="{{ $book->rating }}"
-                            data-image="{{ asset($book->image) }}"
-                            class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        @if(auth()->check())
-                        <a href="#"
-                            data-title="{{ $book->title }}"
-                            data-price="{{ $book->price }}"
-                            data-image="{{ asset($book->image) }}"
-                            data-id="{{ $book->id }}"
-                        class="addToCartBtn btn btn-sm text-dark p-0">
-                        <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                        @else
-                        <button class="btn btn-sm text-dark p-0" onclick="showLoginMessage()">
-                        <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
-                        @endif
-                    </div>
-                </div>
-            </div>
-            @endforeach
-            @foreach($hinduismBooks as $book)
-            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
-                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="{{ asset($book->image)}}" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
-                        <h6 class="text-truncate mb-2">{{$book->title}}</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>Rs.{{ $book -> price }}</h6><h6 class="text-muted ml-2"><del>Rs.123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="#"
-                            data-title="{{ $book->title }}"
-                            data-price="{{ $book->price }}"
-                            data-description="{{ $book->description}}"
-                            data-rating="{{ $book->rating }}"
-                            data-image="{{ asset($book->image) }}"
-                        class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        @if(auth()->check())
-                     <a href="#"
-                        data-title="{{ $book->title }}"
-                        data-price="{{ $book->price }}"
-                        data-image="{{ asset($book->image) }}"
-                        data-id="{{ $book->id }}"
-                        class="addToCartBtn btn btn-sm text-dark p-0">
-                        <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                        @else
-                            <button class="btn btn-sm text-dark p-0" onclick="showLoginMessage()">
-                            <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
-                            @endif
-                    </div>
-                </div>
-            </div>
-            @endforeach
-            @foreach($islamBooks as $book)
-            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
-                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="{{ asset($book->image)}}" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
-                        <h6 class="text-truncate mb-2">{{$book->title}}</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>Rs.{{ $book -> price }}</h6><h6 class="text-muted ml-2"><del>Rs.123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="#"
-                            data-title="{{ $book->title }}"
-                            data-price="{{ $book->price }}"
-                            data-description="{{ $book->description}}"
-                            data-rating="{{ $book->rating }}"
-                            data-image="{{ asset($book->image) }}"
-                            class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        @if(auth()->check())
-                        <a href="#"
-                        data-title="{{ $book->title }}"
-                        data-price="{{ $book->price }}"
-                        data-image="{{ asset($book->image) }}"
-                        data-id="{{ $book->id }}"
-                        class="addToCartBtn btn btn-sm text-dark p-0">
-                        <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                        @else
-                            <button class="btn btn-sm text-dark p-0" onclick="showLoginMessage()">
-                            <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
-                            @endif
-                    </div>
-                </div>
-            </div>
-            @endforeach
-            @foreach($christianityBooks as $book)
-            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
-                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="{{ asset($book->image)}}" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
-                        <h6 class="text-truncate mb-2">{{$book->title}}</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>Rs.{{ $book -> price }}</h6><h6 class="text-muted ml-2"><del>Rs.123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="#"
-                            data-title="{{ $book->title }}"
-                            data-price="{{ $book->price }}"
-                            data-description="{{ $book->description}}"
-                            data-rating="{{ $book->rating }}"
-                            data-image="{{ asset($book->image) }}"
-                        class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        @if(auth()->check())
-                        <a href="#"
-                            data-title="{{ $book->title }}"
-                            data-price="{{ $book->price }}"
-                            data-image="{{ asset($book->image) }}"
-                            data-id="{{ $book->id }}"
-                            class="addToCartBtn btn btn-sm text-dark p-0">
-                            <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                            @else
-                            <button class="btn btn-sm text-dark p-0" onclick="showLoginMessage()">
-                            <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
-                            @endif
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-<!-- Products End ( Religion & Spirituality Books)-->
-
-<!-- Products Start ( History & Biography Books)-->
-    <div class="container-fluid pt-5" id="History-Biography">
-        <div class="text-center mb-4">
-            <h2 class="section-title px-5"><span class="px-2">History & Biography Books</span></h2>
-        </div>
-        <div class="row px-3 pb-3">
-            @foreach($historyBiographyBooks as $book)
-            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
-                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="{{ asset($book->image)}}" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
-                        <h6 class="text-truncate mb-2">{{$book->title}}</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>Rs.{{ $book -> price }}</h6><h6 class="text-muted ml-2"><del>Rs.123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="#"
-                            data-title="{{ $book->title }}"
-                            data-price="{{ $book->price }}"
-                            data-description="{{ $book->description}}"
-                            data-rating="{{ $book->rating }}"
-                            data-image="{{ asset($book->image) }}"
-                        class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        @if(auth()->check())
-                        <a href="#"
-                        data-title="{{ $book->title }}"
-                        data-price="{{ $book->price }}"
-                        data-image="{{ asset($book->image) }}"
-                        data-id="{{ $book->id }}"
-                        class="addToCartBtn btn btn-sm text-dark p-0">
-                        <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                        @else
-                            <button class="btn btn-sm text-dark p-0" onclick="showLoginMessage()">
-                            <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
-                            @endif
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-<!-- Products End ( History & Biography Books)-->
-
-<!-- Products Start ( Kid's & Teens Books)-->
-    <div class="container-fluid pt-5" id="Kids-Teens">
-        <div class="text-center mb-4">
-            <h2 class="section-title px-5"><span class="px-2">Kid's & Teens Books</span></h2>
-        </div>
-        <div class="row px-3 pb-3">
-            @foreach($childrenBooks as $childreanBook)
-            <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
-                <div class="card product-item border-0 mb-4" style="max-width: 200px;">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="{{ asset($childreanBook->image)}}" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-3 pb-1">
-                        <h6 class="text-truncate mb-2">{{$childreanBook->title}}</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>Rs.{{ $childreanBook -> price }}</h6><h6 class="text-muted ml-2"><del>Rs.123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="#"
-                            data-title="{{ $childreanBook->title }}"
-                            data-price="{{ $childreanBook->price }}"
-                            data-description="{{ $childreanBook->description}}"
-                            data-rating="{{ $childreanBook->rating }}"
-                            data-image="{{ asset($childreanBook->image) }}"
-                            class="viewDetailBtn btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                        @if(auth()->check())
-                        <a href="#"
-                        data-title="{{ $childreanBook->title }}"
-                        data-price="{{ $childreanBook->price }}"
-                        data-image="{{ asset($childreanBook->image) }}"
-                        data-id="{{ $childreanBook->id }}"
-                        class="addToCartBtn btn btn-sm text-dark p-0">
-                        <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
-                        @else
-                            <button class="btn btn-sm text-dark p-0" onclick="showLoginMessage()">
-                            <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
-                            @endif
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-<!-- Products End ( Kid's & Teens Books)-->
-
-    <!-- Vendor Start -->
-    <div class="container-fluid py-5">
-        <div class="row px-xl-5">
-            <div class="col">
-                <div class="owl-carousel vendor-carousel">
-                    <div class="vendor-item border p-4">
-                        <img src="/eBookStore/img/vendor-1.jpg" alt="">
-                        <!-- <img src="{{ asset('eBookStore/img/vendor-1.jpg') }}" alt=""> -->
-
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="/eBookStore/img/vendor-2.jpg " alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="/eBookStore/img/vendor-3.jpg " alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="/eBookStore/img/vendor-4.jpg" alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="/eBookStore/img/vendor-5.jpg " alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="/eBookStore/img/vendor-6.jpg" alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="/eBookStore/img/vendor-7.jpg" alt="">
-                    </div>
-                    <div class="vendor-item border p-4">
-                        <img src="/eBookStore/img/vendor-8.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Vendor End -->
-
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
-        <div class="row px-xl-5 pt-5">
-            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
-                <a href="{{ route('homepage') }}" class="text-decoration-none">
-                    <h1 class="mb-4 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border border-white px-3 mr-1">E</span>Books</h1>
-                </a>
-                <p>Dolore erat dolor sit lorem vero amet. Sed sit lorem magna, ipsum no sit erat lorem et magna ipsum dolore amet erat.</p>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Gaindakot, Nawalparasi, Nepal</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@eBookStore.com</p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+977 9864575047</p>
-            </div>
-            <div class="col-lg-8 col-md-12">
-                <div class="row">
-                    <div class="col-md-4 mb-5">
-                        <h5 class="font-weight-bold text-dark mb-4">Informations</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-dark mb-2" href="/aboutUs"><i class="fa fa-angle-right mr-2"></i>About Us</a>
-                            <a class="text-dark mb-2" href="/refundPolicy"><i class="fa fa-angle-right mr-2"></i>Return and Refund Policy</a>
-                            <a class="text-dark mb-2" href="/termCondition"><i class="fa fa-angle-right mr-2"></i>Terms and Condition</a>
-                            <a class="text-dark mb-2" href="/privacyPolicy"><i class="fa fa-angle-right mr-2"></i>Privacy Policy</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-dark mb-2" href="{{ route('homepage') }}"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                            <a class="text-dark mb-2" href="/shopDetail"><i class="fa fa-angle-right mr-2"></i>Shop Detail</a>
-                            <a class="text-dark mb-2" href="/shoppingCart"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                            <a class="text-dark mb-2" href="/checkOut"><i class="fa fa-angle-right mr-2"></i>Checkout</a>
-                            <a class="text-dark" href="/contact"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="font-weight-bold text-dark mb-4">Newsletter</h5>
-                        <form action="">
-                            <div class="form-group">
-                                <input type="text" class="form-control border-0 py-4" placeholder="Your Name" required="required" />
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control border-white p-4"
+                                placeholder="Email Goes Here">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary px-4">Subscribe</button>
                             </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
-                                    required="required" />
-                            </div>
-                            <div>
-                                <button class="btn btn-primary btn-block border-0 py-3" type="submit">Subscribe Now</button>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <div class="row border-top border-light mx-xl-5 py-4">
-            <div class="col-md-6 px-xl-0">
-                <p class="mb-md-0 text-center text-md-left text-dark">Copyright
-                    &copy; 2024. <a class="text-dark font-weight-semi-bold" href="#">eBookStore.com</a> All Rights Reserved.
-                </p>
-            </div>
-            <div class="col-md-6 px-xl-0 text-center text-md-right">
-                <img class="img-fluid" src="img/payments.png" alt="">
-            </div>
-        </div>
+        @include('eBookStore.partials.religion')
+        @include('eBookStore.partials.history-biography')
+        @include('eBookStore.partials.kid-teen')
+
+        @include('eBookStore.partials.vendor')
+
+        @include('eBookStore.partials.footer')
     </div>
-    <!-- Footer End -->
 
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-
-    <!-- <script src="eBookStore/lib/easing/easing.min.js"></script> -->
-    <script src="{{ asset('eBookStore/lib/easing/easing.min.js')}}"></script>
-
-    <!-- <script src="eBookStore/lib/owlcarousel/owl.carousel.min.js"></script> -->
-    <script src="{{ asset('eBookStore/lib/owlcarousel/owl.carousel.min.js')}}"></script>
-
-
-    <!-- Contact Javascript File -->
-    <!-- <script src="eBookStore/mail/jqBootstrapValidation.min.js"></script> -->
-    <script src="{{ asset('eBookStore/mail/jqBootstrapValidation.min.js')}}"></script>
-
-    <!-- <script src="eBookStore/mail/contact.js"></script> -->
-    <script src="{{ asset('eBookStore/mail/contact.js')}}"></script>
-
-
-    <!-- Main Javascript -->
-    <!-- <script src="eBookStore/js/main.js"></script> -->
-    <script src="{{ asset('eBookStore/js/main.js') }}"></script>
 </body>
+
 </html>

@@ -34,15 +34,15 @@
                             </div>
                             <div class="form-group mb-4">
                                 <label for="" class="text-white">Email</label>
-                                <input type="text" name="email" value="{{ old('email')}}" class="form-control bg-primary text-white" placeholder="Enter your Email">
+                                <input type="email" name="email" value="{{ old('email')}}" class="form-control bg-primary text-white" placeholder="Enter your Email">
                             </div>
                             <div class="form-group mb-4">
                                 <label for="" class="text-white">Password</label>
-                                <input type="text" name="password" value="{{ old('password')}}" class="form-control bg-primary text-white" placeholder="Create Strong Password">
+                                <input type="password" name="password" value="{{ old('password')}}" class="form-control bg-primary text-white" placeholder="Create Strong Password">
                             </div>
                             <div class="form-group mb-4">
                                 <label for="" class="text-white">Re-Password</label>
-                                <input type="text" name="password_confirmation" value="{{ old('password_confirmation')}}" class="form-control bg-primary text-white" placeholder="Enter Password to Confirm">
+                                <input type="password" name="password_confirmation" value="{{ old('password_confirmation')}}" class="form-control bg-primary text-white" placeholder="Enter Password to Confirm">
                             </div>
                             <div class="register-btn d-flex justify-content-center">
                                 <button type="submit" class="btn btn-secondary" id="register-btn">

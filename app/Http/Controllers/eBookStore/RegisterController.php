@@ -12,24 +12,24 @@ use App\Models\User;
 
 class RegisterController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         return view('eBookStore.register');
     }
 
     public function store(UserRegisterRequest $request)
     {
-        // dd($request->all());
         $validated = $request->validated();
         User::create([
             'name' => $validated['name'],
             'email' => $validated['email'],
             'password' => Hash::make($validated['password']),
+            'role_id' => 1
         ]);
-        if(Auth::attempt($request ->only('email','password'))){
+        if (Auth::attempt($request->only('email', 'password'))) {
             return redirect('/Home');
-        }
-        else{
-            return back()->with('fail','Error occurred !!!');
+        } else {
+            return back()->with('fail', 'Error occurred !!!');
         }
     }
 
@@ -39,5 +39,4 @@ class RegisterController extends Controller
         Auth::logout();
         return redirect('/Home');
     }
-
 }
