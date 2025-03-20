@@ -27,7 +27,7 @@ class RegisterController extends Controller
             'role_id' => 1
         ]);
         if (Auth::attempt($request->only('email', 'password'))) {
-            return redirect('/Home');
+            return redirect('/AdminDashboard');
         } else {
             return back()->with('fail', 'Error occurred !!!');
         }
