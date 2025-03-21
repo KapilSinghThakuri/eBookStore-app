@@ -15,9 +15,10 @@ class HomeController extends Controller
     public function index()
     {
         $categories = Category::all();
+        $books = Book::get();
         return view(
             'eBookStore.index',
-            compact('categories')
+            compact('categories', 'books')
         );
         // $religionSpirituality = Category::orderBy('id')->take(4)->get();
         // $businessEssential = Category::orderBy('id')->skip(4)->take(4)->get();

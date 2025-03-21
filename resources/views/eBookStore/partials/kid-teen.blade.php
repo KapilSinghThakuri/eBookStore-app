@@ -1,9 +1,9 @@
-<div class="container-fluid pt-5" id="Kids-Teens">
+{{-- <div class="container-fluid pt-5" id="Kids-Teens">
     <div class="text-center mb-4">
         <h2 class="section-title px-5"><span class="px-2">Kid's & Teens Books</span></h2>
     </div>
     <div class="row px-3 pb-3">
-        {{-- @foreach ($childrenBooks as $childreanBook)
+        @foreach ($childrenBooks as $childreanBook)
             <div class="col-lg-2 col-md-4 col-sm-6 pb-1">
                 <div class="card product-item border-0 mb-4" style="max-width: 200px;">
                     <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
@@ -38,6 +38,6 @@
                     </div>
                 </div>
             </div>
-            @endforeach --}}
+            @endforeach
     </div>
-</div>
+</div> --}}
